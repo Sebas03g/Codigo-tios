@@ -6,5 +6,6 @@ export const {
   update: updatepedido_elementos,
   remove: deletepedido_elementos,
   findById: findpedido_elementos,
-  findAll: findAllpedido_elementos
+  findAll: findAllpedido_elementos,
+  extraData: extraDatapedido_elementos
 } = baseController(service);

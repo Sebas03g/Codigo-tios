@@ -6,5 +6,6 @@ export const {
   update: updateproforma_empleados,
   remove: deleteproforma_empleados,
   findById: findproforma_empleados,
-  findAll: findAllproforma_empleados
+  findAll: findAllproforma_empleados,
+  extraData: extraDataproforma_empleados
 } = baseController(service);

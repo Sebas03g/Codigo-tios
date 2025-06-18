@@ -6,5 +6,6 @@ export const {
   update: updateproforma_herramientas,
   remove: deleteproforma_herramientas,
   findById: findproforma_herramientas,
-  findAll: findAllproforma_herramientas
+  findAll: findAllproforma_herramientas,
+  extraData: extraDataproforma_herramientas
 } = baseController(service);

@@ -24,4 +24,12 @@ export const baseRepository = (modelName) => ({
       where: { id: Number(id) },
       data: { estadoEliminado: 'ELIMINADO' },
     })},
+  extraData: (id, relation) =>{
+    return prisma[modelName].findFirst({
+      where: { id: Number(id), estadoEliminado: 'ACTIVO' },
+      include: {
+          [relation]: true
+      }
+    });
+  }
 })

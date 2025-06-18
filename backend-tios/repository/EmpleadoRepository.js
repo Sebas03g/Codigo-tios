@@ -1,9 +1,9 @@
 import { baseRepository } from './baseRepository.js'
 import { prisma } from '../config/db.js'
 
-export default baseRepository('empleado');
+const repo = baseRepository('empleado');
 
-export const findByCedula = async (cedula) => {
+repo.findByCedula = async (cedula) => {
 
     return await prisma.empleado.findFirst({
         where: { cedula: cedula, estadoEliminado: 'ACTIVO' },
@@ -11,11 +11,17 @@ export const findByCedula = async (cedula) => {
 
 }
 
-export const updatePassword = async (cedula, password) => {
-    return await prisma.empleado.update({
-        where: { cedula: cedula, estadoEliminado: 'ACTIVO'  },
-        data: {
-            password: password,
-        },
-    });
-}
+repo.updatePassword = async (cedula, password) => {
+  const empleado = await prisma.empleado.findFirst({
+    where: { cedula, estadoEliminado: 'ACTIVO' },
+  });
+
+  if (!empleado) return null;
+
+  return await prisma.empleado.update({
+    where: { cedula },
+    data: { password },
+  });
+};
+
+export default repo;

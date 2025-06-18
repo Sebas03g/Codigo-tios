@@ -6,5 +6,6 @@ export const {
   update: updatePunto,
   remove: deletePunto,
   findById: findPunto,
-  findAll: findAllPunto
+  findAll: findAllPunto,
+  extraData: extraDataPunto
 } = baseController(service);

@@ -3,5 +3,6 @@ export const baseService = (repository) => ({
   delete: async (id) => repository.delete(id),
   update: async (id, data) => repository.update(id, data),
   findById: async (id) => repository.findById(id),
-  findAll: async () => repository.findAll() 
+  findAll: async () => repository.findAll(), 
+  extraData: async () => repository.extraData(id, relation)
 });

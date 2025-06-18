@@ -6,5 +6,6 @@ export const {
   update: updatePermiso,
   remove: deletePermiso,
   findById: findPermiso,
-  findAll: findAllPermiso
+  findAll: findAllPermiso,
+  extraData: extraDataPermiso
 } = baseController(service);

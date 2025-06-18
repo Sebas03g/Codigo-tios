@@ -8,3 +8,4 @@ router.get('/:id', controller.findDevolucion);
 router.post('/', controller.crearDevolucion);
 router.put('/:id', controller.updateDevolucion);
 router.delete('/:id', controller.deleteDevolucion);
+router.get('/:id/:relation', controller.extraDataDevolucion);

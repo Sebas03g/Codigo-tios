@@ -6,5 +6,6 @@ export const {
   update: updateObra,
   remove: deleteObra,
   findById: findObra,
-  findAll: findAllObra
+  findAll: findAllObra,
+  extraData: extraDataObra
 } = baseController(service);

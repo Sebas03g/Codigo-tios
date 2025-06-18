@@ -8,3 +8,4 @@ router.get('/:id', controller.findPedido);
 router.post('/', controller.crearPedido);
 router.put('/:id', controller.updatePedido);
 router.delete('/:id', controller.deletePedido);
+router.get('/:id/:relation', controller.extraDataPedido);

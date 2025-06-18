@@ -7,6 +7,6 @@ router.get('/', controller.findAllCategoria);
 router.get('/:id', controller.findCategoria);
 router.post('/', controller.crearCategoria);
 router.put('/:id', controller.updateCategoria);
-router.delete('/:id', controller.deleteCategoria);
+router.get('/:id/:relation', controller.extraDataCategoria);
 
 export {router}

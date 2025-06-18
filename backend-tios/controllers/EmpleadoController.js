@@ -6,13 +6,14 @@ export const {
   update: updateEmpleado,
   remove: deleteEmpleado,
   findById: findEmpleado,
-  findAll: findAllEmpleado
+  findAll: findAllEmpleado,
+  extraData: extraDataEmpleado
 } = baseController(service);
 
 export const loginEmpleado = async (req, res) => {
     try{
         const {cedula, password} = req.body;
-        const token = await loginEmpleado(cedula, password);
+        const token = await login(cedula, password);
         if(!token){
             return res.status(400).json({mensaje : 'Datos invalidos.'})
    
@@ -27,7 +28,7 @@ export const loginEmpleado = async (req, res) => {
 export const updatePassword = async (req, res) => {
     try{
         const {cedula, password} = req.body;
-        const empleado = await updatePassword(cedula, password);
+        const empleado = await update(cedula, password);
         if(!empleado){
             return res.status(400).json({mensaje : 'Datos invalidos.'})
         }

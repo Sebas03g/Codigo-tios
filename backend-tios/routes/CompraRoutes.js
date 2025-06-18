@@ -8,3 +8,4 @@ router.get('/:id', controller.findCompra);
 router.post('/', controller.crearCompra);
 router.put('/:id', controller.updateCompra);
 router.delete('/:id', controller.deleteCompra);
+router.get('/:id/:relation', controller.extraDataCompra);

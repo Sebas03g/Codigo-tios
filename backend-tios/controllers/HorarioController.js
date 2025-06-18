@@ -6,5 +6,6 @@ export const {
   update: updateHorario,
   remove: deleteHorario,
   findById: findHorario,
-  findAll: findAllHorario
+  findAll: findAllHorario,
+  extraData: extraDataHorario
 } = baseController(service);

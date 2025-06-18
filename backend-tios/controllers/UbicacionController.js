@@ -6,5 +6,6 @@ export const {
   update: updateUbicacion,
   remove: deleteUbicacion,
   findById: findUbicacion,
-  findAll: findAllUbicacion
+  findAll: findAllUbicacion,
+  extraData: extraDataUbicacion
 } = baseController(service);

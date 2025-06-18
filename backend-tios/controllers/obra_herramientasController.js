@@ -6,5 +6,6 @@ export const {
   update: updateobra_herramientas,
   remove: deleteobra_herramientas,
   findById: findobra_herramientas,
-  findAll: findAllobra_herramientas
+  findAll: findAllobra_herramientas,
+  extraData: extraDataobra_herramientas
 } = baseController(service);

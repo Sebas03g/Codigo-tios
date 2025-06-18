@@ -6,5 +6,6 @@ export const {
   update: updateubicacion_empleado,
   remove: deleteubicacion_empleado,
   findById: findubicacion_empleado,
-  findAll: findAllubicacion_empleado
+  findAll: findAllubicacion_empleado,
+  extraData: extraDataubicacion_empleado
 } = baseController(service);

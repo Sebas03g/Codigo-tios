@@ -8,3 +8,4 @@ router.get('/:id', controller.findPermiso);
 router.post('/', controller.crearPermiso);
 router.put('/:id', controller.updatePermiso);
 router.delete('/:id', controller.deletePermiso);
+router.get('/:id/:relation', controller.extraDataPermiso);
