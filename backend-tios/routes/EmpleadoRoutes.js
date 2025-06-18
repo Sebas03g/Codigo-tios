@@ -9,7 +9,7 @@ router.get('/:id', verificarToken, controller.findEmpleado);
 router.post('/', verificarToken, controller.crearEmpleado);
 router.put('/:id', verificarToken, controller.updateEmpleado);
 router.delete('/:id', verificarToken, controller.deleteEmpleado);
-router.get('/:id/:relation', controller.extraDataEmpleado);
+router.get('/:id/:relation', verificarToken,controller.extraDataEmpleado);
 router.put('/password', verificarToken,controller.updatePassword);
 
 router.post('/login', controller.loginEmpleado);

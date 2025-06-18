@@ -1,4 +1,4 @@
-export const PERMISOS = {
+export const PERMISOS = Object.freeze({
   REALIZAR_VENTAS: 'realizar ventas',
   VISUALIZAR_VENTAS: 'visualizar ventas',
   REALIZAR_COMPRAS: 'realizar compras',
@@ -33,9 +33,9 @@ export const PERMISOS = {
   RECIBIR_MENSAJES_CONTRASEÑA: 'recibir mensajes de contraseña',
   RECIBIR_MENSAJES: 'recibir mensajes generales',
   MANDAR_MENSAJES: 'mandar mensajes',
-};
+});
 
-export const PERMISOS_HOME = {
+export const PERMISOS_HOME = Object.freeze({
   BOTON_INVENTARIO: [
     PERMISOS.VISUALIZAR_INVENTARIO,
     PERMISOS.AGREGAR_INVENTARIO,
@@ -89,4 +89,4 @@ export const PERMISOS_HOME = {
     PERMISOS.RECIBIR_MENSAJES,
     PERMISOS.MANDAR_MENSAJES,
   ],
-};
+});

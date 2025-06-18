@@ -357,6 +357,17 @@ model Pedido{
   elemento pedido_elementos[]
 }
 
+model Tarea {
+  id           Int      @id @default(autoincrement())
+  nombre       String
+  descripcion  String
+  id_asignador Int
+  id_asignado  Int
+
+  asignador Empleado @relation("AsignadorRelacion", fields: [id_asignador], references: [id])
+  asignado  Empleado @relation("AsignadoRelacion", fields: [id_asignado], references: [id])
+}
+
 model pedido_elementos{
   id_pedido Int
   id_elemento Int
