@@ -39,11 +39,11 @@ app.use(express.json())
 app.use(cookieParser(process.env.COOKIE_SECRET))
 
 /*const csrfProtection = csurf({ cookie: true })
-app.use(csrfProtection)
+app.use(csrfProtection)*/
 
 app.get('/csrf-token', (req, res) => {
   res.json({ csrfToken: req.csrfToken() })
-})*/
+})
 
 app.get('/', (req, res) => res.send('API funcionando'));
 
