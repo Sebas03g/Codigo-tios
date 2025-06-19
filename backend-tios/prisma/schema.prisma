@@ -158,6 +158,8 @@ model Empleado{
   ubicacion ubicacion_empleado[]
   mensajesEnviados Mensaje[] @relation("MensajeRemitente")
   mensajesRecibidos Mensaje[] @relation("MensajeDestinatario")
+  tareasAsignadas Tarea[] @relation("AsignadorRelacion")
+  tareasRecibidas Tarea[] @relation("AsignadoRelacion")
 }
 
 model Mensaje{
