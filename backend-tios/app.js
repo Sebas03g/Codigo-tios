@@ -2,6 +2,7 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import { verificarToken } from './middleware/authMiddleware.js';
 import csurf from 'csurf';
+import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
@@ -40,6 +41,13 @@ app.use(cookieParser(process.env.COOKIE_SECRET))
 
 /*const csrfProtection = csurf({ cookie: true })
 app.use(csrfProtection)*/
+
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://miapp.com'], // varios orígenes
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-CSRF-Token'],
+  credentials: true 
+}));
 
 app.get('/csrf-token', (req, res) => {
   res.json({ csrfToken: req.csrfToken() })

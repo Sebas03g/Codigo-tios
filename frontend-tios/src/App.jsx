@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { useEffect } from "react";
+import 'leaflet/dist/leaflet.css';
 
 function RouteLogger() {
   const location = useLocation();
