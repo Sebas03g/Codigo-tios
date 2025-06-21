@@ -1,3 +1,5 @@
+import logger from '../utils/logger.js';
+
 export const baseController = (service) => ({
   create: async (req, res) => {
     try {
@@ -9,6 +11,7 @@ export const baseController = (service) => ({
       res.status(201).json({ mensaje: 'Creado exitosamente.' });
     } catch (error) {
       console.error(error);
+      logger.error(error);
       res.status(500).json({ mensaje: 'Error interno del servidor.' });
     }
   },
@@ -24,6 +27,7 @@ export const baseController = (service) => ({
       res.status(200).json({ mensaje: 'Modificado exitosamente.' });
     } catch (error) {
       console.error(error);
+      logger.error(error);
       res.status(500).json({ mensaje: 'Error interno del servidor.' });
     }
   },
@@ -31,13 +35,15 @@ export const baseController = (service) => ({
   remove: async (req, res) => {
     try {
       const id = parseInt(req.params.id);
-      const result = await service.delete(id);
+      const data = req.body;
+      const result = await service.delete(id, data);
       if (!result) {
         return res.status(409).json({ mensaje: 'No se pudo eliminar.' });
       }
       res.status(200).json({ mensaje: 'Eliminado exitosamente.' });
     } catch (error) {
       console.error(error);
+      logger.error(error);
       res.status(500).json({ mensaje: 'Error interno del servidor.' });
     }
   },
@@ -52,6 +58,7 @@ export const baseController = (service) => ({
       res.status(200).json(result);
     } catch (error) {
       console.error(error);
+      logger.error(error);
       res.status(500).json({ mensaje: 'Error interno del servidor.' });
     }
   },
@@ -65,6 +72,7 @@ export const baseController = (service) => ({
       res.status(200).json(results);
     } catch (error) {
       console.error(error);
+      logger.error(error);
       res.status(500).json({ mensaje: 'Error interno del servidor.' });
     }
   },
@@ -83,6 +91,7 @@ export const baseController = (service) => ({
     
       }catch (error){
           console.error(error);
+          logger.error(error);
           res.status(500).json({ mensaje: 'Error interno del servidor.' });
       }
   }

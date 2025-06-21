@@ -7,5 +7,5 @@ router.get('/', controller.findAllObra);
 router.get('/:id', controller.findObra);
 router.post('/', controller.crearObra);
 router.put('/:id', controller.updateObra);
-router.delete('/:id', controller.deleteObra);
+router.post('/:id', controller.deleteObra);
 router.get('/:id/:relation', controller.extraDataObra);

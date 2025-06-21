@@ -8,7 +8,7 @@ router.get('/', verificarToken, controller.findAllEmpleado);
 router.get('/:id', verificarToken, controller.findEmpleado);
 router.post('/', verificarToken, controller.crearEmpleado);
 router.put('/:id', verificarToken, controller.updateEmpleado);
-router.delete('/:id', verificarToken, controller.deleteEmpleado);
+router.post('/:id', verificarToken, controller.deleteEmpleado);
 router.get('/:id/:relation', verificarToken,controller.extraDataEmpleado);
 router.put('/password', verificarToken,controller.updatePassword);
 

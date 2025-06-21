@@ -1,4 +1,4 @@
-import PersonaForm from "./PersonaForm";
+import PersonaBase from "../Base/PersonaBase.jsx";
 import * as sentences from "../../../services/fetch/sentenciasFetch.jd";
 import { useState } from "react";
 
@@ -28,7 +28,7 @@ export default function ProveedorForm({ onClose }) {
   };
 
   return (
-    <PersonaForm
+    <PersonaBase
       titulo="Proveedor"
       tipo="RUC/Cédula"
       handleSubmit={handleSubmit}

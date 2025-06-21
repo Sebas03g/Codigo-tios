@@ -1,3 +1,6 @@
+
+
+
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
@@ -56,6 +59,13 @@ model Punto{
   empleado ubicacion_empleado[]
 
   @@unique([lat,lng])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Ubicacion{
@@ -67,6 +77,13 @@ model Ubicacion{
 
   punto  Punto @relation(fields: [id_punto], references: [id])
   inventario Inventario[]
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Categoria{
@@ -77,10 +94,16 @@ model Categoria{
   tipo String
   tipo_unidad    String
   venta    Boolean
-  tiempo    String?
+  tiempo    DateTime?
   estadoEliminado EstadoEliminado @default(ACTIVO)
-
   inventario Inventario[]
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Persona{
@@ -96,6 +119,13 @@ model Persona{
   proforma Proforma[]
   obra Obra[]
   transaccion Transaccion[]
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Inventario{
@@ -118,6 +148,13 @@ model Inventario{
   obra obra_herramientas[]
   proforma_herramienta proforma_herramientas[]
   proforma_inventario proforma_inventario[]
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Permiso{
@@ -127,6 +164,14 @@ model Permiso{
   categoria CategoriasPermiso
 
   posiciones Posicion[] @relation("posicion_permiso")
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
+  
 }
 
 model Posicion{
@@ -136,6 +181,13 @@ model Posicion{
 
   permisos Permiso[] @relation("posicion_permiso")
   empleado Empleado[]
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Empleado{
@@ -161,6 +213,13 @@ model Empleado{
   mensajesRecibidos Mensaje[] @relation("MensajeDestinatario")
   tareasAsignadas Tarea[] @relation("AsignadorRelacion")
   tareasRecibidas Tarea[] @relation("AsignadoRelacion")
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Mensaje{
@@ -174,6 +233,13 @@ model Mensaje{
 
   remitente      Empleado  @relation("MensajeRemitente", fields: [id_remitente], references: [id])
   destinatario   Empleado  @relation("MensajeDestinatario", fields: [id_destinario], references: [id])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 
 }
 
@@ -192,6 +258,13 @@ model Proforma{
   empleados proforma_empleados[]
   herramientas proforma_herramientas[]
   inventario proforma_inventario[]
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model proforma_empleados{
@@ -246,6 +319,12 @@ model Obra{
   transaccion Transaccion[]
   pedido Pedido[]
 
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Transaccion{
@@ -265,6 +344,12 @@ model Transaccion{
   venta Venta?
   devolucion Devolucion?
 
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model transaccion_elementos{
@@ -335,6 +420,7 @@ model obra_empleados{
   obra Obra @relation(fields: [id_obra], references: [id])
   empleado Empleado @relation(fields: [id_empleado], references: [id])
   horarios Horario[] @relation("horario_obra_empleado")
+
 }
 
 model obra_herramientas{
@@ -347,6 +433,7 @@ model obra_herramientas{
   obra Obra @relation(fields: [id_obra], references: [id])
   herramienta Inventario @relation(fields: [id_herramienta], references: [id])
   horarios Horario[] @relation("horario_obra_herramienta")
+
 }
 
 model Pedido{
@@ -358,6 +445,13 @@ model Pedido{
   obra Obra @relation(fields: [id_obra], references: [id])
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
   elemento pedido_elementos[]
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Tarea {
@@ -371,6 +465,13 @@ model Tarea {
 
   asignador Empleado @relation("AsignadorRelacion", fields: [id_asignador], references: [id])
   asignado  Empleado @relation("AsignadoRelacion", fields: [id_asignado], references: [id])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model pedido_elementos{
@@ -388,7 +489,6 @@ model pedido_elementos{
 }
 
 model ubicacion_empleado{
-  id        Int     @id @default(autoincrement())
   id_punto Int
   id_empleado Int
   estado EstadoTrabajador
@@ -398,6 +498,7 @@ model ubicacion_empleado{
   punto Punto @relation(fields: [id_punto], references: [id])
   empleado Empleado @relation(fields: [id_empleado], references: [id])
 
+  @@id([id_punto, id_empleado])
 }
 
 generator client {

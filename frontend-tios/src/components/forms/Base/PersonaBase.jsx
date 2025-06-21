@@ -1,4 +1,4 @@
-export default function PersonaForm({
+export default function PersonaBase({
   titulo,
   tipo,
   handleSubmit,
@@ -60,6 +60,10 @@ export default function PersonaForm({
                 required
                 />
             </div>
+
+            <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+                Crear
+            </button>
 
         </form>
     );

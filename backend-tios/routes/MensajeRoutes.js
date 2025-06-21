@@ -7,5 +7,5 @@ router.get('/', controller.findAllMensaje);
 router.get('/:id', controller.findMensaje);
 router.post('/', controller.crearMensaje);
 router.put('/:id', controller.updateMensaje);
-router.delete('/:id', controller.deleteMensaje);
+router.post('/:id', controller.deleteMensaje);
 router.get('/:id/:relation', controller.extraDataMensaje);

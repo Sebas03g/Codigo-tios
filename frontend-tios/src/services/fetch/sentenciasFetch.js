@@ -1,5 +1,7 @@
 const BASE_URL = 'http://localhost:3000';
 
+const getUsuario = () => localStorage.getItem("id_usuario");
+
 const getAuthHeaders = () => ({
   'Content-Type': 'application/json',
   'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -33,6 +35,7 @@ export const getDataById = async(nombreClase, id) => {
 };
 
 export const createData = async(nombreClase, data) => {
+  data.createdBy = getUsuario();
   const res = await fetch(`${BASE_URL}/${nombreClase}/`, {
     method: 'POST',
     headers: getAuthHeaders(),
@@ -43,6 +46,7 @@ export const createData = async(nombreClase, data) => {
 };
 
 export const updateData = async(nombreClase, data, id) => {
+  data.updatedBy = getUsuario();
   const res = await fetch(`${BASE_URL}/${nombreClase}/${id}`, {
     method: 'PUT',
     headers: getAuthHeaders(),
@@ -54,9 +58,10 @@ export const updateData = async(nombreClase, data, id) => {
 
 export const removeData = async(nombreClase, id) => {
   const res = await fetch(`${BASE_URL}/${nombreClase}/${id}`, {
-    method: 'DELETE',
+    method: 'POST',
     headers: getAuthHeaders(),
     credentials: 'include',
+    body: JSON.stringify({ deletedBy: getUsuario(),  estadoEliminado: "ELIMINADO"}),
   });
   return handleResponse(res);
 };

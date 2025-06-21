@@ -7,5 +7,5 @@ router.get('/', controller.findAllProforma);
 router.get('/:id', controller.findProforma);
 router.post('/', controller.crearProforma);
 router.put('/:id', controller.updateProforma);
-router.delete('/:id', controller.deleteProforma);
+router.post('/:id', controller.deleteProforma);
 router.get('/:id/:relation', controller.extraDataProforma);

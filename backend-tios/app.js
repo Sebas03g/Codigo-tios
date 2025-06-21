@@ -6,6 +6,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
+import { logRequest } from './middlewares/loggerMiddleware.js';
 import { router as categoriaRoutes } from './routes/CategoriaRoutes.js';
 import { router as compraRoutes } from './routes/CompraRoutes.js';
 import { router as devolucionRoutes } from './routes/DevolucionRoutes.js';
@@ -38,6 +39,8 @@ dotenv.config();
 const app = express()
 app.use(express.json())
 app.use(cookieParser(process.env.COOKIE_SECRET))
+
+app.use(logRequest);
 
 /*const csrfProtection = csurf({ cookie: true })
 app.use(csrfProtection)*/
@@ -83,12 +86,12 @@ app.use('/ubicacion_empleado', verificarToken, ubicacion_empleadoRoutes);
 app.use('/ubicacion', verificarToken, ubicacionRoutes);
 app.use('/venta', verificarToken, ventaRoutes);*/
 
-app.use('/categoria', categoriaRoutes);
-app.use('/compra', compraRoutes);
-app.use('/devolucion', devolucionRoutes);
-app.use('/dia', diaRoutes);
+app.use('/categoria/:usuario', categoriaRoutes);
+app.use('/compra/:usuario', compraRoutes);
+app.use('/devolucion/:usuario', devolucionRoutes);
+app.use('/dia/:usuario', diaRoutes);
 app.use('/empleado', empleadoRoutes);
-app.use('/horario', horarioRoutes);
+app.use('/horario/:usuario', horarioRoutes);
 app.use('/inventario', inventarioRoutes);
 app.use('/mensaje', mensajeRoutes);
 app.use('/obra_empleados', obra_empleadosRoutes);

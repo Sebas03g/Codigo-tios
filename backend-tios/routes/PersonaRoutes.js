@@ -7,5 +7,5 @@ router.get('/', controller.findAllPersona);
 router.get('/:id', controller.findPersona);
 router.post('/', controller.crearPersona);
 router.put('/:id', controller.updatePersona);
-router.delete('/:id', controller.deletePersona);
+router.post('/:id', controller.deletePersona);
 router.get('/:id/:relation', controller.extraDataPersona);

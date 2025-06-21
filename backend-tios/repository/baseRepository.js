@@ -22,7 +22,7 @@ export const baseRepository = (modelName) => ({
   remove: (id) =>{
     return prisma[modelName].update({
       where: { id: Number(id) },
-      data: { estadoEliminado: 'ELIMINADO' },
+      data,
     })},
   extraData: (id, relation) =>{
     return prisma[modelName].findFirst({

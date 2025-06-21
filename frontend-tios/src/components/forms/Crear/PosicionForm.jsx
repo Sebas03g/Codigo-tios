@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { PERMISOS } from "../../../constants/permissions.js";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js"
+import PosicionBase from "../Base/PosicionBase.jsx";
 
 export default function PosicionForm({onClose}){
     const [formData, setFormData] = useState({
@@ -44,49 +45,15 @@ export default function PosicionForm({onClose}){
         }));
     };
 
-
     return (
-
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-            <button
-                type="button"
-                onClick={onClose}
-                className="absolute top-0 right-0 p-2 text-red-500"
-            >
-                ✖ Cerrar
-            </button>
-            <h2 className="text-xl font-bold mb-4">Crear Posicion</h2>
-            <div>
-                <label htmlFor="nombre">Nombre</label>
-                <input
-                type="text"
-                name="nombre"
-                value={formData.nombre}
-                onChange={handleChange}
-                required
-                />
-            </div>
-            <div>
-                <label>Permisos</label>
-                <div>
-                    {permisos.map((permiso) => (
-                        <div key={permiso.id}>
-                            <label>
-                            <input
-                                type="checkbox"
-                                value={permiso.id}
-                                checked={formData.permisos.includes(String(permiso.id))}
-                                onChange={handleCheck}
-                            />
-                            {permiso.nombre}
-                            </label>
-                        </div>
-                    ))}
-
-                </div>
-            </div>
-        </form>
-
+        <PosicionBase
+            formData = {formData}
+            handleChange = {handleChange}
+            onClose = {onClose}
+            handleSubmit = {handleSubmit}
+            permisos = {permisos}
+        />
     );
+    
 
 }

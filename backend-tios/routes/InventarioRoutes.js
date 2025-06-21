@@ -7,5 +7,5 @@ router.get('/', controller.findAllInventario);
 router.get('/:id', controller.findInventario);
 router.post('/', controller.crearInventario);
 router.put('/:id', controller.updateInventario);
-router.delete('/:id', controller.deleteInventario);
+router.post('/:id', controller.deleteInventario);
 router.get('/:id/:relation', controller.extraDataInventario);

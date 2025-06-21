@@ -7,5 +7,5 @@ router.get('/', controller.findAllobra_herramientas);
 router.get('/:id', controller.findobra_herramientas);
 router.post('/', controller.crearobra_herramientas);
 router.put('/:id', controller.updateobra_herramientas);
-router.delete('/:id', controller.deleteobra_herramientas);
+router.post('/:id', controller.deleteobra_herramientas);
 router.get('/:id/:relation', controller.extraDataobra_herramientas);
