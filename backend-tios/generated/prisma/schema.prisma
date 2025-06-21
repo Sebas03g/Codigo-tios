@@ -1,0 +1,386 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+enum EstadoTrabajador {
+  TRABAJANDO
+  FUERA
+  DESACTIVO
+}
+
+enum EstadoPedido {
+  ABIERTO
+  PROCESO
+  CERRADO
+}
+
+enum EstadoHerramientas {
+  NUEVO
+  USADO
+  VIEJO
+  DAÑADO
+}
+
+enum DiasSemana {
+  LUNES
+  MARTES
+  MIERCOLES
+  JUEVES
+  VIERNES
+  SABADO
+  DOMINGO
+}
+
+enum EstadoEliminado {
+  ACTIVO
+  ELIMINADO
+}
+
+model Punto {
+  id              Int             @id @default(autoincrement())
+  lat             Decimal
+  lng             Decimal
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  ubicacion Ubicacion[]
+  proforma  Proforma[]
+  obra      Obra[]
+  empleado  ubicacion_empleado[]
+
+  @@unique([lat, lng])
+}
+
+model Ubicacion {
+  id              Int             @id @default(autoincrement())
+  nombre          String
+  descripcion     String
+  id_punto        Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  punto      Punto        @relation(fields: [id_punto], references: [id])
+  inventario Inventario[]
+}
+
+model Categoria {
+  id              Int             @id @default(autoincrement())
+  nombre          String
+  codigo          String          @unique
+  descripcion     String
+  tipo_unidad     String
+  venta           Boolean
+  tiempo          String?
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  inventario Inventario[]
+}
+
+model Persona {
+  id              Int             @id @default(autoincrement())
+  nombre          String
+  ruc             String          @unique
+  mail            String          @unique
+  telefono        String
+  proveedor       Boolean
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  inventario  Inventario[]
+  proforma    Proforma[]
+  obra        Obra[]
+  transaccion Transaccion[]
+}
+
+model Inventario {
+  id              Int                 @id @default(autoincrement())
+  precio          Decimal
+  descuento       Decimal
+  cantidad        Float?
+  descripcion     String?
+  id_categoria    Int
+  id_ubicacion    Int
+  id_proveedor    Int
+  estadoEliminado EstadoEliminado     @default(ACTIVO)
+  estado          EstadoHerramientas?
+
+  categoria            Categoria               @relation(fields: [id_categoria], references: [id])
+  ubicacion            Ubicacion               @relation(fields: [id_ubicacion], references: [id])
+  proveedor            Persona                 @relation(fields: [id_proveedor], references: [id])
+  transaccion          transaccion_elementos[]
+  pedido               pedido_elementos[]
+  obra                 obra_herramientas[]
+  proforma_herramienta proforma_herramientas[]
+  proforma_inventario  proforma_inventario[]
+}
+
+model Permiso {
+  id              Int             @id @default(autoincrement())
+  nombre          String          @unique
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  posiciones Posicion[] @relation("posicion_permiso")
+}
+
+model Posicion {
+  id              Int             @id @default(autoincrement())
+  nombre          String          @unique
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  permisos Permiso[]  @relation("posicion_permiso")
+  empleado Empleado[]
+}
+
+model Empleado {
+  id              Int             @id @default(autoincrement())
+  nombre          String
+  cedula          String          @unique
+  mail            String          @unique
+  telefono        String
+  sueldo          Decimal
+  password        String
+  fecha_inicio    DateTime
+  id_posicion     Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  posicion Posicion @relation(fields: [id_posicion], references: [id])
+
+  transaccion       Transaccion[]
+  pedido            pedido_elementos[]
+  obra              obra_empleados[]
+  proforma          proforma_empleados[]
+  ubicacion         ubicacion_empleado[]
+  mensajesEnviados  Mensaje[]            @relation("MensajeRemitente")
+  mensajesRecibidos Mensaje[]            @relation("MensajeDestinatario")
+}
+
+model Mensaje {
+  id     Int      @id @default(autoincrement())
+  texto  String
+  titulo String
+  fecha  DateTime @default(now())
+
+  id_remitente  Int
+  id_destinario Int
+
+  remitente    Empleado @relation("MensajeRemitente", fields: [id_remitente], references: [id])
+  destinatario Empleado @relation("MensajeDestinatario", fields: [id_destinario], references: [id])
+}
+
+model Proforma {
+  id               Int             @id @default(autoincrement())
+  nombre           String
+  tiempo_esperado  Int
+  porcentaje_venta Decimal
+  id_punto         Int
+  id_cliente       Int
+  estadoEliminado  EstadoEliminado @default(ACTIVO)
+
+  punto        Punto                   @relation(fields: [id_punto], references: [id])
+  cliente      Persona                 @relation(fields: [id_cliente], references: [id])
+  obra         Obra?
+  empleados    proforma_empleados[]
+  herramientas proforma_herramientas[]
+  inventario   proforma_inventario[]
+}
+
+model proforma_empleados {
+  horas           Int
+  id_proforma     Int
+  id_empleado     Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  proforma Proforma @relation(fields: [id_proforma], references: [id])
+  empleado Empleado @relation(fields: [id_empleado], references: [id])
+
+  @@id([id_proforma, id_empleado])
+}
+
+model proforma_herramientas {
+  horas           Int
+  id_proforma     Int
+  id_herramienta  Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  proforma    Proforma   @relation(fields: [id_proforma], references: [id])
+  herramienta Inventario @relation(fields: [id_herramienta], references: [id])
+
+  @@id([id_proforma, id_herramienta])
+}
+
+model proforma_inventario {
+  cantidad        Float
+  id_proforma     Int
+  id_elemento     Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  proforma Proforma   @relation(fields: [id_proforma], references: [id])
+  elemento Inventario @relation(fields: [id_elemento], references: [id])
+
+  @@id([id_proforma, id_elemento])
+}
+
+model Obra {
+  id               Int             @id @default(autoincrement())
+  nombre           String
+  tiempo_esperado  Int
+  porcentaje_venta Decimal
+  id_punto         Int
+  id_cliente       Int
+  id_proforma      Int             @unique
+  estadoEliminado  EstadoEliminado @default(ACTIVO)
+
+  punto        Punto               @relation(fields: [id_punto], references: [id])
+  cliente      Persona             @relation(fields: [id_cliente], references: [id])
+  proforma     Proforma            @relation(fields: [id_proforma], references: [id])
+  herramientas obra_herramientas[]
+  empleado     obra_empleados[]
+  transaccion  Transaccion[]
+  pedido       Pedido[]
+}
+
+model Transaccion {
+  id              Int             @id @default(autoincrement())
+  fecha           DateTime        @default(now())
+  id_empleado     Int
+  id_persona      Int?
+  id_obra         Int?
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  empleado   Empleado                @relation(fields: [id_empleado], references: [id])
+  persona    Persona?                @relation(fields: [id_persona], references: [id])
+  obra       Obra?                   @relation(fields: [id_obra], references: [id])
+  elementos  transaccion_elementos[]
+  pedido     Pedido[]
+  compra     Compra?
+  venta      Venta?
+  devolucion Devolucion?
+}
+
+model transaccion_elementos {
+  id_transaccion  Int
+  id_elementos    Int
+  cantidad        Float
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
+  elemento    Inventario  @relation(fields: [id_elementos], references: [id])
+
+  @@id([id_transaccion, id_elementos])
+}
+
+model Compra {
+  id              Int             @id @default(autoincrement())
+  codigo          String
+  id_transaccion  Int             @unique
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
+}
+
+model Venta {
+  id              Int             @id @default(autoincrement())
+  codigo          String
+  porcentaje      Decimal
+  id_transaccion  Int             @unique
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
+}
+
+model Devolucion {
+  id             Int    @id @default(autoincrement())
+  codigo         String
+  id_transaccion Int    @unique
+
+  transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
+}
+
+model Horario {
+  id              Int             @id @default(autoincrement())
+  hora_inicio     DateTime
+  hora_final      DateTime
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  dias             Dia[]               @relation("horario_dia")
+  obra_empleado    obra_empleados[]    @relation("horario_obra_empleado")
+  obra_herramienta obra_herramientas[] @relation("horario_obra_herramienta")
+}
+
+model Dia {
+  id              Int             @id @default(autoincrement())
+  nombre          DiasSemana
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  horarios Horario[] @relation("horario_dia")
+}
+
+model obra_empleados {
+  id              Int             @id @default(autoincrement())
+  horas           Int
+  id_obra         Int
+  id_empleado     Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  obra     Obra      @relation(fields: [id_obra], references: [id])
+  empleado Empleado  @relation(fields: [id_empleado], references: [id])
+  horarios Horario[] @relation("horario_obra_empleado")
+}
+
+model obra_herramientas {
+  id              Int             @id @default(autoincrement())
+  horas           Int
+  id_obra         Int
+  id_herramienta  Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  obra        Obra       @relation(fields: [id_obra], references: [id])
+  herramienta Inventario @relation(fields: [id_herramienta], references: [id])
+  horarios    Horario[]  @relation("horario_obra_herramienta")
+}
+
+model Pedido {
+  id              Int             @id @default(autoincrement())
+  id_obra         Int
+  id_transaccion  Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  obra        Obra               @relation(fields: [id_obra], references: [id])
+  transaccion Transaccion        @relation(fields: [id_transaccion], references: [id])
+  elemento    pedido_elementos[]
+}
+
+model pedido_elementos {
+  id_pedido       Int
+  id_elemento     Int
+  id_empleado     Int
+  estado          EstadoPedido
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  pedido   Pedido     @relation(fields: [id_pedido], references: [id])
+  elemento Inventario @relation(fields: [id_elemento], references: [id])
+  empleado Empleado   @relation(fields: [id_empleado], references: [id])
+
+  @@id([id_pedido, id_elemento])
+}
+
+model ubicacion_empleado {
+  id              Int              @id @default(autoincrement())
+  id_punto        Int
+  id_empleado     Int
+  estado          EstadoTrabajador
+  fecha           DateTime         @default(now())
+  estadoEliminado EstadoEliminado  @default(ACTIVO)
+
+  punto    Punto    @relation(fields: [id_punto], references: [id])
+  empleado Empleado @relation(fields: [id_empleado], references: [id])
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
