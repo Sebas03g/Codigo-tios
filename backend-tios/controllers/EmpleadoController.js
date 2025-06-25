@@ -18,9 +18,9 @@ export const loginEmpleado = async (req, res) => {
       return res.status(400).json({ mensaje: 'Cédula y contraseña son obligatorias.' });
     }
 
-    const { token, id } = await login(cedula, password);
+    const token = await login(cedula, password);
 
-    res.status(200).json({ token, id });
+    res.status(200).json(token);
 
   } catch (error) {
     console.error(error.message);
