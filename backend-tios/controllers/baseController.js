@@ -94,5 +94,22 @@ export const baseController = (service) => ({
           logger.error(error);
           res.status(500).json({ mensaje: 'Error interno del servidor.' });
       }
+  },
+
+  allExtraData: async (req, res) => {
+    try{
+        const relation = req.params.relation;
+        const results = await service.allExtraData(relation);
+    
+        if (!results) {
+            return res.status(409).json({ mensaje: 'No se pudieron obtener los datos.' });
+        }
+        res.status(200).json(results);
+    
+      }catch (error){
+          console.error(error);
+          logger.error(error);
+          res.status(500).json({ mensaje: 'Error interno del servidor.' });
+      }
   }
 });

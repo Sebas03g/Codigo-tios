@@ -19,13 +19,22 @@ export const login = async (cedula, password) => {
   const passwordValida = await bcrypt.compare(password, empleado.password);
   if (!passwordValida) throw new Error("Contraseña Inválida");
 
+  const data = await repo.getPermisos(empleado.id);
+
+  const permisosEmpleado = data.permisos.map(p => p.nombre);
+  const categoriasEmpleado = data.permisos.map(p => p.categoria);
+
   const token = jwt.sign(
-    { id: empleado.id, permisos: empleado.posicion },
+    {
+      id: empleado.id,
+      permisos: permisosEmpleado,
+      categorias: categoriasEmpleado,
+    },
     process.env.JWT_SECRET || 'secreto',
     { expiresIn: '10h' }
   );
 
-  return token, empleado.id;
+  return { token, id: empleado.id };
 };
 
 export const update = async (cedula, password) => {

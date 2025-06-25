@@ -19,11 +19,20 @@ repo.updatePassword = async (cedula, password) => {
   if (!empleado) return null;
 
   return await prisma.empleado.update({
-    where: { cedula },
+    where: { id: empleado.id },
     data: { password },
   });
 };
 
-repo.loginEmpleado = async ()
+repo.getPermisos = async (id) => {
+  const empleado = await repo.findById(id)
+
+  const permisos = await prisma.posicion.findFirst({
+      where: { id: Number(empleado.id_posicion), estadoEliminado: 'ACTIVO' },
+      select: {permisos : true}
+  });
+
+  return permisos;
+}
 
 export default repo;

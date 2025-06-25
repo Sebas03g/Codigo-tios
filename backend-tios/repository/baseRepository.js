@@ -1,35 +1,59 @@
-import { prisma } from '../config/db.js'
+import { prisma } from '../config/db.js';
 
 export const baseRepository = (modelName) => ({
-  findAll: () =>{
+  findAll: async () => {
     return prisma[modelName].findMany({
       where: { estadoEliminado: 'ACTIVO' },
-    })},
+    });
+  },
 
-  findById: (id) =>{
+  findById: async (id) => {
     return prisma[modelName].findFirst({
       where: { id: Number(id), estadoEliminado: 'ACTIVO' },
-    })},
+    });
+  },
 
-  create: (data) => {return prisma[modelName].create({ data })},
+  create: async (data) => {
+    return prisma[modelName].create({ data });
+  },
 
-  update: (id, data) =>{
-    return prisma[modelName].update({
-      where: { id: Number(id), estadoEliminado: 'ACTIVO'  },
-      data,
-    })},
-
-  remove: (id) =>{
+  update: async (id, data) => {
+    const record = await prisma[modelName].findFirst({
+      where: { id: Number(id), estadoEliminado: 'ACTIVO' },
+    });
+    if (!record) return null;
     return prisma[modelName].update({
       where: { id: Number(id) },
       data,
-    })},
-  extraData: (id, relation) =>{
+    });
+  },
+
+  remove: async (id) => {
+    const record = await prisma[modelName].findFirst({
+      where: { id: Number(id), estadoEliminado: 'ACTIVO' },
+    });
+    if (!record) return null;
+    return prisma[modelName].update({
+      where: { id: Number(id) },
+      data: { estadoEliminado: 'ELIMINADO' },
+    });
+  },
+
+  extraData: async (id, relation) => {
     return prisma[modelName].findFirst({
       where: { id: Number(id), estadoEliminado: 'ACTIVO' },
       select: {
-          [relation]: true
-      }
+        [relation]: true,
+      },
     });
-  }
-})
+  },
+
+  allExtraData: async (relation) => {
+    return prisma[modelName].findMany({
+      where: { estadoEliminado: 'ACTIVO' },
+      include: {
+        [relation]: true,
+      },
+    });
+  },
+});
