@@ -1,11 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/InventarioController.js';
+import controller from '../controllers/InventarioController.js';
+import { baseRouter } from './baseRouter.js';
 
-export const router = express.Router();
-
-router.get('/', controller.findAllInventario);
-router.get('/:id', controller.findInventario);
-router.post('/', controller.crearInventario);
-router.put('/:id', controller.updateInventario);
-router.post('/:id', controller.deleteInventario);
-router.get('/:id/:relation', controller.extraDataInventario);
+export default baseRouter(controller);

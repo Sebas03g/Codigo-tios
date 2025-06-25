@@ -1,11 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/obra_empleadosController.js';
+import controller from '../controllers/obra_empleadosController.js';
+import { baseRouter } from './baseRouter.js';
 
-export const router = express.Router();
-
-router.get('/', controller.findAllobra_empleados);
-router.get('/:id', controller.findobra_empleados);
-router.post('/', controller.crearobra_empleados);
-router.put('/:id', controller.updateobra_empleados);
-router.post('/:id', controller.deleteobra_empleados);
-router.get('/:id/:relation', controller.extraDataobra_empleados);
+export default baseRouter(controller);

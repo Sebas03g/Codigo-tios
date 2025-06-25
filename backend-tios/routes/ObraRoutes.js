@@ -1,11 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/ObraController.js';
+import controller from '../controllers/ObraController.js';
+import { baseRouter } from './baseRouter.js';
 
-export const router = express.Router();
-
-router.get('/', controller.findAllObra);
-router.get('/:id', controller.findObra);
-router.post('/', controller.crearObra);
-router.put('/:id', controller.updateObra);
-router.post('/:id', controller.deleteObra);
-router.get('/:id/:relation', controller.extraDataObra);
+export default baseRouter(controller);

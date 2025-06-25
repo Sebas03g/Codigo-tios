@@ -7,32 +7,32 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
 import { logRequest } from './middlewares/loggerMiddleware.js';
-import { router as categoriaRoutes } from './routes/CategoriaRoutes.js';
-import { router as compraRoutes } from './routes/CompraRoutes.js';
-import { router as devolucionRoutes } from './routes/DevolucionRoutes.js';
-import { router as diaRoutes } from './routes/DiaRoutes.js';
-import { router as empleadoRoutes } from './routes/EmpleadoRoutes.js';
-import { router as horarioRoutes } from './routes/HorarioRoutes.js';
-import { router as inventarioRoutes } from './routes/InventarioRoutes.js';
-import { router as mensajeRoutes } from './routes/MensajeRoutes.js';
-import { router as obra_empleadosRoutes } from './routes/obra_empleadosRoutes.js';
-import { router as obra_herramientasRoutes } from './routes/obra_herramientasRoutes.js';
-import { router as obraRoutes } from './routes/ObraRoutes.js';
-import { router as pedido_elementosRoutes } from './routes/pedido_elementosRoutes.js';
-import { router as pedidoRoutes } from './routes/PedidoRoutes.js';
-import { router as permisoRoutes } from './routes/PermisoRoutes.js'; // Verifica si es el mismo archivo
-import { router as personaRoutes } from './routes/PersonaRoutes.js';
-import { router as posicionRoutes } from './routes/PosicionRoutes.js';
-import { router as proforma_empleadosRoutes } from './routes/proforma_empleadosRoutes.js';
-import { router as proforma_herramientasRoutes } from './routes/proforma_herramientasRoutes.js';
-import { router as proforma_inventarioRoutes } from './routes/proforma_inventarioRoutes.js';
-import { router as proformaRoutes } from './routes/ProformaRoutes.js';
-import { router as transaccion_elementosRoutes } from './routes/transaccion_elementosRoutes.js';
-import { router as transaccionRoutes } from './routes/TransaccionRoutes.js';
-import { router as ubicacion_empleadoRoutes } from './routes/ubicacion_empleadoRoutes.js';
-import { router as ubicacionRoutes } from './routes/UbicacionRoutes.js';
-import { router as ventaRoutes } from './routes/VentaRoutes.js';
 
+import categoriaRoutes from './routes/CategoriaRoutes.js';
+import compraRoutes from './routes/CompraRoutes.js';
+import devolucionRoutes from './routes/DevolucionRoutes.js';
+import diaRoutes from './routes/DiaRoutes.js';
+import empleadoRoutes from './routes/EmpleadoRoutes.js';
+import horarioRoutes from './routes/HorarioRoutes.js';
+import inventarioRoutes from './routes/InventarioRoutes.js';
+import mensajeRoutes from './routes/MensajeRoutes.js';
+import obra_empleadosRoutes from './routes/obra_empleadosRoutes.js';
+import obra_herramientasRoutes from './routes/obra_herramientasRoutes.js';
+import obraRoutes from './routes/ObraRoutes.js';
+import pedido_elementosRoutes from './routes/pedido_elementosRoutes.js';
+import pedidoRoutes from './routes/PedidoRoutes.js';
+import permisoRoutes from './routes/PermisoRoutes.js'; // Verifica si es el mismo archivo
+import personaRoutes from './routes/PersonaRoutes.js';
+import posicionRoutes from './routes/PosicionRoutes.js';
+import proforma_empleadosRoutes from './routes/proforma_empleadosRoutes.js';
+import proforma_herramientasRoutes from './routes/proforma_herramientasRoutes.js';
+import proforma_inventarioRoutes from './routes/proforma_inventarioRoutes.js';
+import proformaRoutes from './routes/ProformaRoutes.js';
+import transaccion_elementosRoutes from './routes/transaccion_elementosRoutes.js';
+import transaccionRoutes from './routes/TransaccionRoutes.js';
+import ubicacion_empleadoRoutes from './routes/ubicacion_empleadoRoutes.js';
+import ubicacionRoutes from './routes/UbicacionRoutes.js';
+import ventaRoutes from './routes/VentaRoutes.js';
 const PORT = process.env.PORT || 3000;
 dotenv.config();
 

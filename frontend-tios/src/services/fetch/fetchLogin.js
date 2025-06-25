@@ -15,13 +15,9 @@ const fetchLogin = async (credenciales) => {
 
     const data = await res.json();
     localStorage.setItem("authToken", data.token);
-    localStorage.setItem("idUsuario", data.id);
-
-    const usuario = await getDataById(data.id);
-
-    const permisos = await extraData(usuario.id_posicio)
-
+    
     const csrf = await tokenCsrf(credenciales);
+    
     if (!csrf.ok) {
       return { mensaje: "Error en la verificación CSRF, intente nuevamente", valido: false };
     }

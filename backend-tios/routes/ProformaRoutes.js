@@ -1,11 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/ProformaController.js';
+import controller from '../controllers/ProformaController.js';
+import { baseRouter } from './baseRouter.js';
 
-export const router = express.Router();
-
-router.get('/', controller.findAllProforma);
-router.get('/:id', controller.findProforma);
-router.post('/', controller.crearProforma);
-router.put('/:id', controller.updateProforma);
-router.post('/:id', controller.deleteProforma);
-router.get('/:id/:relation', controller.extraDataProforma);
+export default baseRouter(controller);

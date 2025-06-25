@@ -1,14 +1,7 @@
 import { baseController } from './baseController.js';
 import service, { login, update } from '../services/EmpleadoServices.js';
 
-export const {
-  create: crearEmpleado,
-  update: updateEmpleado,
-  remove: deleteEmpleado,
-  findById: findEmpleado,
-  findAll: findAllEmpleado,
-  extraData: extraDataEmpleado
-} = baseController(service);
+export default baseController(service);
 
 export const loginEmpleado = async (req, res) => {
   try {

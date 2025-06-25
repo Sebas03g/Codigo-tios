@@ -49,7 +49,7 @@ enum CategoriasPermiso{
   Empleado
   Mensaje
   Posicion
-  proveedor
+  Proveedor
   Tarea
   Ubicacion
 }

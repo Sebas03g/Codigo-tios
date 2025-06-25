@@ -1,10 +1,12 @@
 import express from 'express';
-import * as controller from '../controllers/DiaController.js';
+import controller from '../controllers/DiaController.js';
 
-export const router = express.Router();
+const router = express.Router();
 
 router.get('/', controller.findAllDia);
 router.get('/:id', controller.findDia);
 router.post('/', controller.crearDia);
 router.put('/:id', controller.updateDia);
 router.post('/:id', controller.deleteDia);
+
+export default router;

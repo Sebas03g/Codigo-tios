@@ -1,11 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/CompraController.js';
+import controller from '../controllers/CompraController.js';
+import { baseRouter } from './baseRouter.js';
 
-export const router = express.Router();
-
-router.get('/', controller.findAllCompra);
-router.get('/:id', controller.findCompra);
-router.post('/', controller.crearCompra);
-router.put('/:id', controller.updateCompra);
-router.post('/:id', controller.deleteCompra);
-router.get('/:id/:relation', controller.extraDataCompra);
+export default baseRouter(controller);

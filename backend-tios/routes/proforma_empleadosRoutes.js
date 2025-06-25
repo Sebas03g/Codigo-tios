@@ -1,11 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/proforma_empleadosController.js';
+import controller from '../controllers/proforma_empleadosController.js';
+import { baseRouter } from './baseRouter.js';
 
-export const router = express.Router();
-
-router.get('/', controller.findAllproforma_empleados);
-router.get('/:id', controller.findproforma_empleados);
-router.post('/', controller.crearproforma_empleados);
-router.put('/:id', controller.updateproforma_empleados);
-router.post('/:id', controller.deleteproforma_empleados);
-router.get('/:id/:relation', controller.extraDataproforma_empleados);
+export default baseRouter(controller);

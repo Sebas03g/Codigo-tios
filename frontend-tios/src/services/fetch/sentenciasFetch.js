@@ -1,10 +1,10 @@
 const BASE_URL = 'http://localhost:3000';
 
-const getUsuario = () => localStorage.getItem("id_usuario");
+const getUsuario = () => getTokenData().id;
 
 const getAuthHeaders = () => ({
   'Content-Type': 'application/json',
-  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+  'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
   'X-CSRF-Token': localStorage.getItem('csrfToken')
 });
 
@@ -67,7 +67,16 @@ export const removeData = async(nombreClase, id) => {
 };
 
 export const extraData = async(nombreClase, id, relation) => {
-  const res = await fetch(`${BASE_URL}/${nombreClase}/${id}/${relation}`, {
+  const res = await fetch(`${BASE_URL}/${nombreClase}/${id}/related/${relation}`, {
+    method: 'GET',
+    headers: getAuthHeaders(),
+    credentials: 'include',
+  });
+  return handleResponse(res);
+};
+
+export const allExtraData = async(nombreClase, relation) => {
+  const res = await fetch(`${BASE_URL}/${nombreClase}/related/${relation}`, {
     method: 'GET',
     headers: getAuthHeaders(),
     credentials: 'include',

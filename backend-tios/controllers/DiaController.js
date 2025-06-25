@@ -1,10 +1,10 @@
 import { baseController } from './baseController.js';
 import service from '../services/DiaServices.js';
 
-export const {
-  create: crearDia,
-  update: updateDia,
-  remove: deleteDia,
-  findById: findDia,
-  findAll: findAllDia
+export default {
+  create,
+  update,
+  remove,
+  findById,
+  findAll
 } = baseController(service);
