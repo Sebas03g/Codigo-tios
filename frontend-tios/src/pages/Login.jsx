@@ -1,69 +1,47 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoginPage from '../components/forms/pages/Login';
+import { toast } from 'react-toastify'
+
 
 export default function Login(){
-    const [cedula, setCedula] = useState("");
-    const [password, setPassword] = useState("");
-
-    const [error, setError] = useState("");
-
-    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        cedula: "",
+        password: ""
+    });
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        /*const respuesta = await fetch('',{
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ cedula, password }),
-        });*/
-
-        //const datos = await respuesta.json();
-
-        if(true){
-            navigate('/home');
+        e.preventDefault()
+        const result = await fetchLogin(formData);
+        if(result.valido){
+            toast.success(result.mensaje);
+            setTimeout(() => {
+                navigate("/home");
+            }, 1500);
         }else{
-            setError("Datos Invalidos de Cuenta")
+            toast.error(result.mensaje)
         }
+
+    };
+
+    const handleChange = async (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        })
     }
 
 
     return (
-        <form onSubmit={handleSubmit}  className="space-y-4 max-w-md mx-auto mt-10">
-        <div>
-            <p className="mt-1 text-sm text-red-600">{error}</p>
-        </div>
-        <div>
-            <label className="block mb-1 font-medium">Cedula</label>
-            <input
-            type="text"
-            value={cedula}
-            placeholder='Cedula'
-            onChange={(e) => setCedula(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2"
-            required
+        <>
+            <LoginPage
+                handleSubmit={handleSubmit}
+                handleChange={handleChange}
+                formData={formData}
             />
-        </div>
-
-        <div>
-            <label className="block mb-1 font-medium">Contraseña</label>
-            <input
-            type="password"
-            value={password}
-            placeholder='Contraseña'
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2"
-            required
-            />
-        </div>
-
-        <button
-            type="submit"
-            className="bg-black text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
-            Enviar
-        </button>
-        </form>
+        </>
+        
+        
     );
 
 }

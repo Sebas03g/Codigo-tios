@@ -25,7 +25,7 @@ export const login = async (cedula, password) => {
     { expiresIn: '10h' }
   );
 
-  return token;
+  return token, empleado.id;
 };
 
 export const update = async (cedula, password) => {

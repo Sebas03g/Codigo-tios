@@ -24,4 +24,6 @@ repo.updatePassword = async (cedula, password) => {
   });
 };
 
+repo.loginEmpleado = async ()
+
 export default repo;

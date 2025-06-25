@@ -45,6 +45,13 @@ enum CategoriasPermiso{
   Inventario
   Pedido
   Obra
+  Cliente
+  Empleado
+  Mensaje
+  Posicion
+  proveedor
+  Tarea
+  Ubicacion
 }
 
 model Punto{

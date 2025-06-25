@@ -42,8 +42,8 @@ app.use(cookieParser(process.env.COOKIE_SECRET))
 
 app.use(logRequest);
 
-/*const csrfProtection = csurf({ cookie: true })
-app.use(csrfProtection)*/
+const csrfProtection = csurf({ cookie: true })
+app.use(csrfProtection)
 
 app.use(cors({
   origin: ['http://localhost:5173', 'https://miapp.com'], // varios orígenes
@@ -53,7 +53,7 @@ app.use(cors({
 }));
 
 app.get('/csrf-token', (req, res) => {
-  res.json({ csrfToken: req.csrfToken() })
+  res.status(200).json({ csrfToken: req.csrfToken() })
 })
 
 app.get('/', (req, res) => res.send('API funcionando'));

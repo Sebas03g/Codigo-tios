@@ -13,12 +13,12 @@ export const {
 export const loginEmpleado = async (req, res) => {
     try{
         const {cedula, password} = req.body;
-        const token = await login(cedula, password);
+        const {token, id} = await login(cedula, password);
         if(!token){
             return res.status(400).json({mensaje : 'Datos invalidos.'})
    
         }
-        res.status(200).json({token});
+        res.status(200).json({token, id});
     } catch (error){
         console.log(error);
         res.status(500).json({ mensaje: 'Error interno del servidor.' });

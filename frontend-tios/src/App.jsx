@@ -5,6 +5,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { useEffect } from "react";
 import 'leaflet/dist/leaflet.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 function RouteLogger() {
   const location = useLocation();
@@ -24,16 +26,20 @@ function RouteLogger() {
 
 export default function App() {
   return (
-    <Router>
-      <RouteLogger /> {/* Esto escucha los cambios de ruta */}
-      <main className="p-4">
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-    </Router>
+    <>
+      <Router>
+          <RouteLogger /> {/* Esto escucha los cambios de ruta */}
+          <main className="p-4">
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+      </Router>
+      <ToastContainer position="center" autoClose={3000}/>
+    </>
+    
   );
 }
