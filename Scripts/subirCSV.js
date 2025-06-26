@@ -3,10 +3,11 @@ import axios from 'axios';
 import fs from 'fs';
 
 // Ruta al archivo CSV
-const archivoCSV = 'categoria.csv';
+//const archivoCSV = 'categoria.csv';
+const archivoCSV = 'permisos.csv';
 
 // URL a la que quieres hacer la petición
-const URL = 'http://localhost:3000/categoria/';
+const URL = 'http://localhost:3000/permiso/';
 
 async function enviarDatos() {
   try {
@@ -15,9 +16,9 @@ async function enviarDatos() {
     
     for (const categoria of datosJSON) {
 
-        categoria.venta = categoria.venta?.toLowerCase() === 'true';
+        //categoria.venta = categoria.venta?.toLowerCase() === 'true';
 
-        categoria.createdBy = -1;
+        categoria.createdBy = 1;
 
         try {
             const respuesta = await axios.post(URL, categoria, {

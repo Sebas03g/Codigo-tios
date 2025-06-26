@@ -205,7 +205,7 @@ model Empleado{
   telefono    String
   sueldo    Decimal
   password String
-  fecha_inicio DateTime
+  fecha_inicio DateTime @default(now())
   id_posicion Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
 

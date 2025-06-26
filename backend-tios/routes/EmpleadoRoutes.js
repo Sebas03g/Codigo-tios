@@ -7,7 +7,8 @@ const router = express.Router();
 
 router.get('/', verificarToken, controller.findAll);
 router.get('/:id', verificarToken, controller.findById);
-router.post('/', verificarToken, controller.create);
+//router.post('/', verificarToken, controller.create);
+router.post('/', controller.create);
 router.put('/:id', verificarToken, controller.update);
 router.post('/:id', verificarToken, controller.remove);
 router.get('/:id/related/:relation', verificarToken,controller.extraData);

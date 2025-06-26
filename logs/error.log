@@ -27198,3 +27198,72 @@ Invalid `prisma.categoria.create()` invocation:
 }
 
 Argument `createdBy` is missing.
+[2025-06-26T02:04:06.401Z] ERROR: 
+Invalid `prisma.posicion.create()` invocation:
+
+{
+  data: {
+    nombre: "administrador",
+    permisos: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    ~~~~
+    createdBy: 1
+  }
+}
+
+Argument `permisos`: Invalid value provided. Expected PermisoCreateNestedManyWithoutPosicionesInput or PermisoUncheckedCreateNestedManyWithoutPosicionesInput, provided (Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int, Int).
+[2025-06-26T02:28:09.315Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0.00",
+    sueldo: null,
+    password: "$2b$10$/QoTJQ0W0bjtajtAzsmB5er8np.g4sle6N1YVB72z7UbfbqdwGTQq",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
++   createdBy: Int
+  }
+}
+
+Argument `createdBy` is missing.

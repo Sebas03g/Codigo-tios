@@ -1,0 +1,35 @@
+nombre,categoria
+Realizar ventas,Transaccion
+Visualizar ventas,Transaccion
+Realizar compras,Transaccion
+Visualizar compras,Transaccion
+Visualizar devoluciones,Transaccion
+Visualizar obras,Obra
+Crear proformas,Obra
+Visualizar proformas,Obra
+Crear obras,Obra
+Gestionar obras,Obra
+Asignar tareas,Tarea
+Visualizar inventario,Inventario
+Agregar inventario,Inventario
+Validar devoluciones,Transaccion
+Visualizar empleados,Empleado
+Gestionar empleados,Empleado
+Visualizar proveedores,Proveedor
+Gestionar proveedores,Proveedor
+Visualizar clientes,Cliente
+Gestionar clientes,Cliente
+Visualizar posiciones,Posicion
+Gestionar posiciones,Posicion
+Visualizar pedidos,Pedido
+Asignar pedidos,Pedido
+Completar pedidos,Pedido
+Agregar tareas,Tarea
+Visualizar tareas,Tarea
+Gestionar ubicaciones,Ubicacion
+Visualizar ubicaciones,Ubicacion
+Recibir mensajes de sistemas,Mensaje
+Recibir mensajes de creditos,Mensaje
+Recibir mensajes de contraseña,Mensaje
+Recibir mensajes generales,Mensaje
+Mandar mensajes,Mensaje
