@@ -6,7 +6,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
-import { logRequest } from './middlewares/loggerMiddleware.js';
+import { logRequest } from './middleware/loggerMiddleware.js';
 
 import categoriaRoutes from './routes/CategoriaRoutes.js';
 import compraRoutes from './routes/CompraRoutes.js';
@@ -21,7 +21,7 @@ import obra_herramientasRoutes from './routes/obra_herramientasRoutes.js';
 import obraRoutes from './routes/ObraRoutes.js';
 import pedido_elementosRoutes from './routes/pedido_elementosRoutes.js';
 import pedidoRoutes from './routes/PedidoRoutes.js';
-import permisoRoutes from './routes/PermisoRoutes.js'; // Verifica si es el mismo archivo
+import permisoRoutes from './routes/PermisoRoutes.js';
 import personaRoutes from './routes/PersonaRoutes.js';
 import posicionRoutes from './routes/PosicionRoutes.js';
 import proforma_empleadosRoutes from './routes/proforma_empleadosRoutes.js';
@@ -38,7 +38,7 @@ dotenv.config();
 
 const app = express()
 app.use(express.json())
-app.use(cookieParser(process.env.COOKIE_SECRET))
+/*app.use(cookieParser(process.env.COOKIE_SECRET))
 
 app.use(logRequest);
 
@@ -54,11 +54,7 @@ app.use(cors({
 
 app.get('/csrf-token', (req, res) => {
   res.status(200).json({ csrfToken: req.csrfToken() })
-})
-
-app.get('/', (req, res) => res.send('API funcionando'));
-
-app.get('/prueba', (req, res) => res.send('API funcionando'))
+})*/
 
 /*app.use('/categoria', verificarToken, categoriaRoutes);
 app.use('/compra', verificarToken, compraRoutes);
@@ -86,12 +82,12 @@ app.use('/ubicacion_empleado', verificarToken, ubicacion_empleadoRoutes);
 app.use('/ubicacion', verificarToken, ubicacionRoutes);
 app.use('/venta', verificarToken, ventaRoutes);*/
 
-app.use('/categoria/:usuario', categoriaRoutes);
-app.use('/compra/:usuario', compraRoutes);
-app.use('/devolucion/:usuario', devolucionRoutes);
-app.use('/dia/:usuario', diaRoutes);
+app.use('/categoria', categoriaRoutes);
+app.use('/compra', compraRoutes);
+app.use('/devolucion', devolucionRoutes);
+app.use('/dia', diaRoutes);
 app.use('/empleado', empleadoRoutes);
-app.use('/horario/:usuario', horarioRoutes);
+app.use('/horario', horarioRoutes);
 app.use('/inventario', inventarioRoutes);
 app.use('/mensaje', mensajeRoutes);
 app.use('/obra_empleados', obra_empleadosRoutes);

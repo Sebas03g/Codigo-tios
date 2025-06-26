@@ -17,6 +17,8 @@ async function enviarDatos() {
 
         categoria.venta = categoria.venta?.toLowerCase() === 'true';
 
+        categoria.createdBy = -1;
+
         try {
             const respuesta = await axios.post(URL, categoria, {
             headers: { 'Content-Type': 'application/json' }

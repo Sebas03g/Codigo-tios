@@ -1,3 +1,5 @@
+import express from 'express';
+
 export const baseRouter = (controller) => {
     const router = express.Router();
     

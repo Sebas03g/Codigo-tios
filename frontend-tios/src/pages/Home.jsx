@@ -1,9 +1,9 @@
-import jwtDecode from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode';
 
 export default function Home() {
-  const token = localStorage.getItem('token');
+  /*const token = localStorage.getItem('token');
   const csrf = localStorage.getItem('csrf');
-  const posicion = token ? jwtDecode(token).posicion : "";
+  const posicion = token ? jwtDecode(token).posicion : "";*/
 
 
   return (

@@ -5,14 +5,14 @@ import { baseRouter } from './baseRouter.js';
 
 const router = express.Router();
 
-router.get('/', verificarToken, controller.findAllEmpleado);
-router.get('/:id', verificarToken, controller.findEmpleado);
-router.post('/', verificarToken, controller.crearEmpleado);
-router.put('/:id', verificarToken, controller.updateEmpleado);
-router.post('/:id', verificarToken, controller.deleteEmpleado);
-router.get('/:id/related/:relation', verificarToken,controller.extraDataEmpleado);
+router.get('/', verificarToken, controller.findAll);
+router.get('/:id', verificarToken, controller.findById);
+router.post('/', verificarToken, controller.create);
+router.put('/:id', verificarToken, controller.update);
+router.post('/:id', verificarToken, controller.remove);
+router.get('/:id/related/:relation', verificarToken,controller.extraData);
 router.put('/password', verificarToken,controller.updatePassword);
-router.get('/related/:relation', controller.allExtraDataEmpleado);
+router.get('/related/:relation', controller.allExtraData);
 
 router.post('/login', controller.loginEmpleado);
 

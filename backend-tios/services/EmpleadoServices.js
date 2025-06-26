@@ -37,7 +37,7 @@ export const login = async (cedula, password) => {
   return token;
 };
 
-export const update = async (cedula, password) => {
+export const updatePass = async (cedula, password) => {
   const empleado = await repo.findByCedula(cedula);
   if (!empleado) throw new Error('Empleado No Encontrado');
 

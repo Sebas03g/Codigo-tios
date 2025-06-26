@@ -3,9 +3,6 @@ export default function LoginPage({handleSubmit, handleChange, formData}){
     return (
         <form onSubmit={handleSubmit}  className="space-y-4 max-w-md mx-auto mt-10">
             <div>
-                <p className="mt-1 text-sm text-red-600">{error}</p>
-            </div>
-            <div>
                 <label className="block mb-1 font-medium">Cedula</label>
                 <input
                 type="text"
@@ -22,7 +19,7 @@ export default function LoginPage({handleSubmit, handleChange, formData}){
                 <label className="block mb-1 font-medium">Contraseña</label>
                 <input
                 type="password"
-                value={password}
+                value={formData.password}
                 placeholder='Contraseña'
                 name="password"
                 onChange={handleChange}

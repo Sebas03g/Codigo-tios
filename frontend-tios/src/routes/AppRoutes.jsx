@@ -14,7 +14,7 @@ import ProveedoresPage from "../pages/Proveedores.jsx";
 import TareasPage from "../pages/Tareas.jsx";
 import UbicacionesPage from "../pages/Ubicaciones.jsx";
 import TransaccionesPage from "../pages/Transacciones.jsx";
-import { getTokenData } from "../services/getLocalStorageData.jsx";
+import { getTokenData } from "../services/getLocalStorageData.js";
 
 export default function AppRoutes() {
   const categorias = getTokenData()?.categorias || [];

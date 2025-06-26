@@ -2,6 +2,7 @@ import { CiMenuBurger } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import MenuComponent from "./menu";
 import { useState } from "react";
+import { getTokenData } from "../../services/getLocalStorageData";
 
 export default function HeaderComponent(){
 
@@ -9,9 +10,6 @@ export default function HeaderComponent(){
     const categorias = getTokenData()?.categorias || [];
 
     const [menu, setMenu] = useState(false);
-
-    
-
 
     return(
         <>

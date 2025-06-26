@@ -1,9 +1,18 @@
+
 import { baseController } from './baseController.js';
-import service, { login, update } from '../services/EmpleadoServices.js';
+import service, { login, updatePass } from '../services/EmpleadoServices.js';
 
-export default baseController(service);
+const {
+  create,
+  update,
+  remove,
+  findById,
+  findAll,
+  extraData,
+  allExtraData
+} = baseController(service);
 
-export const loginEmpleado = async (req, res) => {
+const loginEmpleado = async (req, res) => {
   try {
     const { cedula, password } = req.body;
 
@@ -21,7 +30,7 @@ export const loginEmpleado = async (req, res) => {
   }
 };
 
-export const updatePassword = async (req, res) => {
+const updatePassword = async (req, res) => {
   try {
     const { cedula, password } = req.body;
 
@@ -29,7 +38,7 @@ export const updatePassword = async (req, res) => {
       return res.status(400).json({ mensaje: 'Cédula y nueva contraseña son obligatorias.' });
     }
 
-    const empleado = await update(cedula, password);
+    const empleado = await updatePass(cedula, password);
 
     if (!empleado) {
       return res.status(404).json({ mensaje: 'Empleado no encontrado.' });
@@ -41,4 +50,16 @@ export const updatePassword = async (req, res) => {
     console.error(error.message);
     res.status(500).json({ mensaje: 'Error interno del servidor.' });
   }
+};
+
+export default {
+    create,
+    update,
+    remove,
+    findById,
+    findAll,
+    extraData,
+    allExtraData,
+    loginEmpleado,
+    updatePassword
 };
