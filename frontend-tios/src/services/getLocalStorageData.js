@@ -1,7 +1,17 @@
 import { jwtDecode } from 'jwt-decode';
 
-export const getTokenData = () => {
-  const token = localStorage.getItem("authToken");
-  if (!token) return null;
-  return jwtDecode(token);
-};
+export function getTokenData() {
+  const token = localStorage.getItem('authToken');
+
+  if (!token || token.split('.').length !== 3) {
+    console.warn('Token inválido o mal formado:', token);
+    return null;
+  }
+
+  try {
+    return jwtDecode(token);
+  } catch (err) {
+    console.error('Error al decodificar JWT:', err);
+    return null;
+  }
+}

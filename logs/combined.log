@@ -30673,3 +30673,216 @@ Invalid `prisma.empleado.create()` invocation:
 }
 
 Argument `createdBy` is missing.
+[2025-06-26T02:29:12.202Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0.00",
+    password: "$2b$10$ctNrlnZma8xF/vcwJmdujucgg8VsToZBreE/bvWhWqc3ppWh/Sb9W",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:29:36.784Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0.01",
+    password: "$2b$10$nIPXrpaFV6NYnXnRjph6B.FnNVxM41nTRuUAfFNcHwYMGLX4SjXRW",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:30:13.038Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0.01",
+    password: "$2b$10$MllfnLQNvO82lB9XwJdH1us.9Xf48CQtysT75v7.ki/t4J8RQFZp.",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:30:34.935Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "-1",
+    password: "$2b$10$K5WNDl.szDM1OhT5/4CrNuPmcgGYRvQBEXRu/2kZ9CEFIG0OL87n2",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:30:59.861Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "-1",
+    password: "$2b$10$Qj7PbXqoraRSEH.kYgcM4eKWmPR2vjOVCUBXfZSpa0Z7scQqSK3WO",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:31:27.175Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0999022665",
+    sueldo: 0,
+    password: "$2b$10$tUKg8bWX3lUiZwtdjca8GeCMsZgyUXaZz3Th5uD49ufQ4UennC0Pq",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: "1"
+               ~~~
+  }
+}
+
+Argument `createdBy`: Invalid value provided. Expected Int, provided String.
+[2025-06-26T02:57:16.367Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T02:57:16.384Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:07:40.297Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:07:40.311Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:07:49.246Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:07:49.248Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:10:51.668Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:10:51.669Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:11:00.439Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:11:00.440Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:11:35.336Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:11:35.339Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:12:43.287Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:12:43.289Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:15:09.409Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:15:09.411Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:16:37.479Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:16:37.496Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:17:13.067Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:17:13.069Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:17:28.047Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:17:28.065Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:24:23.072Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:24:23.087Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:26:48.523Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:26:48.527Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:27:18.938Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:27:18.940Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:28:24.986Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:28:25.002Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:34:40.872Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:34:40.889Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:37:15.825Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:37:15.827Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:37:52.695Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:37:52.711Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:39:01.138Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:39:01.155Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:42:43.883Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:42:43.899Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:42:44.027Z] INFO: POST /csrf-token NaN
+[2025-06-26T03:52:40.369Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:52:40.386Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:52:40.510Z] INFO: GET /csrf-token NaN
+[2025-06-26T03:55:44.708Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:55:44.725Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:55:44.852Z] INFO: GET /csrf-token NaN
+[2025-06-26T03:56:15.550Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:56:15.566Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:56:15.693Z] INFO: GET /csrf-token NaN
+[2025-06-26T03:58:00.101Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:58:00.103Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:58:00.177Z] INFO: GET /csrf-token NaN
+[2025-06-26T03:58:17.935Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T03:58:17.950Z] INFO: POST /empleado/login NaN
+[2025-06-26T03:58:18.079Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:00:10.474Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:00:10.476Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:00:10.548Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:02:21.573Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:02:21.574Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:02:21.645Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:02:51.056Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:02:51.058Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:02:51.128Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:05:03.999Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:05:04.000Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:05:04.104Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:06:13.095Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:06:13.096Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:06:13.163Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:09:05.832Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:09:05.834Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:09:05.904Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:09:36.553Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:09:36.554Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:09:36.625Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:12:00.114Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:12:00.116Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:12:00.219Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:12:19.720Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:12:19.736Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:12:19.859Z] INFO: GET /csrf-token NaN
+[2025-06-26T04:13:34.546Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T04:13:34.548Z] INFO: POST /empleado/login NaN
+[2025-06-26T04:13:34.620Z] INFO: GET /csrf-token NaN

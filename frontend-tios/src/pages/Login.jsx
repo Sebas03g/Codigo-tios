@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LoginPage from '../components/forms/pages/Login';
+import LoginPage from '../components/forms/pages/Login.jsx';
 import { toast } from 'react-toastify'
+import fetchLogin from '../services/fetch/fetchLogin.js'
 
 
 export default function Login(){
@@ -10,8 +11,10 @@ export default function Login(){
         password: ""
     });
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const result = await fetchLogin(formData);
         if(result.valido){
             toast.success(result.mensaje);

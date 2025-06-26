@@ -27267,3 +27267,130 @@ Invalid `prisma.empleado.create()` invocation:
 }
 
 Argument `createdBy` is missing.
+[2025-06-26T02:29:12.202Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0.00",
+    password: "$2b$10$ctNrlnZma8xF/vcwJmdujucgg8VsToZBreE/bvWhWqc3ppWh/Sb9W",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:29:36.784Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0.01",
+    password: "$2b$10$nIPXrpaFV6NYnXnRjph6B.FnNVxM41nTRuUAfFNcHwYMGLX4SjXRW",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:30:13.038Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0.01",
+    password: "$2b$10$MllfnLQNvO82lB9XwJdH1us.9Xf48CQtysT75v7.ki/t4J8RQFZp.",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:30:34.935Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "-1",
+    password: "$2b$10$K5WNDl.szDM1OhT5/4CrNuPmcgGYRvQBEXRu/2kZ9CEFIG0OL87n2",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:30:59.861Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "-1",
+    password: "$2b$10$Qj7PbXqoraRSEH.kYgcM4eKWmPR2vjOVCUBXfZSpa0Z7scQqSK3WO",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: 1,
++   sueldo: Decimal
+  }
+}
+
+Argument `sueldo` must not be null.
+[2025-06-26T02:31:27.175Z] ERROR: 
+Invalid `prisma.empleado.create()` invocation:
+
+{
+  data: {
+    nombre: "Administrador",
+    cedula: "0106853740",
+    mail: "hsebastian03g@gmail.com",
+    telefono: "0999022665",
+    sueldo: 0,
+    password: "$2b$10$tUKg8bWX3lUiZwtdjca8GeCMsZgyUXaZz3Th5uD49ufQ4UennC0Pq",
+    posicion: {
+      connect: {
+        id: 1
+      }
+    },
+    createdBy: "1"
+               ~~~
+  }
+}
+
+Argument `createdBy`: Invalid value provided. Expected Int, provided String.

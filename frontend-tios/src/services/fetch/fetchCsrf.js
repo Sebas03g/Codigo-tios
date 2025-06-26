@@ -1,9 +1,8 @@
  const tokenCsrf = async() => {
-    const res = await fetch('http://localhost:3000/csrf-token',{
-        method: "POST",
+    return await fetch('http://localhost:3000/csrf-token',{
+        method: "GET",
         credentials: 'include',
     });
-
 }
 
 export default tokenCsrf

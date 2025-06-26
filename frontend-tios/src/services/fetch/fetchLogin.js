@@ -1,5 +1,5 @@
 import { extraData, getDataById } from './sentenciasFetch';
-import tokenCsrf from './tokenCsrf'; // Asegúrate de importar correctamente
+import tokenCsrf from './fetchCsrf.js'; 
 
 const fetchLogin = async (credenciales) => {
   try {
@@ -14,6 +14,7 @@ const fetchLogin = async (credenciales) => {
     }
 
     const data = await res.json();
+
     localStorage.setItem("authToken", data.token);
     
     const csrf = await tokenCsrf(credenciales);

@@ -17,6 +17,7 @@ export const login = async (cedula, password) => {
   if (!empleado) throw new Error('Empleado No Encontrado');
 
   const passwordValida = await bcrypt.compare(password, empleado.password);
+  
   if (!passwordValida) throw new Error("Contraseña Inválida");
 
   const data = await repo.getPermisos(empleado.id);

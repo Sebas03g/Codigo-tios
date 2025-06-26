@@ -16,13 +16,14 @@ const loginEmpleado = async (req, res) => {
   try {
     const { cedula, password } = req.body;
 
+
     if (!cedula || !password) {
       return res.status(400).json({ mensaje: 'Cédula y contraseña son obligatorias.' });
     }
 
     const token = await login(cedula, password);
 
-    res.status(200).json(token);
+    res.status(200).json({token});
 
   } catch (error) {
     console.error(error.message);

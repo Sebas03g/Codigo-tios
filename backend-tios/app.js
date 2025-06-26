@@ -33,34 +33,73 @@ import transaccionRoutes from './routes/TransaccionRoutes.js';
 import ubicacion_empleadoRoutes from './routes/ubicacion_empleadoRoutes.js';
 import ubicacionRoutes from './routes/UbicacionRoutes.js';
 import ventaRoutes from './routes/VentaRoutes.js';
-const PORT = process.env.PORT || 3000;
+
 dotenv.config();
 
-const app = express()
-app.use(express.json())
-/*app.use(cookieParser(process.env.COOKIE_SECRET))
+const app = express();
+const PORT = process.env.PORT || 3000;
 
+// Middlewares básicos
+app.use(express.json());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(logRequest);
 
-const csrfProtection = csurf({ cookie: true })
-app.use(csrfProtection)
-
+// CORS setup
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://miapp.com'], // varios orígenes
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: ['http://localhost:5173', 'https://miapp.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-CSRF-Token'],
-  credentials: true 
+  credentials: true,
 }));
 
-app.get('/csrf-token', (req, res) => {
-  res.status(200).json({ csrfToken: req.csrfToken() })
-})*/
+// Middleware para debug de cada petición
+app.use((req, res, next) => {
+  console.log(`[DEBUG] ${req.method} ${req.originalUrl}`);
+  next();
+});
 
-/*app.use('/categoria', verificarToken, categoriaRoutes);
+// Configurar CSRF protección solo para rutas que la necesitan
+const csrfProtection = csurf({ cookie: true });
+
+app.get('/csrf-token', csrfProtection, (req, res) => {
+  res.status(200).json({ csrfToken: req.csrfToken() });
+});
+
+
+
+// Rutas que NO deben usar CSRF
+const csrfExcludedRoutes = [
+  { path: '/empleado/login', method: 'POST' },
+];
+
+
+// Middleware para controlar CSRF, solo se aplica a rutas que NO están en la lista excluida
+app.use((req, res, next) => {
+  const path = req.originalUrl.split('?')[0];
+  const isExcluded = csrfExcludedRoutes.some(r => r.path === path && r.method === req.method);
+  if (isExcluded) {
+    console.log(`[DEBUG] CSRF excluded for ${req.method} ${path}`);
+    return next();
+  }
+  csrfProtection(req, res, (err) => {
+    if (err) {
+      console.error(`[ERROR] CSRF error:`, err.code);
+      return res.status(403).json({ mensaje: 'Error CSRF: acceso denegado' });
+    }
+    next();
+  });
+});
+
+// Ruta para obtener token CSRF
+
+
+// Registro de rutas
+app.use('/empleado', empleadoRoutes); // login no usa verificarToken
+// Rutas protegidas con token
+app.use('/categoria', verificarToken, categoriaRoutes);
 app.use('/compra', verificarToken, compraRoutes);
 app.use('/devolucion', verificarToken, devolucionRoutes);
 app.use('/dia', verificarToken, diaRoutes);
-app.use('/empleado', empleadoRoutes);
 app.use('/horario', verificarToken, horarioRoutes);
 app.use('/inventario', verificarToken, inventarioRoutes);
 app.use('/mensaje', verificarToken, mensajeRoutes);
@@ -80,36 +119,24 @@ app.use('/transaccion_elementos', verificarToken, transaccion_elementosRoutes);
 app.use('/transaccion', verificarToken, transaccionRoutes);
 app.use('/ubicacion_empleado', verificarToken, ubicacion_empleadoRoutes);
 app.use('/ubicacion', verificarToken, ubicacionRoutes);
-app.use('/venta', verificarToken, ventaRoutes);*/
+app.use('/venta', verificarToken, ventaRoutes);
 
-app.use('/categoria', categoriaRoutes);
-app.use('/compra', compraRoutes);
-app.use('/devolucion', devolucionRoutes);
-app.use('/dia', diaRoutes);
-app.use('/empleado', empleadoRoutes);
-app.use('/horario', horarioRoutes);
-app.use('/inventario', inventarioRoutes);
-app.use('/mensaje', mensajeRoutes);
-app.use('/obra_empleados', obra_empleadosRoutes);
-app.use('/obra_herramientas', obra_herramientasRoutes);
-app.use('/obra', obraRoutes);
-app.use('/pedido_elementos', pedido_elementosRoutes);
-app.use('/pedido', pedidoRoutes);
-app.use('/permiso', permisoRoutes);
-app.use('/persona', personaRoutes);
-app.use('/posicion', posicionRoutes);
-app.use('/proforma_empleados', proforma_empleadosRoutes);
-app.use('/proforma_herramientas', proforma_herramientasRoutes);
-app.use('/proforma_inventario', proforma_inventarioRoutes);
-app.use('/proforma', proformaRoutes);
-app.use('/transaccion_elementos', transaccion_elementosRoutes);
-app.use('/transaccion', transaccionRoutes);
-app.use('/ubicacion_empleado', ubicacion_empleadoRoutes);
-app.use('/ubicacion', ubicacionRoutes);
-app.use('/venta', ventaRoutes);
-
+// Middleware para manejar rutas no encontradas
 app.use((req, res) => {
   res.status(404).json({ mensaje: 'Ruta no encontrada' });
+});
+
+// Middleware para capturar errores generales (incluye errores de autorización)
+app.use((err, req, res, next) => {
+  console.error(`[ERROR] ${req.method} ${req.originalUrl}`, err);
+  if (err.name === 'UnauthorizedError') {
+    // Error de jwt token inválido o ausente
+    return res.status(401).json({ mensaje: 'Token inválido o no proporcionado' });
+  }
+  if (err.code === 'EBADCSRFTOKEN') {
+    return res.status(403).json({ mensaje: 'Error CSRF: token inválido' });
+  }
+  res.status(500).json({ mensaje: 'Error interno del servidor' });
 });
 
 app.listen(PORT, () => {
