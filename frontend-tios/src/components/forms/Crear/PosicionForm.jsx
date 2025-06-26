@@ -52,6 +52,7 @@ export default function PosicionForm({onClose}){
             onClose = {onClose}
             handleSubmit = {handleSubmit}
             permisos = {permisos}
+            handleCheck={handleCheck}
         />
     );
     

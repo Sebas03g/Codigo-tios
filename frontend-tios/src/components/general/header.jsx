@@ -1,48 +1,101 @@
 import { CiMenuBurger } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import MenuComponent from "./menu";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getTokenData } from "../../services/getLocalStorageData";
+import { getDataById } from "../../services/fetch/sentenciasFetch";
+import UserComponent from "./usuario";
 
 export default function HeaderComponent(){
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const [menu, setMenu] = useState(true);
+    const [isUserOpen, setIsUserOpen] = useState(false);
+
+    const [menu, setMenu] = useState(false);
 
     const categoriaValidas = ["Empleado", "Proveedor", "Cliente", "Posicion", "Ubicacion", "Tarea"];
 
+    const [categorias, setCategorias] = useState([]);
+
+    const [user, setUser] = useState();
+
     useEffect(() => {
-        const validateMenu = async () => {
-            try{
-                const categorias = getTokenData()?.categorias || [];
-                setMenu(categoriaValidas.some(categoria => categorias.includes(categoria)));
-            } catch (error) {
-                console.log("Error al obtener las categorias: ", error);
-            }
-        };
-        validateMenu();
+      const validateMenu = async () => {
+        try {
+          const cat = getTokenData()?.categorias || [];
+          setCategorias(cat);
+          setMenu(categoriaValidas.some(categoria => cat.includes(categoria)));
+        } catch (error) {
+          console.log("Error al obtener las categorias: ", error);
+        }
+      };
+
+      const getUserData = async () => {
+        try {
+          console.log(getTokenData()?.id)
+          const usuario = await getDataById("empleado", getTokenData()?.id);
+          console.log(usuario);
+          console.log("SI");
+          setUser(usuario);
+        } catch (error) {
+          console.log("Error al obtener los usuarios: ", error);
+        }
+      };
+
+      validateMenu();
+      getUserData();
     }, []);
 
-    return (
-    <header className="flex items-center justify-between px-4 py-3 bg-white shadow-md sticky top-0 z-50">
-      <div className="flex items-center gap-3">
-        {menu && (
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-md hover:bg-gray-100 transition-colors"
-          >
-            <CiMenuBurger className="text-2xl" />
-          </button>
-        )}
-        <h1 className="text-xl font-semibold text-gray-800">Hidrogass</h1>
-      </div>
 
-      <div className="flex items-center gap-4">
-        <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-          <CiUser className="text-2xl text-gray-600" />
-        </button>
-      </div>
-    </header>
+    return (
+      <>
+        <header className="flex items-center justify-between px-4 py-3 bg-white shadow-md sticky top-0 z-50">
+          <div className="flex items-center gap-3">
+            {menu && (
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 rounded-md hover:bg-gray-200 transition-colors"
+              >
+                <CiMenuBurger className="text-2xl" />
+              </button>
+            )}
+            <h1 className="text-xl font-bold text-gray-800">Hidrogass</h1>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => setIsUserOpen(!isUserOpen)}
+              className="p-2 rounded-full hover:bg-gray-200 transition-colors"
+            >
+              <CiUser className="text-2xl text-gray-600" />
+            </button>
+          </div>
+        </header>
+        {isMenuOpen && (
+          <AnimatePresence>
+            <motion.div
+              key="overlay"
+              className="fixed inset-0 bg-black z-30"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.2 }}
+              exit={{ opacity: 0.1 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsMenuOpen(false)}
+            />
+          </AnimatePresence>
+        )}
+        <MenuComponent
+          isOpen={isMenuOpen}
+          setIsOpen={setIsMenuOpen}
+          categorias={categorias}
+        />
+        <UserComponent
+          isOpen={isUserOpen}
+          usuario={user}
+        />
+      </>
+      
   );
 }

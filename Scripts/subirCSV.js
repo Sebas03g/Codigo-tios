@@ -8,6 +8,7 @@ const archivoCSV = 'permisos.csv';
 
 // URL a la que quieres hacer la petición
 const URL = 'http://localhost:3000/permiso/';
+//const URL = 'http://localhost:3000/categoria/';
 
 async function enviarDatos() {
   try {

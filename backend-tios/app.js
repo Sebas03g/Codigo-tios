@@ -65,8 +65,6 @@ app.get('/csrf-token', csrfProtection, (req, res) => {
   res.status(200).json({ csrfToken: req.csrfToken() });
 });
 
-
-
 // Rutas que NO deben usar CSRF
 const csrfExcludedRoutes = [
   { path: '/empleado/login', method: 'POST' },
@@ -120,6 +118,34 @@ app.use('/transaccion', verificarToken, transaccionRoutes);
 app.use('/ubicacion_empleado', verificarToken, ubicacion_empleadoRoutes);
 app.use('/ubicacion', verificarToken, ubicacionRoutes);
 app.use('/venta', verificarToken, ventaRoutes);
+
+/*app.use('/empleado', empleadoRoutes); // login no usa verificarToken
+// Rutas protegidas con token
+app.use('/categoria', categoriaRoutes);
+app.use('/compra', compraRoutes);
+app.use('/devolucion', devolucionRoutes);
+app.use('/dia', diaRoutes);
+app.use('/horario', horarioRoutes);
+app.use('/inventario', inventarioRoutes);
+app.use('/mensaje', mensajeRoutes);
+app.use('/obra_empleados', obra_empleadosRoutes);
+app.use('/obra_herramientas', obra_herramientasRoutes);
+app.use('/obra', obraRoutes);
+app.use('/pedido_elementos', pedido_elementosRoutes);
+app.use('/pedido', pedidoRoutes);
+app.use('/permiso', permisoRoutes);
+app.use('/persona', personaRoutes);
+app.use('/posicion', posicionRoutes);
+app.use('/proforma_empleados', proforma_empleadosRoutes);
+app.use('/proforma_herramientas', proforma_herramientasRoutes);
+app.use('/proforma_inventario', proforma_inventarioRoutes);
+app.use('/proforma', proformaRoutes);
+app.use('/transaccion_elementos', transaccion_elementosRoutes);
+app.use('/transaccion', transaccionRoutes);
+app.use('/ubicacion_empleado', ubicacion_empleadoRoutes);
+app.use('/ubicacion', ubicacionRoutes);
+app.use('/venta', ventaRoutes);*/
+
 
 // Middleware para manejar rutas no encontradas
 app.use((req, res) => {

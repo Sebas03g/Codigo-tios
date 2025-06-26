@@ -1,3 +1,8 @@
+import { useState, useEffect } from "react";
+import { PERMISOS } from "../../../constants/permissions.js";
+import * as sentences from "../../../services/fetch/sentenciasFetch.js"
+import PosicionBase from "../Base/PosicionBase.jsx";
+
 export default function PosicionForm({ onClose, data }) {
   const [formData, setFormData] = useState({
     nombre: data.nombre,
