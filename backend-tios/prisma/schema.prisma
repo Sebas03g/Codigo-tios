@@ -140,7 +140,6 @@ model Inventario{
   precio    Decimal
   descuento Decimal
   cantidad Float?
-  descripcion String? 
   id_categoria  Int
   id_ubicacion  Int
   id_proveedor  Int

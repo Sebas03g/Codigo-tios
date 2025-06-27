@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import TablaProveedores from "../TablaProveedores.jsx"; // Asegúrate que el nombre del archivo sea correcto
+import ElementoBase from "../Base/ElementoBase.jsx";
 
 export default function ElementoForm({ onClose, tipo, categoria }) {
   const [formData, setFormData] = useState({
@@ -18,6 +19,10 @@ export default function ElementoForm({ onClose, tipo, categoria }) {
     mail: "",
     telefono: "",
   });
+
+  const [ubicacionesData, setUbicacionesData] = useState([]);
+
+  const [ubicacionId, setUbicacionId] = useState(0);
 
   const [diccionario, setDiccionario] = useState([]);
 
@@ -58,7 +63,13 @@ export default function ElementoForm({ onClose, tipo, categoria }) {
       }
     };
 
+    const fetchUbicaciones = async () => {
+      const ubicaciones = await sentences.getAllData("ubicacion");
+      setUbicacionesData(ubicaciones);
+    }
+
     fetchProveedores();
+    fetchUbicaciones();
   }, [categoria]);
 
   const handleChange = (e) => {
@@ -68,6 +79,10 @@ export default function ElementoForm({ onClose, tipo, categoria }) {
       [name]: value,
     }));
   };
+
+  const handleChangeUbicacion = async (e) => {
+    setUbicacionId(e.target.value);
+  }
 
   const handleChangeProveedor = async (e) => {
     const { name, value } = e.target;
@@ -130,108 +145,18 @@ export default function ElementoForm({ onClose, tipo, categoria }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto bg-white p-6 shadow rounded relative">
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute top-2 right-2 text-red-500 font-bold"
-      >
-        ✖
-      </button>
-
-      <h2 className="text-xl font-bold mb-4">Crear Elemento</h2>
-
-      <div className="grid gap-4">
-        <label htmlFor="nombre">Nombre</label>
-          <input
-            type="text"
-            name="nombre"
-            value={proveedorData.nombre}
-            onChange={handleChangeProveedor}
-            className="border p-2 w-full"
-            required
-          />
-        
-
-        <label htmlFor="ruc">RUC</label>
-          <input
-            type="text"
-            name="ruc"
-            value={proveedorData.ruc}
-            onChange={handleChangeProveedor}
-            className="border p-2 w-full"
-            required
-          />
-        
-
-        <label htmlFor="mail">Correo</label>
-          <input
-            type="email"
-            name="mail"
-            value={proveedorData.mail}
-            onChange={handleChangeProveedor}
-            className="border p-2 w-full"
-          />
-        
-
-        <label htmlFor="telefono">Teléfono</label>          
-          <input
-            type="tel"
-            name="telefono"
-            value={proveedorData.telefono}
-            onChange={handleChangeProveedor}
-            className="border p-2 w-full"
-          />
-       
-
-        <label htmlFor="precio">Precio</label>         
-          <input
-            type="number"
-            name="precio"
-            value={formData.precio}
-            onChange={handleChange}
-            step="0.01"
-            className="border p-2 w-full"
-            required
-          />
-        
-
-        <label htmlFor="descuento">Descuento</label>
-          <input
-            type="number"
-            name="descuento"
-            value={formData.descuento}
-            onChange={handleChange}
-            step="0.01"
-            className="border p-2 w-full"
-          />
-        
-
-        {herramienta && (
-            <div>
-                <label htmlFor="cantidad">Cantidad</label>
-                    <input
-                        type="number"
-                        name="cantidad"
-                        value={formData.cantidad}
-                        onChange={handleChange}
-                        step="0.01"
-                        className="border p-2 w-full"
-                    /> 
-
-            </div>
-        )}
-
-      </div>
-
-      <div className="mt-6">
-        <h3 className="font-semibold mb-2">Proveedores sugeridos</h3>
-        <TablaProveedores datos={diccionario} onSeleccionar={handleSeleccionProveedor} />
-      </div>
-
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded mt-4">
-        Guardar
-      </button>
-    </form>
+    <ElementoBase
+      onClose={onClose}
+      handleSubmit={handleSubmit} 
+      proveedorData={proveedorData}
+      handleChange={handleChange}
+      handleChangeProveedor={handleChangeProveedor}
+      formData={formData}
+      diccionario={diccionario}
+      handleSeleccionProveedor={handleSeleccionProveedor}
+      ubicacionId={ubicacionId}
+      handleChangeUbicacion={handleChangeUbicacion}
+      ubicacionesData={ubicacionesData}
+    />
   );
 }

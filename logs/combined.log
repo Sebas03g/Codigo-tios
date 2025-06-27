@@ -34327,3 +34327,9 @@ Argument `createdBy`: Invalid value provided. Expected Int, provided String.
 [2025-06-26T14:39:50.443Z] INFO: OPTIONS /empleado/login NaN
 [2025-06-26T14:39:50.525Z] INFO: POST /empleado/login NaN
 [2025-06-26T14:39:51.088Z] INFO: GET /csrf-token NaN
+[2025-06-26T17:20:32.874Z] INFO: OPTIONS /empleado/login NaN
+[2025-06-26T17:20:32.893Z] INFO: POST /empleado/login NaN
+[2025-06-26T17:20:33.017Z] INFO: GET /csrf-token NaN
+[2025-06-26T17:20:34.544Z] INFO: OPTIONS /empleado/1 NaN
+[2025-06-26T17:20:34.546Z] INFO: GET /empleado/1 NaN
+[2025-06-26T17:20:34.553Z] INFO: GET /empleado/1 NaN
