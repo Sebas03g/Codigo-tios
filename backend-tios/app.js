@@ -33,6 +33,7 @@ import transaccionRoutes from './routes/TransaccionRoutes.js';
 import ubicacion_empleadoRoutes from './routes/ubicacion_empleadoRoutes.js';
 import ubicacionRoutes from './routes/UbicacionRoutes.js';
 import ventaRoutes from './routes/VentaRoutes.js';
+import mailRoutes from './routes/MailRouter.js';
 
 dotenv.config();
 
@@ -118,6 +119,7 @@ app.use('/transaccion', verificarToken, transaccionRoutes);
 app.use('/ubicacion_empleado', verificarToken, ubicacion_empleadoRoutes);
 app.use('/ubicacion', verificarToken, ubicacionRoutes);
 app.use('/venta', verificarToken, ventaRoutes);
+app.use('/mail', verificarToken, mailRoutes);
 
 /*app.use('/empleado', empleadoRoutes); // login no usa verificarToken
 // Rutas protegidas con token
