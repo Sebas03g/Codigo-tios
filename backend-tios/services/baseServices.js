@@ -1,9 +1,31 @@
-export const baseService = (repository) => ({
-  create: async (data) => repository.create(data),
-  delete: async (id) => repository.delete(id, data),
-  update: async (id, data) => repository.update(id, data),
-  findById: async (id) => repository.findById(id),
-  findAll: async () => repository.findAll(), 
-  extraData: async () => repository.extraData(id, relation),
-  allExtraData: async () => repository.allExtraData(relation),
+export const baseService = (repository, dataValidate) => ({
+  create: async (data) => {
+    if (dataValidate) await dataValidate(data);
+    return repository.create(data);
+  },
+
+  update: async (id, data) => {
+    if (dataValidate) await dataValidate(data);
+    return repository.update(id, data);
+  },
+
+  delete: async (id) => {
+    return repository.delete(id);
+  },
+
+  findById: async (id) => {
+    return repository.findById(id);
+  },
+
+  findAll: async () => {
+    return repository.findAll();
+  },
+
+  extraData: async (id, relation) => {
+    return repository.extraData(id, relation);
+  },
+
+  allExtraData: async (relation) => {
+    return repository.allExtraData(relation);
+  }
 });
