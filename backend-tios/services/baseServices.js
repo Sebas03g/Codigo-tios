@@ -1,11 +1,9 @@
 export const baseService = (repository, dataValidate) => ({
   create: async (data) => {
-    if (dataValidate) await dataValidate(data);
     return repository.create(data);
   },
 
   update: async (id, data) => {
-    if (dataValidate) await dataValidate(data);
     return repository.update(id, data);
   },
 

@@ -1,19 +1,20 @@
 import express from 'express';
 import controller from '../controllers/EmpleadoController.js';
 import { verificarToken } from '../middleware/authMiddleware.js';
+import * as validators from "../validators/validateEmpleado.js"
 
 const router = express.Router();
 
-router.post('/login', controller.loginEmpleado);
-router.get('/related/:relation', controller.allExtraData);
+router.post('/login', validators.validarPassword,controller.loginEmpleado);
 
 router.get('/', verificarToken, controller.findAll);
 router.get('/:id', verificarToken, controller.findById);
-router.post('/', verificarToken, controller.create);
+router.get('/related/:relation', verificarToken, controller.allExtraData);
+router.post('/', verificarToken, validators.validarEmpleado, controller.create);
 //router.post('/', controller.create);
-router.put('/:id', verificarToken, controller.update);
+router.put('/:id', verificarToken, validators.validarEmpleado, controller.update);
 router.post('/:id', verificarToken, controller.remove);
 router.get('/:id/related/:relation', verificarToken,controller.extraData);
-router.put('/password', verificarToken,controller.updatePassword);
+router.put('/password', verificarToken, validators.validarPassword,controller.updatePassword);
 
 export default router

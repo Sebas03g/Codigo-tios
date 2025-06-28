@@ -54,6 +54,11 @@ enum CategoriasPermiso{
   Ubicacion
 }
 
+enum CategoriaMensajes{
+  Sistema
+  Personal
+}
+
 model Punto{
   id        Int     @id @default(autoincrement())
   lat       Decimal
@@ -204,6 +209,8 @@ model Empleado{
   telefono    String
   sueldo    Decimal
   password String
+  latActual Decimal?
+  lngActual Decimal?
   fecha_inicio DateTime @default(now())
   id_posicion Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
@@ -233,9 +240,11 @@ model Mensaje{
   texto String
   titulo String
   fecha DateTime @default(now())
+  tipo CategoriaMensajes @default(Sistema)
+  estadoEliminado EstadoEliminado @default(ACTIVO)
 
-  id_remitente Int
-  id_destinario Int
+  id_remitente Int @default(1)
+  id_destinario Int @default(1)
 
   remitente      Empleado  @relation("MensajeRemitente", fields: [id_remitente], references: [id])
   destinatario   Empleado  @relation("MensajeDestinatario", fields: [id_destinario], references: [id])
@@ -252,7 +261,7 @@ model Mensaje{
 model Proforma{
   id        Int     @id @default(autoincrement())
   nombre String
-  tiempo_esperado Int
+  tiempo_esperado DateTime
   porcentaje_venta Decimal
   id_punto  Int 
   id_cliente  Int
@@ -310,7 +319,7 @@ model proforma_inventario{
 model Obra{
   id        Int     @id @default(autoincrement())
   nombre String
-  tiempo_esperado Int
+  tiempo_esperado DateTime
   porcentaje_venta Decimal
   id_punto Int 
   id_cliente Int
@@ -393,6 +402,7 @@ model Devolucion{
   id        Int     @id @default(autoincrement())
   codigo String
   id_transaccion Int @unique
+  estadoEliminado EstadoEliminado @default(ACTIVO)
 
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
 }

@@ -35,4 +35,8 @@ repo.getPermisos = async (id) => {
   return permisos;
 }
 
+repo.updateLiveLocationn = async (id, data) => {
+  const empleado = await repo.findById(id)
+}
+
 export default repo;

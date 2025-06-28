@@ -1,5 +1,4 @@
 import express from 'express';
-import bcrypt from 'bcrypt';
 import { verificarToken } from './middleware/authMiddleware.js';
 import csurf from 'csurf';
 import cors from 'cors';
@@ -34,6 +33,7 @@ import ubicacion_empleadoRoutes from './routes/ubicacion_empleadoRoutes.js';
 import ubicacionRoutes from './routes/UbicacionRoutes.js';
 import ventaRoutes from './routes/VentaRoutes.js';
 import mailRoutes from './routes/MailRouter.js';
+import updateLocationRoutes from './routes/UpdateLocationRouter.js'
 
 dotenv.config();
 
@@ -120,6 +120,7 @@ app.use('/ubicacion_empleado', verificarToken, ubicacion_empleadoRoutes);
 app.use('/ubicacion', verificarToken, ubicacionRoutes);
 app.use('/venta', verificarToken, ventaRoutes);
 app.use('/mail', verificarToken, mailRoutes);
+app.use('/update/location', verificarToken, updateLocationRoutes);
 
 /*app.use('/empleado', empleadoRoutes); // login no usa verificarToken
 // Rutas protegidas con token
