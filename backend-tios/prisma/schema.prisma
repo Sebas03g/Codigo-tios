@@ -89,6 +89,7 @@ model Ubicacion{
 
   punto  Punto @relation(fields: [id_punto], references: [id])
   inventario Inventario[]
+  tarea Tarea[]
 
   createdBy   Int
   updatedBy   Int?
@@ -333,6 +334,7 @@ model Obra{
   empleado obra_empleados[]
   transaccion Transaccion[]
   pedido Pedido[]
+  tarea Tarea[]
 
   createdBy   Int
   updatedBy   Int?
@@ -476,11 +478,15 @@ model Tarea {
   descripcion  String
   id_asignador Int
   id_asignado  Int
+  id_ubicacion Int?
+  id_obra Int?
   fecha_final DateTime
   fecha_inicio DateTime @default(now())
 
   asignador Empleado @relation("AsignadorRelacion", fields: [id_asignador], references: [id])
   asignado  Empleado @relation("AsignadoRelacion", fields: [id_asignado], references: [id])
+  ubicacion Ubicacion? @relation(fields: [id_ubicacion], references: [id])
+  obra Obra? @relation(fields: [id_obra], references: [id])
 
   createdBy   Int
   updatedBy   Int?
@@ -505,6 +511,7 @@ model pedido_elementos{
 }
 
 model ubicacion_empleado{
+  id Int     @id @default(autoincrement())
   id_punto Int
   id_empleado Int
   estado EstadoTrabajador
@@ -513,8 +520,6 @@ model ubicacion_empleado{
 
   punto Punto @relation(fields: [id_punto], references: [id])
   empleado Empleado @relation(fields: [id_empleado], references: [id])
-
-  @@id([id_punto, id_empleado])
 }
 
 generator client {

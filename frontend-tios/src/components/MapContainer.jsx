@@ -14,7 +14,7 @@ export default function Mapa({punto, setPunto}) {
     };
 
   return (
-    <MapContainer center={position} zoom={13} style={{ height: '400px', width: '100%' }}>
+    <MapContainer center={[punto.lat, punto.lng]} zoom={13} style={{ height: '400px', width: '100%' }}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

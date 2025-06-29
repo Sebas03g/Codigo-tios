@@ -1,6 +1,8 @@
 import repo from '../repository/EmpleadoRepository.js';
-import repoLocations from '../repository/UbicacionRepository.js'
-import repoMensaje from '../repository/MensajeRepository.js'
+import repoLocations from '../repository/UbicacionRepository.js';
+import repoMensaje from '../repository/MensajeRepository.js';
+import repoPunto from '../repository/PuntoRepository.js';
+import repoUbicacionEmpleado from '../repository/ubicacion_empleadoRepository.js';
 import distance from '@turf/distance';
 import { point } from '@turf/helpers';
 
@@ -43,9 +45,20 @@ export default updateLocation = async (id, data) => {
 
       await repoMensaje.create(MensajeData);
 
-      const ubicaconEmpleadoData = {
-        
+      const PuntoData = {
+        lat: parseFloat(data.lat),
+        lng: parseFloat(data.lng),
       }
+
+      const punto = await repoPunto.create(PuntoData);
+
+      const ubicacionEmpleadoData = {
+        id_punto: punto.id,
+        id_empleado: empleado.id,
+        estado: estado ? "TRABAJANDO" : "FUERA",
+      }
+
+      await repoUbicacionEmpleado.create(ubicacionEmpleadoData);
 
     }
 

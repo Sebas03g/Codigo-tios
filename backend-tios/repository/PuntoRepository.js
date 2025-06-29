@@ -2,11 +2,11 @@ import { baseRepository } from './baseRepository.js'
 
 const repo = baseRepository('punto');
 
-repo.findByCords = (lat, lng) =>
+repo.findByCords = (data) =>
     prisma.punto.findFirst({
         where: {
-            lat,
-            lng,
+            lat: data.lat,
+            lng: data.lng,
             estadoEliminado: 'ACTIVO',
         }
     })

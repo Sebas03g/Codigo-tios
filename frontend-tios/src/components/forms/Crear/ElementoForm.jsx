@@ -157,6 +157,7 @@ export default function ElementoForm({ onClose, tipo, categoria }) {
       ubicacionId={ubicacionId}
       handleChangeUbicacion={handleChangeUbicacion}
       ubicacionesData={ubicacionesData}
+      herramienta={herramienta}
     />
   );
 }

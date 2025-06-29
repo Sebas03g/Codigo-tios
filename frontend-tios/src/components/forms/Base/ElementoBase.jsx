@@ -3,7 +3,7 @@ import TablaProveedores from "../TablaProveedores.jsx"; // Asegúrate que el nom
 export default function ElementoBase({
     onClose, handleSubmit, proveedorData, handleChangeProveedor,
     handleChange, formData, diccionario, handleSeleccionProveedor,
-    handleChangeUbicacion, ubicacionesData, ubicacionId
+    handleChangeUbicacion, ubicacionesData, ubicacionId, herramienta
 }){
     return (
         <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto bg-white p-6 shadow rounded relative">
