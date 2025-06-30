@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import fetchLogin from '../services/fetch/fetchLogin.js'
 
 
-export default function Login(){
+export default function Login({ruta}){
     const [formData, setFormData] = useState({
         cedula: "",
         password: ""
@@ -19,7 +19,7 @@ export default function Login(){
         if(result.valido){
             toast.success(result.mensaje);
             setTimeout(() => {
-                navigate("/home");
+                navigate(ruta);
             }, 1500);
         }else{
             toast.error(result.mensaje)

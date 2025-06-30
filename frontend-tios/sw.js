@@ -1,14 +1,10 @@
 const CACHE_NAME = 'mi-pwa-v1';
 const URLS_TO_CACHE = [
-  '/templates/aplicacionMovil.html',
-  '/static/css/aplicacionMovil/contenedores.css',
-  '/static/css/aplicacionMovil/cuerpo.css',
-  '/static/css/aplicacionMovil/datosContenedor.css',
-  '/static/js/ubicacionActual.js',
-  '/static/js/setUpPWA.js'
+    "/app-login",
+    "/app-home",
+    "/app-tasks"
 ];
 
-// Instalar SW y cachear archivos
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -17,7 +13,6 @@ self.addEventListener('install', event => {
   );
 });
 
-// Activar SW y limpiar caches viejos
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -28,7 +23,6 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Interceptar peticiones y responder con cache
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(resp => {

@@ -11,4 +11,4 @@ repo.findByCords = (data) =>
         }
     })
 
-export default repo;
+export default repo;1

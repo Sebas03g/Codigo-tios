@@ -4,6 +4,8 @@ import DefaultLayout from "../layouts/DefaultLayout";
 
 import Login from "../pages/Login.jsx";
 import Home from "../pages/Home.jsx";
+import AppHome from "../pages/AppHome.jsx"
+import AppTasks from "../pages/AppTasks.jsx"
 import ClientesPage from "../pages/Clientes.jsx";
 import EmpleadosPage from "../pages/Empleados.jsx";
 import InventarioPage from "../pages/Inventario.jsx";
@@ -16,14 +18,20 @@ import UbicacionesPage from "../pages/Ubicaciones.jsx";
 import TransaccionesPage from "../pages/Transacciones.jsx";
 import { getTokenData } from "../services/getLocalStorageData.js";
 import PrivateRoute from "./PrivateRoutes.jsx";
+import AppLayout from "../layouts/AppLayout.jsx";
+
 
 export default function AppRoutes() {
   const categorias = getTokenData()?.categorias || [];
 
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-
+      <Route path="/" element={<Login ruta="/home"/>} />
+      <Route path="/app-login" element={<Login ruta="/app-home"/>}/>
+      <Route element= {<AppLayout />}>
+        <Route path="/app-home" element={<PrivateRoute><AppHome /></PrivateRoute>}/>
+        <Route path="/app-tasks" element={<PrivateRoute><AppTasks /></PrivateRoute>}/>
+      </Route>
       <Route element={<DefaultLayout />}>
         <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
 
