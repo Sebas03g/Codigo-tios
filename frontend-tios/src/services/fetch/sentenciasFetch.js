@@ -59,7 +59,7 @@ export const updateData = async(nombreClase, data, id) => {
 };
 
 export const removeData = async(nombreClase, id) => {
-  const res = await fetch(`${BASE_URL}/${nombreClase}/${id}`, {
+  const res = await fetch(`${BASE_URL}/${nombreClase}/delete/${id}`, {
     method: 'POST',
     headers: getAuthHeaders(),
     credentials: 'include',

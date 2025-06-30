@@ -5,9 +5,9 @@ export const baseRouter = (controller, validateData) => {
     
     router.get('/', controller.findAll);
     router.get('/:id', controller.findById);
-    router.post('/', validateData, controller.create);
-    router.put('/:id', validateData, controller.update);
-    router.post('/:id', controller.remove);
+    router.post('/', validateData ,controller.create);
+    router.put('/:id', controller.update);
+    router.post('/delete/:id', controller.remove);
     router.get('/:id/related/:relation', controller.extraData);
     router.get('/related/:relation', controller.allExtraData);
     return router;

@@ -15,6 +15,9 @@ import PosicionesPage from "../pages/Posiciones.jsx";
 import ProveedoresPage from "../pages/Proveedores.jsx";
 import TareasPage from "../pages/Tareas.jsx";
 import UbicacionesPage from "../pages/Ubicaciones.jsx";
+import ComprasPage from "../pages/Compras.jsx";
+import VentasPage from "../pages/Ventas.jsx";
+import DevolucionesPage from "../pages/Devoluciones.jsx";
 import TransaccionesPage from "../pages/Transacciones.jsx";
 import { getTokenData } from "../services/getLocalStorageData.js";
 import PrivateRoute from "./PrivateRoutes.jsx";
@@ -23,6 +26,14 @@ import AppLayout from "../layouts/AppLayout.jsx";
 
 export default function AppRoutes() {
   const categorias = getTokenData()?.categorias || [];
+
+  const permisosTransaccion = ["Compra",  "Venta", "Devolucion"]
+
+  console.log(categorias);
+
+  const transaccion = permisosTransaccion.some(permiso => categorias.includes(permiso));
+
+  console.log(transaccion);
 
   return (
     <Routes>
@@ -35,7 +46,7 @@ export default function AppRoutes() {
       <Route element={<DefaultLayout />}>
         <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
 
-        {categorias.includes("Transaccion") && (
+        {transaccion && (
           <Route path="/transacciones" element={<PrivateRoute><TransaccionesPage /></PrivateRoute>} />
         )}
         {categorias.includes("Inventario") && (
@@ -64,6 +75,15 @@ export default function AppRoutes() {
         )}
         {categorias.includes("Ubicacion") && (
           <Route path="/ubicaciones" element={<PrivateRoute><UbicacionesPage /></PrivateRoute>} />
+        )}
+        {categorias.includes("Compra") && (
+          <Route path="/compras" element={<PrivateRoute><ComprasPage /></PrivateRoute>} />
+        )}
+        {categorias.includes("Venta") && (
+          <Route path="/ventas" element={<PrivateRoute><VentasPage /></PrivateRoute>} />
+        )}
+        {categorias.includes("Devolucion") && (
+          <Route path="/devoluciones" element={<PrivateRoute><DevolucionesPage /></PrivateRoute>} />
         )}
       </Route>
     </Routes>

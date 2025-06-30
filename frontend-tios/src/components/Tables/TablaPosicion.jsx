@@ -1,4 +1,22 @@
-export default function TablaTarea({ datos, onSeleccionar}) {
+import { useEffect, useState } from "react";
+
+export default function TablaPosicion({ datos, onSeleccionar, filtros}) {
+  
+  const [dataTable, setDataTable] = useState([]);
+
+  useEffect(() => {
+    const filterTableData = async () => {
+
+      const tableData = datos.filter(dato => dato.nombre.includes(filtros));
+
+      setDataTable(tableData);
+
+    }
+
+    filterTableData();
+
+  },[datos, filtros])
+  
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white shadow rounded-lg">
@@ -10,7 +28,7 @@ export default function TablaTarea({ datos, onSeleccionar}) {
           </tr>
         </thead>
         <tbody>
-          {datos.map(item => (
+          {dataTable.map(item => (
             <tr
               key={item.id}
               className="border-t cursor-pointer hover:bg-gray-100"

@@ -1,6 +1,7 @@
 import { CiMenuBurger } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import MenuComponent from "./menu";
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getTokenData } from "../../services/getLocalStorageData";
@@ -61,7 +62,12 @@ export default function HeaderComponent(){
                 <CiMenuBurger className="text-2xl" />
               </button>
             )}
-            <h1 className="text-xl font-bold text-gray-800">Hidrogass</h1>
+            <Link
+              to="/home"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <h1 className="text-xl font-bold text-gray-800">Hidrogass</h1>
+            </Link>
           </div>
 
           <div className="flex items-center gap-4">

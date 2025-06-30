@@ -1,5 +1,6 @@
 import express from 'express';
 import controller from '../controllers/VentaController.js';
 import { baseRouter } from './baseRouter.js';
+import { validateVenta } from '../validators/validateVenta.js';
 
-export default baseRouter(controller);
+export default baseRouter(controller,validateVenta);

@@ -41,7 +41,9 @@ enum EstadoEliminado{
 }
 
 enum CategoriasPermiso{
-  Transaccion
+  Compra
+  Venta
+  Devolucion
   Inventario
   Pedido
   Obra

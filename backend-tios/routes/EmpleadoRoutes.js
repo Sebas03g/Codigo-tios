@@ -12,7 +12,7 @@ router.get('/:id', verificarToken, controller.findById);
 router.get('/related/:relation', verificarToken, controller.allExtraData);
 router.post('/', verificarToken, validators.validarEmpleado, controller.create);
 //router.post('/', controller.create);
-router.put('/:id', verificarToken, validators.validarEmpleado, controller.update);
+router.put('/:id', verificarToken, controller.update);
 router.post('/:id', verificarToken, controller.remove);
 router.get('/:id/related/:relation', verificarToken,controller.extraData);
 router.put('/password', verificarToken, validators.validarPassword,controller.updatePassword);

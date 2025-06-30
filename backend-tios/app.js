@@ -91,7 +91,6 @@ app.use((req, res, next) => {
 
 // Ruta para obtener token CSRF
 
-
 // Registro de rutas
 app.use('/empleado', empleadoRoutes); // login no usa verificarToken
 // Rutas protegidas con token
@@ -122,7 +121,9 @@ app.use('/venta', verificarToken, ventaRoutes);
 app.use('/mail', verificarToken, mailRoutes);
 app.use('/update/location', verificarToken, updateLocationRoutes);
 
-/*app.use('/empleado', empleadoRoutes); // login no usa verificarToken
+/*
+
+app.use('/empleado', empleadoRoutes); // login no usa verificarToken
 // Rutas protegidas con token
 app.use('/categoria', categoriaRoutes);
 app.use('/compra', compraRoutes);
@@ -147,8 +148,9 @@ app.use('/transaccion_elementos', transaccion_elementosRoutes);
 app.use('/transaccion', transaccionRoutes);
 app.use('/ubicacion_empleado', ubicacion_empleadoRoutes);
 app.use('/ubicacion', ubicacionRoutes);
-app.use('/venta', ventaRoutes);*/
+app.use('/venta', ventaRoutes);
 
+*/
 
 // Middleware para manejar rutas no encontradas
 app.use((req, res) => {

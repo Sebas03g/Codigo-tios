@@ -1,11 +1,11 @@
 import logger from '../utils/logger.js';
-import updateLocation from '../services/UpdateLocationServices.js'
+import service from '../services/UpdateLocationServices.js'
 
-export default updateLocation = async (req, res) => {
+export default async function updateLocation({req, res}){
     try {
       const data = req.body;
       const id = req.params.id;
-      const result = await updateLocation(id, data);
+      const result = await service(id, data);
       if (!result) {
         return res.status(500).json({ mensaje: 'Error interno del servidor.' });
       }

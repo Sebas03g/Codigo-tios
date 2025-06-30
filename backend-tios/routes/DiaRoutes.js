@@ -1,11 +1,12 @@
 import express from 'express';
 import controller from '../controllers/DiaController.js';
+import { validateDia } from '../validators/validateDia.js'
 
 const router = express.Router();
 
 router.get('/', controller.findAll);
 router.get('/:id', controller.findById);
-router.post('/', controller.create);
+router.post('/', validateDia ,controller.create);
 router.put('/:id', controller.update);
 router.post('/:id', controller.remove);
 

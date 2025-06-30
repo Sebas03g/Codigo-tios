@@ -1,9 +1,9 @@
 nombre,categoria
-Realizar ventas,Transaccion
-Visualizar ventas,Transaccion
-Realizar compras,Transaccion
-Visualizar compras,Transaccion
-Visualizar devoluciones,Transaccion
+Realizar ventas,Venta
+Visualizar ventas,Venta
+Realizar compras,Compra
+Visualizar compras,Compra
+Visualizar devoluciones,Devolucion
 Visualizar obras,Obra
 Crear proformas,Obra
 Visualizar proformas,Obra
@@ -12,7 +12,7 @@ Gestionar obras,Obra
 Asignar tareas,Tarea
 Visualizar inventario,Inventario
 Agregar inventario,Inventario
-Validar devoluciones,Transaccion
+Validar devoluciones,Devolucion
 Visualizar empleados,Empleado
 Gestionar empleados,Empleado
 Visualizar proveedores,Proveedor

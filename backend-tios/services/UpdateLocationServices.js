@@ -6,7 +6,7 @@ import repoUbicacionEmpleado from '../repository/ubicacion_empleadoRepository.js
 import distance from '@turf/distance';
 import { point } from '@turf/helpers';
 
-export default updateLocation = async (id, data) => {
+export default async function updateLocation({id, data}) {
   try {
     const empleado = await repo.findById(id);
     if (!empleado) throw new Error(`Empleado con ID ${id} no encontrado`);
