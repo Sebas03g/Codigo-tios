@@ -3,6 +3,10 @@ import { prisma } from '../config/db.js'
 
 const repo = baseRepository('empleado');
 
+repo.getAllData = async () => {
+  return prisma.empleado.findMany();
+},
+
 repo.findByCedula = async (cedula) => {
 
     return await prisma.empleado.findFirst({

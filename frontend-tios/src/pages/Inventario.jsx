@@ -1,3 +1,3 @@
-export default function InventarioPage(){
+export default function Inventario(){
     
 }

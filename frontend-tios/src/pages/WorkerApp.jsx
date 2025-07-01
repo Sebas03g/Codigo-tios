@@ -3,7 +3,7 @@ import { MapContainer } from "react-leaflet";
 import * as sentences from "../services/fetch/sentenciasFetch.js"
 import { getTokenData } from "../services/getLocalStorageData.js";
 
-export default function WorkerAppPage(){
+export default function WorkerApp(){
 
     const [empleado, setEmpleado] = useState();
 
@@ -31,6 +31,7 @@ export default function WorkerAppPage(){
 
 
     return(
-        <WorkerAppPage />
+       // <WorkerAppPage />
+       <p>Hola</p>
     );
 }

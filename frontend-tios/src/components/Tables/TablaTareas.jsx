@@ -8,6 +8,7 @@ export default function TablaTarea({ datos, onSeleccionar}) {
             <th className="py-2 px-4 text-left">Fecha de Inicio </th>
             <th className="py-2 px-4 text-left">Fecha Final</th>
             <th className="py-2 px-4 text-left">Estado</th>
+            <th className="py-2 px-4 text-left">Asignador</th>
             <th className="py-2 px-4 text-left">Asignado</th>
           </tr>
         </thead>
@@ -21,8 +22,9 @@ export default function TablaTarea({ datos, onSeleccionar}) {
               <td className="py-2 px-4">{item.nombre}</td>
               <td className="py-2 px-4">{item.feha_inicio}</td>
               <td className="py-2 px-4">{item.fecha_final}</td>
-              <td className="py-2 px-4">${item.estado}</td>
-              <td className="py-2 px-4">${item.asignado}</td>
+              <td className="py-2 px-4">{item.estado}</td>
+              <td className="py-2 px-4">{item.asignador}</td>
+              <td className="py-2 px-4">{item.asignado}</td>
             </tr>
           ))}
         </tbody>

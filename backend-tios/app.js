@@ -59,6 +59,7 @@ app.use((req, res, next) => {
   next();
 });
 
+
 // Configurar CSRF protección solo para rutas que la necesitan
 const csrfProtection = csurf({ cookie: true });
 

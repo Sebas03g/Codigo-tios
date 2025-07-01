@@ -6,19 +6,19 @@ import Login from "../pages/Login.jsx";
 import Home from "../pages/Home.jsx";
 import AppHome from "../pages/AppHome.jsx"
 import AppTasks from "../pages/AppTasks.jsx"
-import ClientesPage from "../pages/Clientes.jsx";
-import EmpleadosPage from "../pages/Empleados.jsx";
-import InventarioPage from "../pages/Inventario.jsx";
-import ObrasPage from "../pages/Obras.jsx";
-import PedidosPage from "../pages/Pedidos.jsx";
-import PosicionesPage from "../pages/Posiciones.jsx";
-import ProveedoresPage from "../pages/Proveedores.jsx";
-import TareasPage from "../pages/Tareas.jsx";
-import UbicacionesPage from "../pages/Ubicaciones.jsx";
-import ComprasPage from "../pages/Compras.jsx";
-import VentasPage from "../pages/Ventas.jsx";
-import DevolucionesPage from "../pages/Devoluciones.jsx";
-import TransaccionesPage from "../pages/Transacciones.jsx";
+import Clientes from "../pages/Clientes.jsx";
+import Empleados from "../pages/Empleados.jsx";
+import Inventario from "../pages/Inventario.jsx";
+import Obras from "../pages/Obras.jsx";
+import Pedidos from "../pages/Pedidos.jsx";
+import Posiciones from "../pages/Posiciones.jsx";
+import Proveedores from "../pages/Proveedores.jsx";
+import Tareas from "../pages/Tareas.jsx";
+import Ubicaciones from "../pages/Ubicaciones.jsx";
+import Compras from "../pages/Compras.jsx";
+import Ventas from "../pages/Ventas.jsx";
+import Devoluciones from "../pages/Devoluciones.jsx";
+import Transacciones from "../pages/Transacciones.jsx";
 import { getTokenData } from "../services/getLocalStorageData.js";
 import PrivateRoute from "./PrivateRoutes.jsx";
 import AppLayout from "../layouts/AppLayout.jsx";
@@ -29,11 +29,7 @@ export default function AppRoutes() {
 
   const permisosTransaccion = ["Compra",  "Venta", "Devolucion"]
 
-  console.log(categorias);
-
   const transaccion = permisosTransaccion.some(permiso => categorias.includes(permiso));
-
-  console.log(transaccion);
 
   return (
     <Routes>
@@ -47,43 +43,43 @@ export default function AppRoutes() {
         <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
 
         {transaccion && (
-          <Route path="/transacciones" element={<PrivateRoute><TransaccionesPage /></PrivateRoute>} />
+          <Route path="/transacciones" element={<PrivateRoute><Transacciones /></PrivateRoute>} />
         )}
         {categorias.includes("Inventario") && (
-          <Route path="/inventario" element={<PrivateRoute><InventarioPage /></PrivateRoute>} />
+          <Route path="/inventario" element={<PrivateRoute><Inventario /></PrivateRoute>} />
         )}
         {categorias.includes("Pedido") && (
-          <Route path="/pedidos" element={<PrivateRoute><PedidosPage /></PrivateRoute>} />
+          <Route path="/pedidos" element={<PrivateRoute><Pedidos /></PrivateRoute>} />
         )}
         {categorias.includes("Obra") && (
-          <Route path="/obras" element={<PrivateRoute><ObrasPage /></PrivateRoute>} />
+          <Route path="/obras" element={<PrivateRoute><Obras /></PrivateRoute>} />
         )}
         {categorias.includes("Cliente") && (
-          <Route path="/clientes" element={<PrivateRoute><ClientesPage /></PrivateRoute>} />
+          <Route path="/clientes" element={<PrivateRoute><Clientes /></PrivateRoute>} />
         )}
         {categorias.includes("Empleado") && (
-          <Route path="/empleados" element={<PrivateRoute><EmpleadosPage /></PrivateRoute>} />
+          <Route path="/empleados" element={<PrivateRoute><Empleados /></PrivateRoute>} />
         )}
         {categorias.includes("Posicion") && (
-          <Route path="/posiciones" element={<PrivateRoute><PosicionesPage /></PrivateRoute>} />
+          <Route path="/posiciones" element={<PrivateRoute><Posiciones /></PrivateRoute>} />
         )}
         {categorias.includes("Proveedor") && (
-          <Route path="/proveedores" element={<PrivateRoute><ProveedoresPage /></PrivateRoute>} />
+          <Route path="/proveedores" element={<PrivateRoute><Proveedores /></PrivateRoute>} />
         )}
         {categorias.includes("Tarea") && (
-          <Route path="/tareas" element={<PrivateRoute><TareasPage /></PrivateRoute>} />
+          <Route path="/tareas" element={<PrivateRoute><Tareas /></PrivateRoute>} />
         )}
         {categorias.includes("Ubicacion") && (
-          <Route path="/ubicaciones" element={<PrivateRoute><UbicacionesPage /></PrivateRoute>} />
+          <Route path="/ubicaciones" element={<PrivateRoute><Ubicaciones /></PrivateRoute>} />
         )}
         {categorias.includes("Compra") && (
-          <Route path="/compras" element={<PrivateRoute><ComprasPage /></PrivateRoute>} />
+          <Route path="/compras" element={<PrivateRoute><Compras /></PrivateRoute>} />
         )}
         {categorias.includes("Venta") && (
-          <Route path="/ventas" element={<PrivateRoute><VentasPage /></PrivateRoute>} />
+          <Route path="/ventas" element={<PrivateRoute><Ventas /></PrivateRoute>} />
         )}
         {categorias.includes("Devolucion") && (
-          <Route path="/devoluciones" element={<PrivateRoute><DevolucionesPage /></PrivateRoute>} />
+          <Route path="/devoluciones" element={<PrivateRoute><Devoluciones /></PrivateRoute>} />
         )}
       </Route>
     </Routes>

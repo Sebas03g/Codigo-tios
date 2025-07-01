@@ -1,3 +1,3 @@
-export default function PedidosPage(){
+export default function Pedidos(){
     
 }

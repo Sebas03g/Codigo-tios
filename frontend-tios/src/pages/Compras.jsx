@@ -1,3 +1,3 @@
-export default function ComprasPage(){
+export default function Compras(){
     
 }

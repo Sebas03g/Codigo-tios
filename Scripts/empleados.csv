@@ -1,2 +1,2 @@
-nombre,cedula,mail,telefono,sueldo,password,posicion,createdBy
-Administrador,0106853740, hsebastian03g@gmail.com,0999022665, 0.0, Hgpm@767898,1,1 
+nombre,cedula,mail,telefono,sueldo,password,posicion,estado,createdBy
+Sistema,0106853740, hsebastian03g@gmail.com,0999022665, 0.0, Hgpm@767898,1,TRABAJANDO,1 

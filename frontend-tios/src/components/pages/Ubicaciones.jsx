@@ -1,17 +1,17 @@
-import TablaPosicion from "../../components/Tables/TablaPosicion.jsx";
+import TablaUbicacion from "../../components/Tables/TablaUbicacion.jsx";
 import { AiOutlinePlus } from "react-icons/ai";
 
-export default function PosicionesPage({busqueda, handleInputChange, handleAgregar, dataTable, onSeleccionar}){
+export default function UbicacionesPage({busqueda, handleInputChange, handleAgregar, dataTable, onSeleccionar}){
     return(
         <div className="h-full flex flex-col">
-            <h1 className="text-2xl font-bold text-gray-800 mb-4">Posiciones</h1>
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">Ubicaciones</h1>
 
             <div className="flex items-center gap-2 mb-6">
             <input
                 type="text"
                 value={busqueda}
                 onChange={handleInputChange}
-                placeholder="Buscar..."
+                placeholder="Nombre..."
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
 
@@ -24,10 +24,10 @@ export default function PosicionesPage({busqueda, handleInputChange, handleAgreg
             </button>
             </div>
 
-            <TablaPosicion
-            datos={dataTable}
-            onSeleccionar={onSeleccionar}
-            filtros={busqueda}
+            <TablaUbicacion
+                datos={dataTable}
+                onSeleccionar={onSeleccionar}
+                filtros={busqueda}
             />
         </div>
     );

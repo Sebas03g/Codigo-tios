@@ -1,3 +1,3 @@
-export default function VentasPage(){
+export default function Ventas(){
     
 }

@@ -1,3 +1,3 @@
-export default function ObrasPage(){
+export default function Obras(){
     
 }

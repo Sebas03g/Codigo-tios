@@ -1,6 +1,29 @@
-export default function TablaUbicacion({ datos, onSeleccionar}) {
+import { useEffect, useState } from "react";
+
+export default function TablaUbicacion({ datos, onSeleccionar, filtros}) {
+
+  const [dataTable, setDataTable] = useState([]);
+  
+    useEffect(() => {
+      const filterTableData = async () => {
+  
+        const tableData = datos.filter(dato => dato.nombre.toLowerCase().includes(filtros.toLowerCase()));
+  
+        setDataTable(tableData);
+  
+      }
+  
+      filterTableData();
+  
+    },[datos, filtros])
+
   return (
     <div className="overflow-x-auto">
+      {dataTable.length === 0 ? (
+        <div className="text-center text-gray-600 font-medium p-4">
+          No existen datos para mostrar.
+        </div>
+      ) : (
       <table className="min-w-full bg-white shadow rounded-lg">
         <thead>
           <tr className="bg-gray-100 text-gray-700">
@@ -9,7 +32,7 @@ export default function TablaUbicacion({ datos, onSeleccionar}) {
           </tr>
         </thead>
         <tbody>
-          {datos.map(item => (
+          {dataTable.map(item => (
             <tr
               key={item.id}
               className="border-t cursor-pointer hover:bg-gray-100"
@@ -21,6 +44,7 @@ export default function TablaUbicacion({ datos, onSeleccionar}) {
           ))}
         </tbody>
       </table>
+      )}
     </div>
   );
 }

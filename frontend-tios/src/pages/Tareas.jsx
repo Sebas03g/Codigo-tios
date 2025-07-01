@@ -1,3 +1,3 @@
-export default function TareasPage(){
+export default function Tareas(){
     
 }

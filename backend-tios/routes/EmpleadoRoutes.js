@@ -16,5 +16,6 @@ router.put('/:id', verificarToken, controller.update);
 router.post('/:id', verificarToken, controller.remove);
 router.get('/:id/related/:relation', verificarToken,controller.extraData);
 router.put('/password', verificarToken, validators.validarPassword,controller.updatePassword);
+router.get("/getAllData", verificarToken, controller.getAllData);
 
 export default router

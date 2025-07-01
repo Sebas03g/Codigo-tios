@@ -45,3 +45,9 @@ export const updatePass = async (cedula, password) => {
   const encryptedPassword = await bcrypt.hash(password, 10);
   return await repo.updatePassword(cedula, encryptedPassword);
 };
+
+export const getAllData = async () => {
+  const empleados = await repo.getAllData();
+  if (!empleados) throw new Error("Error en obtener los empleados");
+  return empleados;
+}

@@ -1,6 +1,6 @@
 
 import { baseController } from './baseController.js';
-import service, { login, updatePass } from '../services/EmpleadoServices.js';
+import service, { login, updatePass, getAllData } from '../services/EmpleadoServices.js';
 
 const {
   create,
@@ -53,6 +53,20 @@ const updatePassword = async (req, res) => {
   }
 };
 
+const getAllData = async (req, res) => {
+  try{
+    const empleados = await getAllData();
+    if (!empleados){
+      return res.status(404).json({ mensaje: 'No se puedieron obtener los empleados.' });
+    }
+
+    res.status(200).json(empleados);
+  }catch (error) {
+    console.error(error.message);
+    res.status(500).json({ mensaje: 'Error interno del servidor.' });
+  }
+}
+
 export default {
     create,
     update,
@@ -62,5 +76,6 @@ export default {
     extraData,
     allExtraData,
     loginEmpleado,
-    updatePassword
+    updatePassword,
+    getAllData
 };

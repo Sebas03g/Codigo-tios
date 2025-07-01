@@ -1,7 +1,7 @@
 import { getTokenData } from "../services/getLocalStorageData.js";
 import TransactionPage from "../components/pages/Transacciones.jsx";
 
-export default function TransaccionesPage(){
+export default function Transacciones(){
 
     const categorias = getTokenData()?.categorias || [];
 

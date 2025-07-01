@@ -25,6 +25,12 @@ enum EstadoHerramientas{
   DAÑADO
 }
 
+enum EstadoTarea{
+  ABIERTA
+  PROCESO
+  CERRADA
+}
+
 enum DiasSemana{
   LUNES
   MARTES
@@ -216,6 +222,7 @@ model Empleado{
   lngActual Decimal?
   fecha_inicio DateTime @default(now())
   id_posicion Int
+  estado EstadoTrabajador
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   posicion Posicion @relation(fields: [id_posicion], references: [id])
@@ -478,15 +485,16 @@ model Tarea {
   id           Int      @id @default(autoincrement())
   nombre       String
   descripcion  String
+  estado EstadoTarea @default(ABIERTA)
   id_asignador Int
-  id_asignado  Int
+  id_asignado  Int?
   id_ubicacion Int?
   id_obra Int?
   fecha_final DateTime
   fecha_inicio DateTime @default(now())
 
   asignador Empleado @relation("AsignadorRelacion", fields: [id_asignador], references: [id])
-  asignado  Empleado @relation("AsignadoRelacion", fields: [id_asignado], references: [id])
+  asignado  Empleado? @relation("AsignadoRelacion", fields: [id_asignado], references: [id])
   ubicacion Ubicacion? @relation(fields: [id_ubicacion], references: [id])
   obra Obra? @relation(fields: [id_obra], references: [id])
 
