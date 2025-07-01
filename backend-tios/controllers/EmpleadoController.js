@@ -1,4 +1,3 @@
-
 import { baseController } from './baseController.js';
 import service, { login, updatePass, getAllData } from '../services/EmpleadoServices.js';
 
@@ -16,14 +15,13 @@ const loginEmpleado = async (req, res) => {
   try {
     const { cedula, password } = req.body;
 
-
-    if (!cedula || !password) {
+    if (!cedula?.trim() || !password?.trim()) {
       return res.status(400).json({ mensaje: 'Cédula y contraseña son obligatorias.' });
     }
 
     const token = await login(cedula, password);
 
-    res.status(200).json({token});
+    res.status(200).json({ token });
 
   } catch (error) {
     console.error(error.message);
@@ -35,7 +33,7 @@ const updatePassword = async (req, res) => {
   try {
     const { cedula, password } = req.body;
 
-    if (!cedula || !password) {
+    if (!cedula?.trim() || !password?.trim()) {
       return res.status(400).json({ mensaje: 'Cédula y nueva contraseña son obligatorias.' });
     }
 
@@ -53,29 +51,30 @@ const updatePassword = async (req, res) => {
   }
 };
 
-const getAllData = async (req, res) => {
-  try{
+const getAllEmpleadoData = async (req, res) => {
+  try {
     const empleados = await getAllData();
-    if (!empleados){
-      return res.status(404).json({ mensaje: 'No se puedieron obtener los empleados.' });
+
+    if (!empleados || empleados.length === 0) {
+      return res.status(404).json({ mensaje: 'No se encontraron empleados.' });
     }
 
     res.status(200).json(empleados);
-  }catch (error) {
+  } catch (error) {
     console.error(error.message);
     res.status(500).json({ mensaje: 'Error interno del servidor.' });
   }
-}
+};
 
 export default {
-    create,
-    update,
-    remove,
-    findById,
-    findAll,
-    extraData,
-    allExtraData,
-    loginEmpleado,
-    updatePassword,
-    getAllData
+  create,
+  update,
+  remove,
+  findById,
+  findAll,
+  extraData,
+  allExtraData,
+  loginEmpleado,
+  updatePassword,
+  getAllEmpleadoData
 };

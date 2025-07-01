@@ -46,8 +46,6 @@ export default function Empleados(){
     }
 
     const handleEstado = (e) => {
-        console.log("ESTADO");
-        console.log(e.target.value);
         setEstado(e.target.value);
     }
     

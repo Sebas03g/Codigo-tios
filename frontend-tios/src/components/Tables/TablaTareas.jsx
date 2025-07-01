@@ -1,4 +1,4 @@
-export default function TablaTarea({ datos, onSeleccionar}) {
+export default function TablaTarea({ datos, onSeleccionar, estado, asignador, asignado, nombre}) {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white shadow rounded-lg">

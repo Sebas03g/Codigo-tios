@@ -2,10 +2,9 @@ import PageButton from "../forms/Button/PageButton";
 import { Link } from 'react-router-dom';
 
 export default function TransactionPage({ categorias }){
-
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-            <div className="flex flex-wrap gap-6 justify-center">
+        <div className="flex items-center justify-center">
+            <div className="flex flex-wrap gap-6 items-center justify-center">
                 {categorias.includes("Compra") && (
                     <Link
                         to="/compras"

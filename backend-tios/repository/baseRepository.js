@@ -56,4 +56,10 @@ export const baseRepository = (modelName) => ({
       },
     });
   },
+  dataAllRelations: async (id) => {
+
+  },
+  allDataAllRelations: async () => {
+    
+  }
 });
