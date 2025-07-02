@@ -80,6 +80,15 @@ export default function MenuComponent({ isOpen, setIsOpen, categorias }) {
               Tareas
             </Link>
           )}
+          {categorias.includes("Proforma") && (
+            <Link
+              to="/proformas"
+              className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Proformas
+            </Link>
+          )}
         </nav>
 
         {/* Botón de salir */}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import EmpleadosPage from "../components/pages/Empleados";
-import * as sentences from "../services/fetch/sentenciasFetch"
+import * as sentences from "../services/fetch/sentenciasFetch";
 
 export default function Empleados(){
 

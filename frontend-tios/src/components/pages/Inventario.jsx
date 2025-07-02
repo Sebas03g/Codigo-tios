@@ -12,7 +12,7 @@ export default function InventarioPage({
 
     return (
         <div className="h-full flex flex-col">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">{estadoNavBar}</h1>
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">Categorias {estadoNavBar}</h1>
         
           <div className="flex flex-col gap-4 mb-6">
             <div className="flex flex-wrap gap-4">

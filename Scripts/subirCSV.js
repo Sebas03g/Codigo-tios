@@ -15,19 +15,19 @@ async function enviarDatos() {
     const datosJSON = await csv().fromFile(archivoCSV);
 
     
-    for (const categoria of datosJSON) {
+    for (const data of datosJSON) {
 
-        //categoria.venta = categoria.venta?.toLowerCase() === 'true';
+        //data.venta = data.venta?.toLowerCase() === 'true';
 
-        categoria.createdBy = 1;
+        data.createdBy = 1;
 
         try {
-            const respuesta = await axios.post(URL, categoria, {
-            headers: { 'Content-Type': 'application/json' }
+            const respuesta = await axios.post(URL, data, {
+              headers: { 'Content-Type': 'application/json' }
             });
-            console.log('✅ Enviado:', categoria, '→', respuesta.data);
+            console.log('✅ Enviado:', data, '→', respuesta.data);
         } catch (error) {
-            console.error('❌ Error con:', categoria, '→', error.response?.data || error.message);
+            console.error('❌ Error con:', data, '→', error.response?.data || error.message);
         }
     }
   } catch (error) {

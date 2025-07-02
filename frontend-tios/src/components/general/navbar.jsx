@@ -15,7 +15,7 @@ export default function NavigationBar({ paramsNavBar }){
                             estadoNavBar === estado ? "bg-blue-800" : "hover:bg-blue-500"
                         }`}
                     >
-                        {capitalizaPrimera(estado)}
+                        {capitalizaPrimera(estado.toLowerCase())}
                     </button>
                 ))}
             </nav>

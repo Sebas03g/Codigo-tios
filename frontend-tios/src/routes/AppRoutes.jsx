@@ -17,6 +17,7 @@ import Tareas from "../pages/Tareas.jsx";
 import Ubicaciones from "../pages/Ubicaciones.jsx";
 import Compras from "../pages/Compras.jsx";
 import Ventas from "../pages/Ventas.jsx";
+import Proformas from "../pages/Proformas.jsx";
 import Devoluciones from "../pages/Devoluciones.jsx";
 import Transacciones from "../pages/Transacciones.jsx";
 import { getTokenData } from "../services/getLocalStorageData.js";
@@ -80,6 +81,9 @@ export default function AppRoutes() {
         )}
         {categorias.includes("Devolucion") && (
           <Route path="/devoluciones" element={<PrivateRoute><Devoluciones /></PrivateRoute>} />
+        )}
+        {categorias.includes("Proforma") && (
+          <Route path="/proformas" element={<PrivateRoute><Proformas /></PrivateRoute>} />
         )}
       </Route>
     </Routes>

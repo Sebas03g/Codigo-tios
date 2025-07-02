@@ -65,6 +65,7 @@ enum CategoriasPermiso{
   Proveedor
   Tarea
   Ubicacion
+  Proforma
 }
 
 enum CategoriasInventario{
@@ -75,6 +76,12 @@ enum CategoriasInventario{
 enum CategoriaMensajes{
   Sistema
   Personal
+  Credito
+}
+
+enum EstadoMensaje{
+  RECIBIDO
+  ABIERTO
 }
 
 model Punto{
@@ -262,6 +269,7 @@ model Mensaje{
   fecha DateTime @default(now())
   tipo CategoriaMensajes @default(Sistema)
   estadoEliminado EstadoEliminado @default(ACTIVO)
+  estado EstadoMensaje @default(RECIBIDO)
 
   id_remitente Int @default(1)
   id_destinario Int @default(1)
@@ -303,6 +311,7 @@ model Proforma{
 }
 
 model proforma_empleados{
+  id        Int     @id @default(autoincrement())
   horas Int
   id_proforma Int
   id_empleado Int
@@ -310,10 +319,10 @@ model proforma_empleados{
 
   proforma Proforma @relation(fields: [id_proforma], references: [id])
   empleado Empleado @relation(fields: [id_empleado], references: [id])
-  @@id([id_proforma, id_empleado])
 }
 
 model proforma_herramientas{
+  id        Int     @id @default(autoincrement())
   horas Int
   id_proforma Int
   id_herramienta Int
@@ -321,10 +330,10 @@ model proforma_herramientas{
 
   proforma Proforma @relation(fields: [id_proforma], references: [id])
   herramienta Inventario @relation(fields: [id_herramienta], references: [id])
-  @@id([id_proforma, id_herramienta])
 }
 
 model proforma_inventario{
+  id        Int     @id @default(autoincrement())
   cantidad Float
   id_proforma Int
   id_elemento Int
@@ -332,7 +341,6 @@ model proforma_inventario{
 
   proforma Proforma @relation(fields: [id_proforma], references: [id])
   elemento Inventario @relation(fields: [id_elemento], references: [id])
-  @@id([id_proforma, id_elemento])
 }
 
 
