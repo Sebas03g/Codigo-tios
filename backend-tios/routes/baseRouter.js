@@ -10,5 +10,7 @@ export const baseRouter = (controller, validateData) => {
     router.post('/delete/:id', controller.remove);
     router.get('/:id/related/:relation', controller.extraData);
     router.get('/related/:relation', controller.allExtraData);
+    router.post('/all/:id', controller.dataAllRelations);
+    router.post('/data/all', controller.allDataAllRelations);
     return router;
 }

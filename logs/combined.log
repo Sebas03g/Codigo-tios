@@ -40220,3 +40220,1581 @@ Argument `createdBy`: Invalid value provided. Expected Int, provided String.
 [2025-07-01T14:31:04.733Z] INFO: OPTIONS /ubicacion/ NaN
 [2025-07-01T14:31:04.735Z] INFO: GET /ubicacion/ NaN
 [2025-07-01T14:31:04.746Z] INFO: GET /ubicacion/ NaN
+[2025-07-01T20:12:46.533Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:12:46.539Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:12:46.540Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:12:46.597Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:15:50.660Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:15:50.662Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:15:50.664Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:15:50.670Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:29.864Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:40:29.865Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:40:29.867Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:29.911Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:29.916Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:29.921Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:36.788Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:40:36.789Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:40:36.792Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:36.797Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:36.803Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:36.809Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:40.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:40.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:40.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:40.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:51.750Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:40:51.753Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:51.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:51.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:51.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:53.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:53.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:53.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:53.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:56.754Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:40:56.756Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:56.762Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:56.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:40:56.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:01.765Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:41:01.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:01.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:01.807Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:01.812Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:03.749Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:03.753Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:03.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:03.762Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:04.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:04.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:04.797Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:04.802Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:08.750Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:41:08.751Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:41:08.753Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:08.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:08.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:08.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:28.783Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:41:28.785Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:28.790Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:28.825Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:28.831Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:36.780Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:41:36.782Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:41:36.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:36.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:36.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:36.796Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:57.754Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:41:57.757Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:57.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:57.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:41:57.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:04.771Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:04.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:04.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:04.782Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:04.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:07.753Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:07.757Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:07.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:07.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:11.762Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:11.764Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:11.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:11.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:11.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:14.752Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:14.757Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:14.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:14.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:17.849Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:17.851Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:17.856Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:17.862Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:17.867Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:20.788Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:20.792Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:20.798Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:20.802Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:23.769Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:23.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:23.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:23.804Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:23.809Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:26.756Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:26.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:26.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:26.774Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:38.769Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:38.772Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:38.773Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:38.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:38.779Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:38.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:38.790Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:40.759Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:40.764Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:40.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:40.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:43.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:43.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:43.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:43.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:45.762Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:45.764Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:45.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:45.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:45.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:45.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:47.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:47.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:47.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:47.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:51.759Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:51.762Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:51.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:51.770Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:51.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:58.748Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:42:58.751Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:58.756Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:58.761Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:42:58.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.802Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.802Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.805Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.806Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.807Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.812Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.817Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:36.822Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:43.775Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:43.777Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:43.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:43.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:43.788Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:43.792Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:48.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:48.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:48.781Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:48.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:49.759Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:49.761Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:49.762Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:49.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:49.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:49.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:50.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:50.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:50.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:50.789Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:54.771Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:43:54.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:54.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:54.794Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:43:54.798Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.766Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.767Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.768Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.770Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.782Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:02.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:11.766Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:44:11.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:11.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:11.779Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:11.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:44:38.049Z] INFO: OPTIONS /ubicacion/ NaN
+[2025-07-01T20:44:38.050Z] INFO: OPTIONS /ubicacion/ NaN
+[2025-07-01T20:44:38.052Z] INFO: GET /ubicacion/ NaN
+[2025-07-01T20:44:38.058Z] INFO: GET /ubicacion/ NaN
+[2025-07-01T20:44:44.182Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:44:44.183Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:44:44.185Z] INFO: GET /persona/ NaN
+[2025-07-01T20:44:44.191Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:24.788Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:45:24.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:24.794Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:45:24.797Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:24.798Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:24.803Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:24.805Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:24.809Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:36.789Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:45:36.791Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:45:36.793Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:36.795Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:36.842Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:36.934Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:36.938Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:36.942Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:39.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:39.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:39.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:39.788Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:39.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:39.794Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:41.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:41.767Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:41.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:41.773Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:41.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:41.779Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:45.768Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:45:45.770Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:45.774Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:45.790Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:45:45.790Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:45.792Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:45.796Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:45.798Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:47.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:47.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:47.798Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:47.800Z] INFO: GET /persona/ NaN
+[2025-07-01T20:45:47.802Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:45:47.804Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:15.757Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:46:15.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:15.764Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:46:15.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:15.768Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:15.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:15.773Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:15.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:21.749Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:46:21.751Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:21.754Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:46:21.756Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:21.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:21.762Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:21.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:21.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:36.762Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:46:36.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:36.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:36.771Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:46:36.774Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:36.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:36.778Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:36.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:39.746Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:39.750Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:39.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:39.796Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:39.801Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:39.803Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:45.743Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:46:45.745Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:45.749Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:45.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:45.796Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:46:45.797Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:45.799Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:45.805Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:48.764Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:48.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:48.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:48.787Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:48.790Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:48.792Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:51.783Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:46:51.784Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:46:51.785Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:51.787Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:51.790Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:51.792Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:51.819Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:51.823Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:52.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:52.773Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:52.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:52.778Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:52.782Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:52.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:54.759Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:54.762Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:54.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:54.768Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:54.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:54.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:56.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:56.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:56.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:56.780Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:56.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:56.785Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:59.753Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:46:59.755Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:59.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:59.775Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:46:59.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:59.778Z] INFO: GET /persona/ NaN
+[2025-07-01T20:46:59.781Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:46:59.783Z] INFO: GET /persona/ NaN
+[2025-07-01T20:47:31.775Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:47:31.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:47:31.783Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:47:31.785Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:47:31.787Z] INFO: GET /persona/ NaN
+[2025-07-01T20:47:31.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:47:31.793Z] INFO: GET /persona/ NaN
+[2025-07-01T20:47:31.797Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:47:41.806Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:47:41.809Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:47:41.810Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:47:41.813Z] INFO: GET /persona/ NaN
+[2025-07-01T20:47:41.817Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:47:41.818Z] INFO: GET /persona/ NaN
+[2025-07-01T20:47:41.821Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:47:41.827Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:02.771Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:48:02.774Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:02.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:02.791Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:48:02.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:02.793Z] INFO: GET /persona/ NaN
+[2025-07-01T20:48:02.796Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:02.798Z] INFO: GET /persona/ NaN
+[2025-07-01T20:48:03.759Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:03.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:03.803Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:03.806Z] INFO: GET /persona/ NaN
+[2025-07-01T20:48:03.811Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:03.812Z] INFO: GET /persona/ NaN
+[2025-07-01T20:48:05.752Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:05.754Z] INFO: GET /persona/ NaN
+[2025-07-01T20:48:05.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:05.761Z] INFO: GET /persona/ NaN
+[2025-07-01T20:48:05.801Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:48:05.808Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:03.766Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:49:03.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:03.770Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:49:03.773Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:03.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:03.778Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:03.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:03.785Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:15.784Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:49:15.785Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:49:15.786Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:49:15.788Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:15.791Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:15.795Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:15.797Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:15.800Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:15.807Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:17.903Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:17.905Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:17.909Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:17.911Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:17.915Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:17.920Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:29.769Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:49:29.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:29.776Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:49:29.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:29.780Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:29.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:29.785Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:29.788Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:33.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:33.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:33.768Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:33.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:33.773Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:33.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:34.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:34.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:34.769Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:34.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:34.774Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:34.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:39.747Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:49:39.749Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:39.753Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:39.761Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:49:39.762Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:39.764Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:39.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:39.769Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:41.839Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:41.840Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:41.844Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:41.846Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:41.905Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:41.949Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:43.751Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:43.753Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:43.756Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:43.759Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:43.762Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:43.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:48.764Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:49:48.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:48.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:48.778Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:49:48.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:48.781Z] INFO: GET /persona/ NaN
+[2025-07-01T20:49:48.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:49:48.785Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:40.753Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:50:40.755Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:40.758Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:50:40.762Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:40.814Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:40.817Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:40.823Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:40.827Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:43.756Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:43.761Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:43.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:43.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:43.769Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:43.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:46.806Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:50:46.808Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:46.812Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:50:46.815Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:46.819Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:46.826Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:46.829Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:46.836Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:47.747Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:47.754Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:47.755Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:47.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:50:47.760Z] INFO: GET /persona/ NaN
+[2025-07-01T20:50:47.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:00.762Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:51:00.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:00.768Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:51:00.771Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:00.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:00.776Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:00.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:00.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:03.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:03.768Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:03.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:03.774Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:03.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:03.782Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:15.765Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:51:15.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:15.769Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:51:15.771Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:15.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:15.777Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:15.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:15.782Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:37.762Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:51:37.766Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:51:37.767Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:51:37.767Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:51:37.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:37.771Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:37.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:37.777Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:37.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:37.785Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:48.750Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:51:48.753Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:48.758Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:51:48.759Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:48.761Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:48.764Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:51:48.766Z] INFO: GET /persona/ NaN
+[2025-07-01T20:51:48.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:58:53.866Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T20:58:53.866Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T20:58:53.870Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:58:53.872Z] INFO: GET /persona/ NaN
+[2025-07-01T20:58:53.919Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:58:53.921Z] INFO: GET /persona/ NaN
+[2025-07-01T20:58:53.926Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T20:58:53.930Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:12:17.924Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:12:17.924Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:12:17.929Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:12:17.931Z] INFO: GET /persona/ NaN
+[2025-07-01T21:12:17.981Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:12:17.984Z] INFO: GET /persona/ NaN
+[2025-07-01T21:12:17.990Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:12:17.995Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:33:23.871Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:33:23.872Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:33:23.876Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:33:23.878Z] INFO: GET /persona/ NaN
+[2025-07-01T21:33:23.930Z] INFO: GET /persona/ NaN
+[2025-07-01T21:33:23.932Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:33:23.940Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:33:23.945Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.817Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.818Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:04.818Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.820Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:04.821Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.822Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.825Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.827Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:04.833Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.834Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:04.837Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:04.842Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:05.804Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:05.808Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:05.812Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:05.814Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:05.817Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:05.823Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:10.768Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:10.770Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:10.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:10.774Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:10.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:10.780Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:10.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:10.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:12.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:12.768Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:12.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:12.776Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:12.779Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:12.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:16.757Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:16.758Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:16.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:16.760Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:16.762Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:16.765Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:16.792Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:16.797Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:20.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:20.762Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:20.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:20.769Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:20.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:20.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:21.758Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:21.764Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:21.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:21.814Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:21.815Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:21.817Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:21.820Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:21.822Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:23.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:23.774Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:23.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:23.792Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:23.797Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:23.803Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:24.759Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:24.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:24.790Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:24.792Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:24.794Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:24.796Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:32.767Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:32.769Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:32.770Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:32.773Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:32.774Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:32.776Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:32.779Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:32.781Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:32.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:32.789Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:35.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:35.769Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:35.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:35.775Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:35.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:35.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:37.756Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:37.759Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:37.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:37.765Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:37.793Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:37.794Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:37.799Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:42.768Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:42.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:42.772Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:42.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:42.777Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:42.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:42.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:47.791Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:47.794Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:47.795Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:47.796Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:47.798Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:47.799Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:47.802Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:47.804Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:47.807Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:47.812Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:58.774Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:34:58.776Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:34:58.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:58.780Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:58.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:58.786Z] INFO: GET /persona/ NaN
+[2025-07-01T21:34:58.789Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:34:58.794Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:02.764Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:02.766Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:02.770Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:02.772Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:02.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:02.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:04.764Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:04.765Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:35:04.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:04.768Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:35:04.768Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:04.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:04.773Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:04.805Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:04.811Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:10.768Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:10.773Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:10.774Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:35:10.774Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:10.775Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:35:10.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:10.778Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:10.782Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:10.783Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:10.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:10.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:36.763Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:36.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:36.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:36.803Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:36.806Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:35:36.809Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:36.812Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:36.815Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:39.760Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:39.763Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:39.768Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:39.771Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:39.774Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:39.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:41.773Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:41.775Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:41.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:41.778Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:41.781Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:41.783Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:41.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:41.792Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:43.754Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:43.759Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:43.798Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:43.801Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:35:43.803Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:43.807Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:43.812Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:49.753Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:35:49.754Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:35:49.755Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:49.757Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:49.761Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:49.763Z] INFO: GET /persona/ NaN
+[2025-07-01T21:35:49.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:35:49.771Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:01.771Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:36:01.772Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:36:01.774Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:36:01.776Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:36:01.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:01.780Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:01.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:01.787Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:01.791Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:01.798Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:03.770Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:03.772Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:03.775Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:03.777Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:03.781Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:03.786Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:05.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:05.774Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:05.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:05.780Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:05.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:05.789Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:08.755Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:36:08.757Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:08.759Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:36:08.762Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:08.764Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:08.768Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:08.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:08.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:26.771Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:36:26.772Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:36:26.773Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:36:26.774Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:36:26.776Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:26.778Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:26.781Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:26.783Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:26.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:26.792Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:28.765Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:28.767Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:28.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:28.774Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:28.823Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:28.828Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:30.763Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:30.765Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:30.769Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:30.770Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:30.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:30.778Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:32.765Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:36:32.766Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:36:32.767Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:32.769Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:32.773Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:32.775Z] INFO: GET /persona/ NaN
+[2025-07-01T21:36:32.779Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:36:32.783Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:03.779Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:37:03.783Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:37:03.784Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:03.786Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:03.789Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:03.791Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:03.794Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:03.800Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:13.789Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:37:13.790Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:37:13.791Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:37:13.793Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:13.795Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:13.799Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:13.801Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:13.804Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:13.808Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:20.776Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:37:20.778Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:37:20.780Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:20.782Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:20.785Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:20.786Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:20.790Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:20.794Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:29.756Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:37:29.759Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:29.764Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:29.767Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:37:29.770Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:29.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:37:29.775Z] INFO: GET /persona/ NaN
+[2025-07-01T21:37:29.777Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:01.832Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:38:01.833Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:38:01.836Z] INFO: OPTIONS /persona/ NaN
+[2025-07-01T21:38:01.837Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:38:01.839Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:01.842Z] INFO: GET /persona/ NaN
+[2025-07-01T21:38:01.847Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:01.850Z] INFO: GET /persona/ NaN
+[2025-07-01T21:38:01.854Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:01.862Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:05.782Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:05.784Z] INFO: GET /persona/ NaN
+[2025-07-01T21:38:05.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:05.790Z] INFO: GET /persona/ NaN
+[2025-07-01T21:38:05.794Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:05.799Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:55.924Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:38:55.926Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:38:55.929Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:54:43.317Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T21:54:43.319Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T21:54:43.362Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:03:37.617Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:03:37.617Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:03:37.619Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:03:37.621Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:37.623Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:03:37.624Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:03:37.625Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:03:37.627Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:37.628Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:37.630Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:03:37.674Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:03:37.725Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:42.086Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:03:42.089Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:42.095Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:03:42.142Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:45.105Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:03:45.106Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:45.726Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:46.448Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:03:46.958Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:05:15.506Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:05:15.508Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:05:15.511Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:05:15.516Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:05:15.523Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:05:15.612Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:07:07.896Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:07:07.897Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:07:07.899Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:07:07.901Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:07:07.904Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:07:07.949Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:07:27.595Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:07:27.596Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:07:27.598Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:07:27.600Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:07:27.603Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:07:27.646Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:07:54.396Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:07:54.399Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:07:54.400Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:07:54.401Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:07:54.402Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:07:54.405Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:07:54.452Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:08:13.104Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:08:13.105Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:08:13.106Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:08:13.109Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:08:13.112Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:08:13.173Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:08:35.709Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:08:35.710Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:08:35.712Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:08:35.713Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:08:35.717Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:08:35.767Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:09:22.251Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:09:22.252Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:09:22.254Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:09:22.256Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:09:22.304Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:09:22.349Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:09:45.097Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:09:45.097Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:09:45.100Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:09:45.101Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:09:45.107Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:09:45.156Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:10:06.654Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:10:06.655Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:10:06.657Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:10:06.658Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:10:06.661Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:10:06.712Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:10:57.422Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:10:57.423Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:10:57.426Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:10:57.427Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:10:57.431Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:10:57.475Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:11:12.128Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:11:12.130Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:11:12.132Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:11:12.134Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:11:12.138Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:11:12.186Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:11:49.820Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:11:49.822Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:11:49.824Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:11:49.826Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:11:49.829Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:11:49.876Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:25.888Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-01T22:12:25.889Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:12:25.891Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:12:25.893Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:25.897Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-01T22:12:25.944Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:42.741Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:12:42.743Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:43.903Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:44.905Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:45.836Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:48.472Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:12:48.473Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:49.735Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:55.827Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-01T22:12:55.829Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-01T22:12:58.068Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-02T03:11:23.957Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:11:23.959Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:11:23.963Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:11:24.016Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:14:34.254Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:14:34.257Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:14:34.261Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:14:36.112Z] INFO: OPTIONS /persona/ NaN
+[2025-07-02T03:14:36.113Z] INFO: OPTIONS /persona/ NaN
+[2025-07-02T03:14:36.114Z] INFO: GET /persona/ NaN
+[2025-07-02T03:14:36.120Z] INFO: GET /persona/ NaN
+[2025-07-02T03:14:37.765Z] INFO: GET /persona/ NaN
+[2025-07-02T03:14:37.768Z] INFO: GET /persona/ NaN
+[2025-07-02T03:14:45.727Z] INFO: OPTIONS /ubicacion/ NaN
+[2025-07-02T03:14:45.728Z] INFO: OPTIONS /ubicacion/ NaN
+[2025-07-02T03:14:45.729Z] INFO: GET /ubicacion/ NaN
+[2025-07-02T03:14:45.734Z] INFO: GET /ubicacion/ NaN
+[2025-07-02T03:15:42.764Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:15:42.766Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:42.772Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:46.713Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:46.717Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:48.688Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:15:48.690Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:48.694Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:55.695Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:15:55.697Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:55.701Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:59.690Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:15:59.694Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:16:43.711Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:16:43.714Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:16:43.751Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:18:44.747Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:18:44.750Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:18:44.756Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:18:59.696Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:18:59.698Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:18:59.703Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:03.686Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:03.690Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:04.682Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:04.686Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:06.691Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:19:06.693Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:06.696Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:11.683Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:11.687Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:13.676Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:19:13.677Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:13.681Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:16.664Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:16.668Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:18.681Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:19:18.683Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:18.686Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:20.674Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:20.679Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:25.680Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:19:25.682Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:19:25.686Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:20:11.863Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:20:11.863Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:20:11.865Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:20:11.869Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:20:13.789Z] INFO: OPTIONS /persona/ NaN
+[2025-07-02T03:20:13.790Z] INFO: OPTIONS /persona/ NaN
+[2025-07-02T03:20:13.791Z] INFO: GET /persona/ NaN
+[2025-07-02T03:20:13.797Z] INFO: GET /persona/ NaN
+[2025-07-02T03:20:15.698Z] INFO: GET /persona/ NaN
+[2025-07-02T03:20:15.702Z] INFO: GET /persona/ NaN
+[2025-07-02T03:20:19.099Z] INFO: OPTIONS /ubicacion/ NaN
+[2025-07-02T03:20:19.100Z] INFO: OPTIONS /ubicacion/ NaN
+[2025-07-02T03:20:19.101Z] INFO: GET /ubicacion/ NaN
+[2025-07-02T03:20:19.107Z] INFO: GET /ubicacion/ NaN
+[2025-07-02T03:20:22.376Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:20:22.377Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:20:22.378Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:20:22.381Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:20:58.777Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:20:58.777Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:20:58.780Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:20:58.781Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:20:58.783Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:20:58.787Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:20:58.788Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:07.695Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:21:07.695Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:21:07.697Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:07.699Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:07.702Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:07.705Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:09.689Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:09.690Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:09.693Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:09.695Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:12.665Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:12.667Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:12.669Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:12.671Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:14.677Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:21:14.678Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:21:14.679Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:14.680Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:14.683Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:14.684Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:17.668Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:17.670Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:17.672Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:17.674Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:20.671Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:21:20.672Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:21:20.672Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:20.675Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:21:20.677Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:21:20.679Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:22:12.698Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:22:12.699Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:22:12.700Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:22:12.702Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:22:12.743Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:22:12.746Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:22:14.679Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:22:14.682Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:22:14.685Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:22:14.686Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:22:17.675Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:22:17.676Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:22:17.679Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:22:17.680Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:26:54.646Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:26:54.646Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:26:54.648Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:26:54.649Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:26:54.652Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:26:54.653Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:37:39.752Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:37:39.753Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:37:39.754Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:37:39.756Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:37:39.801Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:37:39.802Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:49:34.802Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:49:34.802Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:49:34.804Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:49:34.805Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:49:34.855Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:49:34.856Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:49:37.693Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:49:37.695Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:49:37.698Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:49:37.699Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:50:03.676Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:50:03.676Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:50:03.677Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:50:03.679Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:50:03.680Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:50:03.682Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:50:03.684Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:50:49.697Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:50:49.698Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:50:49.700Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:50:49.701Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:50:49.702Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:50:49.704Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:50:49.707Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:50:49.708Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:50:52.692Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:50:52.693Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:50:52.696Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:50:52.698Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:00.674Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:00.675Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:00.676Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:00.678Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:00.681Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:00.683Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:02.671Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:02.673Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:02.675Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:02.676Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:06.667Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:06.668Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:06.669Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:06.671Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:06.674Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:06.676Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:09.662Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:09.663Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:09.666Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:09.668Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:13.662Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:13.664Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:13.664Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:13.665Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:13.666Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:13.669Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:13.670Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:15.665Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:15.666Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:15.669Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:15.670Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:26.684Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:26.684Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:26.685Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:26.686Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:26.688Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:26.691Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:26.693Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:34.667Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:34.668Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:34.669Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:34.671Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:34.672Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:34.675Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:34.676Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:45.680Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:45.681Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:45.683Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:45.684Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:45.686Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:45.689Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:45.691Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:47.666Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:47.667Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:47.670Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:47.672Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:49.674Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:49.675Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:49.678Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:49.679Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:52.667Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:52.667Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:52.669Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:52.670Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:52.673Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:52.674Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:57.676Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:51:57.676Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:51:57.677Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:57.679Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:51:57.681Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:51:57.683Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:52:01.665Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:52:01.666Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:52:01.669Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:52:01.670Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:52:08.674Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:52:08.674Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:52:08.675Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:52:08.676Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:52:08.679Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:52:08.682Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:52:08.684Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:52:11.707Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:52:11.710Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:52:11.714Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:52:11.716Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:53:34.681Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T03:53:34.682Z] INFO: OPTIONS /empleado/ NaN
+[2025-07-02T03:53:34.684Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:53:34.685Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:53:34.688Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:53:34.689Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:53:35.685Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:53:35.686Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:53:35.690Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:53:35.691Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:53:39.669Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:53:39.671Z] INFO: GET /empleado/ NaN
+[2025-07-02T03:53:39.673Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T03:53:39.675Z] INFO: GET /empleado/ NaN
+[2025-07-02T04:09:38.571Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:09:38.573Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:09:38.611Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:09:42.835Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:09:42.843Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:09:51.829Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:09:51.831Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:09:51.837Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:10:24.667Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:10:24.667Z] INFO: OPTIONS /categoria/related/inventario NaN
+[2025-07-02T04:10:24.670Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:10:24.672Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-02T04:10:24.674Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:10:24.676Z] INFO: GET /categoria/related/inventario NaN
+[2025-07-02T04:10:32.990Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:10:32.993Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:10:33.000Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:10:33.984Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:10:33.992Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:09.582Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:11:09.584Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:09.588Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:12.323Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:12.331Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:38.573Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:11:38.575Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:38.580Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:56.242Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:11:56.245Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:11:56.251Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:13:03.403Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:13:03.405Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:13:03.409Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:14:09.913Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:14:09.919Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:14:09.920Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:14:09.975Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:14:18.389Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:14:18.392Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:14:18.397Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:14:56.403Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:14:56.409Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:14:56.410Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:14:56.412Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:14:56.413Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:14:56.441Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:14:56.444Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:14:56.578Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:14:56.605Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:14:56.618Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:15:03.982Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:15:03.984Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:15:03.986Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:15:03.988Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:15:03.991Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:15:03.995Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:15:03.997Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:15:03.998Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:17:48.989Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:17:48.994Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:17:48.996Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:17:48.997Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:17:48.999Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:17:49.018Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:17:49.021Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:17:49.051Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:17:49.082Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:17:49.086Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:22:01.018Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:22:01.020Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:22:01.021Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:22:01.025Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:22:01.027Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:22:01.031Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:22:01.033Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:22:01.035Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:23:37.234Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:23:37.235Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:23:37.238Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:23:37.240Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:23:37.243Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:23:37.288Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:23:37.290Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:23:37.292Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:25:43.121Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:25:43.128Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:25:43.129Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:25:43.130Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:25:43.131Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:25:43.150Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:25:43.153Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:25:43.185Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:25:43.217Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:25:43.221Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:26:24.561Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:26:24.567Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:26:24.578Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:26:24.584Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:26:39.314Z] INFO: OPTIONS /empleado/1/related/posicion NaN
+[2025-07-02T04:26:39.315Z] INFO: OPTIONS /pedido/all/data NaN
+[2025-07-02T04:26:39.318Z] INFO: GET /empleado/1/related/posicion NaN
+[2025-07-02T04:26:39.324Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:26:39.328Z] INFO: POST /pedido/all/data NaN
+[2025-07-02T04:26:39.370Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:26:39.398Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:26:39.409Z] INFO: GET /empleado/1/related/posicion NaN

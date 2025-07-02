@@ -11,18 +11,34 @@ export default function Tareas(){
     })
 
     const [estado, setEstado] = useState("TODOS")
-    const [data, setData] = useState([])
+    const [dataTable, setDataTable] = useState([])
+
+    const getDataTable = async() => {
+        try{
+            const dataTareas = await sentences.allDataAllRelations("tarea", ["asignador", "asignado"])
+            const fixedData = await Promise.all(
+                dataTareas.map(async (tarea) => {
+                    return {
+                        id:tarea.id,
+                        nombre:tarea.nombre,
+                        fecha_inicio:tarea.fecha_inicio,
+                        fecha_final:tarea.fecha_final,
+                        estado:tarea.estado,
+                        asignador: tarea.asignador?.nombre || "—",
+                        asignado: tarea.asignado?.nombre || false
+                    };
+                })
+            );
+
+            setDataTable(fixedData);
+
+        }catch (error){
+            console.log("Error al obtener data de tareas:", error);
+        }
+    }
 
     useEffect(() => {
-        const getData = async() => {
-            try{
-                const dataAsignador = await sentences.allExtraData("tarea", "asignador");
-                const dataAsignado = await sentences.allExtraData("tarea", "")
-            }catch (error){
-                console.log("Error al obtener data de tareas:", error);
-            }
-        }
-        getData()
+        getDataTable()
     }, []);
 
     const handleEstado = (e) => {
@@ -53,7 +69,7 @@ export default function Tareas(){
             handleEstado={handleEstado}
             handleInputChange={handleInputChange}
             handleAgregar={handleAgregar}
-            dataTable={data}
+            dataTable={dataTable}
             onSeleccionar={onSeleccionar}
         
         />

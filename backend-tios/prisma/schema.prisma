@@ -13,6 +13,11 @@ enum EstadoTrabajador{
   DESACTIVO
 }
 
+enum EstadoObra{
+  ACTIVO
+  CERRADO
+}
+
 enum EstadoPedido{
   ABIERTO
   PROCESO
@@ -60,6 +65,11 @@ enum CategoriasPermiso{
   Proveedor
   Tarea
   Ubicacion
+}
+
+enum CategoriasInventario{
+  Inventario
+  Herramienta
 }
 
 enum CategoriaMensajes{
@@ -112,7 +122,7 @@ model Categoria{
   nombre    String
   codigo    String  @unique
   descripcion    String
-  tipo String
+  tipo CategoriasInventario
   tipo_unidad    String
   venta    Boolean
   tiempo    DateTime?
@@ -152,7 +162,7 @@ model Persona{
 model Inventario{
   id        Int     @id @default(autoincrement())
   precio    Decimal
-  descuento Decimal
+  descuento Decimal @default(0)
   cantidad Float?
   id_categoria  Int
   id_ubicacion  Int
@@ -334,6 +344,7 @@ model Obra{
   id_punto Int 
   id_cliente Int
   id_proforma Int @unique
+  estado EstadoObra @default(ACTIVO)
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   punto  Punto @relation(fields: [id_punto], references: [id])

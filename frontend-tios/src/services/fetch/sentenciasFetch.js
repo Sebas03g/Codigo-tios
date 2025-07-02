@@ -10,6 +10,14 @@ const getAuthHeaders = () => ({
   'X-CSRF-Token': localStorage.getItem('csrfToken')
 });
 
+const generarIncludes = (relaciones) => {
+  let diccionario = {}
+  for(const relacion of relaciones){
+    diccionario[relacion] = true
+  }
+  return diccionario
+};
+
 const handleResponse = async (res) => {
   if (!res.ok) {
     const error = await res.json();
@@ -85,3 +93,27 @@ export const allExtraData = async(nombreClase, relation) => {
   });
   return handleResponse(res);
 };
+
+export const dataAllRelations = async(nombreClase, relaciones, id) => {
+  const includes = generarIncludes(relaciones);
+  const res = await fetch(`${BASE_URL}/${nombreClase}/all/${id}`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    credentials: 'include',
+    body: JSON.stringify(includes),
+  });
+  return handleResponse(res);
+}
+
+export const allDataAllRelations = async(nombreClase, relaciones) => {
+  const includes = generarIncludes(relaciones);
+  const res = await fetch(`${BASE_URL}/${nombreClase}/data/all`, {
+    method: 'POST',
+    headers: getAuthHeaders(),
+    credentials: 'include',
+    body: JSON.stringify(includes),
+  });
+  return handleResponse(res);
+}
+
+

@@ -4,6 +4,8 @@ export default function UserComponent({ isOpen, usuario }) {
 
   const claseAnimacion = isOpen ? "translate-x-0" : "translate-x-full";
 
+  console.log(usuario);
+
   return (
     <aside className={`${claseBase} ${claseAnimacion}`}>
       <div className="text-gray-800">
@@ -11,6 +13,7 @@ export default function UserComponent({ isOpen, usuario }) {
           <>
             <p className="font-semibold text-lg">{usuario.nombre}</p>
             <p className="text-sm text-gray-500">{usuario.mail}</p>
+            <p className="text-sm text-gray-500">{usuario.posicion.nombre}</p>
           </>
         ) : (
           <p className="text-sm text-gray-500">Cargando datos de usuario...</p>

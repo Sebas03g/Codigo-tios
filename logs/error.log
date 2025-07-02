@@ -27394,3 +27394,297 @@ Invalid `prisma.empleado.create()` invocation:
 }
 
 Argument `createdBy`: Invalid value provided. Expected Int, provided String.
+[2025-07-02T04:14:56.578Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:14:56.605Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:15:03.995Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:15:03.997Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:17:49.082Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:17:49.086Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:22:01.031Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:22:01.033Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:23:37.288Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:23:37.290Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:25:43.217Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:25:43.221Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:26:39.370Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.
+[2025-07-02T04:26:39.398Z] ERROR: 
+Invalid `prisma.pedido.findFirst()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
++   id: {
++     equals: Int | IntFieldRefInput,
++     in: Int[] | ListIntFieldRefInput,
++     notIn: Int[] | ListIntFieldRefInput,
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  },
+  include: undefined
+}
+
+Argument `id` is missing.

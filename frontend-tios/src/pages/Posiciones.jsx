@@ -9,21 +9,15 @@ export default function Posiciones() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const posicionesData = await sentences.getAllData("posicion");
-
-                console.log(posicionesData);
+                const posicionesData = await sentences.allDataAllRelations("posicion", ["empleado", "permisos"])
 
                 const tableData = await Promise.all(
                     posicionesData.map(async (posicion) => {
-                        const dataEmpleados = await sentences.extraData("posicion", posicion.id, "empleado");
-                        const dataPermisos = await sentences.extraData("posicion", posicion.id, "permisos");
-                        
-
                         return {
                             id: posicion.id,
                             nombre: posicion.nombre,
-                            numero_permisos: dataPermisos.permisos.length,
-                            numero_empleados: dataEmpleados.empleado.length,
+                            numero_permisos: posicion.permisos.length,
+                            numero_empleados: posicion.empleado.length,
                         };
                     })
                 );

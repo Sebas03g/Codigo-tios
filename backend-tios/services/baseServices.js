@@ -25,5 +25,12 @@ export const baseService = (repository, dataValidate) => ({
 
   allExtraData: async (relation) => {
     return repository.allExtraData(relation);
+  },
+
+  dataAllRelations: async (id, includes) => {
+    return repository.dataAllRelations(id, includes);
+  },
+  allDataAllRelations: async (includes) => {
+    return repository.allDataAllRelations(includes);
   }
 });

@@ -3,29 +3,22 @@ import { useEffect, useState } from "react";
 export default function TablaEmpleado({ datos, onSeleccionar, cedula, nombre, estado}) {
 
   const [dataTable, setDataTable] = useState([]);
-  
-    useEffect(() => {
-      const filterTableData = async () => {
+  const filterTableData = async () => {
+      const tableData = datos.filter(dato =>
+          dato.nombre.toLowerCase().includes(nombre.toLowerCase()) &&
+          dato.cedula.toLowerCase().includes(cedula.toLowerCase()) &&
+          (estado === "TODOS" || dato.estado === estado)
+      );
 
-        console.log(datos);
-  
-        const tableData = datos.filter(dato =>
-              dato.nombre.toLowerCase().includes(nombre.toLowerCase()) &&
-              dato.cedula.toLowerCase().includes(cedula.toLowerCase()) &&
-              (estado === "TODOS" || dato.estado === estado)
-            );
 
-        console.log("ESTADO TABLA");
-        console.log(estado);
+    setDataTable(tableData);
   
-        setDataTable(tableData);
-        console.log(tableData);
+  }
   
-      }
+  useEffect(() => {
+    filterTableData();
   
-      filterTableData();
-  
-    },[datos, cedula, nombre, estado])
+  },[datos, cedula, nombre, estado])
 
   return (
     <div className="overflow-x-auto">

@@ -8,7 +8,9 @@ const {
   findById,
   findAll,
   extraData,
-  allExtraData
+  allExtraData,
+  dataAllRelations,
+  allDataAllRelations
 } = baseController(service);
 
 const loginEmpleado = async (req, res) => {
@@ -76,5 +78,7 @@ export default {
   allExtraData,
   loginEmpleado,
   updatePassword,
+  dataAllRelations,
+  allDataAllRelations,
   getAllEmpleadoData
 };
