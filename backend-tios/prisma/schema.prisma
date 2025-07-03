@@ -182,7 +182,8 @@ model Inventario{
   proveedor Persona @relation(fields: [id_proveedor], references: [id])
   transaccion transaccion_elementos[]
   pedido pedido_elementos[]
-  obra obra_herramientas[]
+  obra_herramientas obra_herramientas[]
+  obra_inventario obra_inventario[]
   proforma_herramienta proforma_herramientas[]
   proforma_inventario proforma_inventario[]
 
@@ -313,6 +314,7 @@ model Proforma{
 model proforma_empleados{
   id        Int     @id @default(autoincrement())
   horas Int
+  sueldo Float
   id_proforma Int
   id_empleado Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
@@ -324,6 +326,8 @@ model proforma_empleados{
 model proforma_herramientas{
   id        Int     @id @default(autoincrement())
   horas Int
+  descuento Float
+  precio Float
   id_proforma Int
   id_herramienta Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
@@ -335,6 +339,8 @@ model proforma_herramientas{
 model proforma_inventario{
   id        Int     @id @default(autoincrement())
   cantidad Float
+  descuento Float
+  precio Float
   id_proforma Int
   id_elemento Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
@@ -359,6 +365,7 @@ model Obra{
   cliente Persona @relation(fields: [id_cliente], references: [id])
   proforma Proforma @relation(fields: [id_proforma], references: [id])
   herramientas obra_herramientas[]
+  inventario obra_inventario[]
   empleado obra_empleados[]
   transaccion Transaccion[]
   pedido Pedido[]
@@ -459,6 +466,7 @@ model Dia{
 model obra_empleados{
   id        Int     @id @default(autoincrement())
   horas Int
+  sueldo Float
   id_obra Int
   id_empleado Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
@@ -469,9 +477,25 @@ model obra_empleados{
 
 }
 
+model obra_inventario{
+  id        Int     @id @default(autoincrement())
+  horas Int
+  descuento Float
+  precio Float
+  id_obra Int
+  id_inventario Int
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  obra Obra @relation(fields: [id_obra], references: [id])
+  inventario Inventario @relation(fields: [id_inventario], references: [id])
+
+}
+
 model obra_herramientas{
   id        Int     @id @default(autoincrement())
   horas Int
+  descuento Float
+  precio Float
   id_obra Int
   id_herramienta Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
