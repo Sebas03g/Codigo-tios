@@ -3,7 +3,7 @@ import { PERMISOS } from "../../../constants/permissions.js";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js"
 import PosicionBase from "../Base/PosicionBase.jsx";
 
-export default function PosicionForm({onClose}){
+export default function PosicionForm({setOpen, handleSubmit}){
     const [formData, setFormData] = useState({
         nombre: "",
         permisos: []
@@ -22,10 +22,6 @@ export default function PosicionForm({onClose}){
         };
         fetchPermisos();
     }, []);
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
 
     const handleChange = (e) => {
         setFormData({
@@ -49,7 +45,7 @@ export default function PosicionForm({onClose}){
         <PosicionBase
             formData = {formData}
             handleChange = {handleChange}
-            onClose = {onClose}
+            setOpen = {setOpen}
             handleSubmit = {handleSubmit}
             permisos = {permisos}
             handleCheck={handleCheck}

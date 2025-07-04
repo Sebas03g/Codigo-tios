@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import CategoriaBase from "../Base/CategoriaBase.jsx";
 
-export default function CategoriaForm({ onClose, tipo }) {
+export default function CategoriaForm({ setOpen, tipo }) {
   const [formData, setFormData] = useState({
     nombre: "",
     codigo: "",
@@ -69,7 +69,7 @@ export default function CategoriaForm({ onClose, tipo }) {
     <CategoriaBase
       formData={formData}
       handleSubmit={handleSubmit}
-      onClose={onClose}
+      setOpen={setOpen}
       handleChange={handleChange}
       handleMantenimiento={handleMantenimiento}
       mantenimiento={mantenimiento}

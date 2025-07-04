@@ -3,15 +3,14 @@ import * as sentences from "../services/fetch/sentenciasFetch"
 import PosicionesPage from "../components/pages/Posiciones";
 
 export default function Posiciones() {
-  const [dataTable, setDataTable] = useState([]);
-  const [busqueda, setBusqueda] = useState("");
+    const [dataTable, setDataTable] = useState([]);
+    const [busqueda, setBusqueda] = useState("");
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const posicionesData = await sentences.allDataAllRelations("posicion", ["empleado", "permisos"])
-                console.log("ESTA")
-                console.log(posicionesData)
 
                 const tableData = await Promise.all(
                     posicionesData.map(async (posicion) => {
@@ -45,6 +44,10 @@ export default function Posiciones() {
 
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     return (
         <PosicionesPage
             busqueda={busqueda}
@@ -52,6 +55,9 @@ export default function Posiciones() {
             handleAgregar={handleAgregar}
             dataTable={dataTable}
             onSeleccionar={onSeleccionar}
+            open={open}
+            setOpen={setOpen}
+            handleSubmit={handleSubmit}
         />
     );
     

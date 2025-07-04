@@ -1,18 +1,24 @@
-export default function EmpleadoBase({formData, handleChange, posiciones, handleSubmit}){
+import { IoClose } from "react-icons/io5";
+
+export default function EmpleadoBase({formData, handleChange, posiciones, handleSubmit, setOpen}){
     return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute top-0 right-0 p-2 text-red-500"
-      >
-        ✖ Cerrar
-      </button>
-      <h2 className="text-xl font-bold mb-4">Crear Empleado</h2>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-bold">Crear Empleado</h2>
+        <button
+          type="button"
+          onClick={() => setOpen(false)}
+          className="text-red-500 text-xl hover:text-red-700"
+        >
+          <IoClose />
+        </button>
+      </div>
+
 
       <div>
         <label htmlFor="nombre">Nombre</label>
         <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
           type="text"
           name="nombre"
           value={formData.nombre}
@@ -24,6 +30,7 @@ export default function EmpleadoBase({formData, handleChange, posiciones, handle
       <div>
         <label htmlFor="cedula">Cédula</label>
         <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
           type="text"
           name="cedula"
           value={formData.cedula}
@@ -35,6 +42,7 @@ export default function EmpleadoBase({formData, handleChange, posiciones, handle
       <div>
         <label htmlFor="mail">Correo</label>
         <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
           type="email"
           name="mail"
           value={formData.mail}
@@ -46,6 +54,7 @@ export default function EmpleadoBase({formData, handleChange, posiciones, handle
       <div>
         <label htmlFor="telefono">Teléfono</label>
         <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
           type="tel"
           name="telefono"
           value={formData.telefono}
@@ -57,6 +66,7 @@ export default function EmpleadoBase({formData, handleChange, posiciones, handle
       <div>
         <label htmlFor="posicion">Posición</label>
         <select
+          className="w-full px-3 py-2 border border-gray-300 rounded"
           name="posicion"
           value={formData.id_posicion}
           onChange={handleChange}
@@ -74,6 +84,7 @@ export default function EmpleadoBase({formData, handleChange, posiciones, handle
       <div>
         <label htmlFor="sueldo">Sueldo</label>
         <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
           type="number"
           name="sueldo"
           value={formData.sueldo}
@@ -82,9 +93,13 @@ export default function EmpleadoBase({formData, handleChange, posiciones, handle
         />
       </div>
 
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+      <button
+        type="submit"
+        className="block w-full max-w-xs mx-auto bg-blue-500 text-white p-3 rounded text-lg hover:bg-blue-600 transition"
+      >
         Crear
       </button>
+
     </form>
   );
 }

@@ -9,6 +9,7 @@ export default function Clientes(){
     })
 
     const [dataTable, setDataTable] = useState([]);
+    const [open, setOpen] = useState(false);
 
     const handleInputChange = (e) => {
         setFormData({
@@ -41,15 +42,27 @@ export default function Clientes(){
     
     }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          await sentences.createData("persona", formData);
+          setOpen();
+        } catch (error) {
+          console.error("Error al crear cliente:", error);
+        }
+    };
+
     return(
         <PersonasPage
             tipo = "Clientes"
             nombre= {formData.nombre}
             ruc = {formData.ruc}
             handleInputChange = {handleInputChange}
-            handleAgregar={handleAgregar}
+            handleSubmit={handleSubmit}
             dataTable = {dataTable}
             onSeleccionar = {onSeleccionar}
+            open={open}
+            setOpen={setOpen}
         />
     );
 }

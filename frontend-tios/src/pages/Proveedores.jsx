@@ -9,6 +9,7 @@ export default function Proveedores(){
     })
 
     const [dataTable, setDataTable] = useState([]);
+    const [open, setOpen] = useState(false);
 
     const handleInputChange = (e) => {
         setFormData({
@@ -20,6 +21,16 @@ export default function Proveedores(){
     const handleAgregar = (item) => {
 
     }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          await sentences.createData("persona", formData);
+          setOpen(false);
+        } catch (error) {
+          console.error("Error al crear Proveedor:", error);
+        }
+      };
 
     useEffect(() => {
         const getProviderData = async () => {
@@ -48,9 +59,11 @@ export default function Proveedores(){
             nombre= {formData.nombre}
             ruc = {formData.ruc}
             handleInputChange = {handleInputChange}
-            handleAgregar={handleAgregar}
+            handleSubmit={handleSubmit}
             dataTable = {dataTable}
             onSeleccionar = {onSeleccionar}
+            open={open}
+            setOpen={setOpen}
         />
     );
 }

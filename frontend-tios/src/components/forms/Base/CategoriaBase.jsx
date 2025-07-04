@@ -1,5 +1,5 @@
 export default function CategoriaBase({
-    formData, handleSubmit, onClose, handleChange, 
+    formData, handleSubmit, setOpen, handleChange, 
     handleMantenimiento, mantenimiento, tiempoData, 
     handleTimeChange
 }){
@@ -7,7 +7,7 @@ export default function CategoriaBase({
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto relative bg-white p-4 shadow rounded">
       <button
         type="button"
-        onClick={onClose}
+        onClick={() => setOpen(false)}
         className="absolute top-2 right-2 text-red-500 font-bold"
       >
         ✖
@@ -17,6 +17,7 @@ export default function CategoriaBase({
       <div>
         <label htmlFor="nombre" className="block font-medium">Nombre</label>
         <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
           type="text"
           name="nombre"
           value={formData.nombre}
@@ -41,6 +42,7 @@ export default function CategoriaBase({
         <div>
           <label htmlFor="tipo_unidad" className="block font-medium">Tipo de Unidad</label>
           <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
             type="text"
             name="tipo_unidad"
             value={formData.tipo_unidad}
@@ -53,6 +55,7 @@ export default function CategoriaBase({
         <div>
           <label className="flex items-center space-x-2">
             <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
               type="checkbox"
               checked={mantenimiento}
               onChange={handleMantenimiento}
@@ -64,6 +67,7 @@ export default function CategoriaBase({
             <div className="mt-2 grid grid-cols-1 gap-2">
               <label>Días</label>
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="number"
                 name="dias"
                 value={tiempoData.dias}
@@ -72,6 +76,7 @@ export default function CategoriaBase({
               />
               <label>Meses</label>
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="number"
                 name="meses"
                 value={tiempoData.meses}
@@ -80,6 +85,7 @@ export default function CategoriaBase({
               />
               <label>Años</label>
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="number"
                 name="anios"
                 value={tiempoData.anios}

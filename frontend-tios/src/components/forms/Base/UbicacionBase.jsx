@@ -1,11 +1,11 @@
 import Mapa from "../../MapContainer.jsx"
 
-export default function UbicacionBase({formData, punto, setPunto, onClose, handleSubmit, handleChange}){
+export default function UbicacionBase({formData, punto, setPunto, setOpen, handleSubmit, handleChange}){
     return (
         <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
             <button
                 type="button"
-                onClick={onClose}
+                onClick={() => setOpen(false)}
                 className="absolute top-0 right-0 p-2 text-red-500"
             >
                 ✖ Cerrar
@@ -14,6 +14,7 @@ export default function UbicacionBase({formData, punto, setPunto, onClose, handl
             <div>
                 <label htmlFor="nombre">Nombre</label>
                 <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                     type="text"
                     name="nombre"
                     value={formData.nombre}
@@ -24,6 +25,7 @@ export default function UbicacionBase({formData, punto, setPunto, onClose, handl
             <div>
                 <label htmlFor="descripcion">Descripcion</label>
                 <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                     type="text"
                     name="descripcion"
                     value={formData.descripcion}

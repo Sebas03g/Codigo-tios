@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import UbicacionBase from "../Base/UbicacionBase.jsx";
 
-export default function UbicacionForm({onClose}){
+export default function UbicacionForm({setOpen}){
     const [formData, setFormData] = useState({
         nombre: "",
         descripcion: "",
@@ -29,7 +29,7 @@ export default function UbicacionForm({onClose}){
             formData={formData}
             punto={punto}
             setPunto={setPunto}
-            onClose={onClose}
+            setOpen={setOpen}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
         />

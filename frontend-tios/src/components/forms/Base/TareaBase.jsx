@@ -1,11 +1,11 @@
 import DatePicker from 'react-datepicker';
 
-export default function TareaBase({ formData, empleados, handleChange, handleSubmit, handleDateChange}){
+export default function TareaBase({ formData, empleados, handleChange, handleSubmit, handleDateChange, setOpen}){
     return (
             <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
                 <button
                     type="button"
-                    onClick={onClose}
+                    onClick={() => setOpen(false)}
                     className="absolute top-0 right-0 p-2 text-red-500"
                 >
                     ✖ Cerrar
@@ -14,6 +14,7 @@ export default function TareaBase({ formData, empleados, handleChange, handleSub
                 <div>
                     <label htmlFor="nombre">Nombre</label>
                     <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                     type="text"
                     name="nombre"
                     value={formData.nombre}

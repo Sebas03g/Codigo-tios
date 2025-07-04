@@ -9,6 +9,8 @@ export default function Empleados(){
         cedula: ""
     })
 
+    const [open, setOpen] = useState(false);
+
     const [estado, setEstado] = useState("TRABAJANDO");
 
     const [dataTable, setDataTable] = useState([]);
@@ -20,8 +22,8 @@ export default function Empleados(){
         });
     }
 
-    const handleAgregar = (item) => {
-
+    const handleAgregar = () => {
+        setOpen(true);
     }
 
     useEffect(() => {
@@ -48,6 +50,16 @@ export default function Empleados(){
     const handleEstado = (e) => {
         setEstado(e.target.value);
     }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          await sentences.createData("empleado", formData);
+          alert("Empleado creado exitosamente");
+        } catch (error) {
+          console.error("Error al crear empleado:", error);
+        }
+    };
     
     return(
         <EmpleadosPage
@@ -59,6 +71,9 @@ export default function Empleados(){
             onSeleccionar={onSeleccionar}
             handleEstado={handleEstado}
             estado={estado}
+            open={open}
+            setOpen={setOpen}
+            handleSubmit={handleSubmit}
         />
     );
 

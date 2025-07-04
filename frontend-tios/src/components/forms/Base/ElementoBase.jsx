@@ -1,7 +1,7 @@
 import TablaProveedores from "../TablaProveedores.jsx"; // Asegúrate que el nombre del archivo sea correcto
 
 export default function ElementoBase({
-    onClose, handleSubmit, proveedorData, handleChangeProveedor,
+    setOpen, handleSubmit, proveedorData, handleChangeProveedor,
     handleChange, formData, diccionario, handleSeleccionProveedor,
     handleChangeUbicacion, ubicacionesData, ubicacionId, herramienta
 }){
@@ -9,7 +9,7 @@ export default function ElementoBase({
         <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto bg-white p-6 shadow rounded relative">
           <button
             type="button"
-            onClick={onClose}
+            onClick={() => setOpen(false)}
             className="absolute top-2 right-2 text-red-500 font-bold"
           >
             ✖
@@ -20,6 +20,7 @@ export default function ElementoBase({
           <div className="grid gap-4">
             <label htmlFor="nombre">Nombre</label>
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="text"
                 name="nombre"
                 value={proveedorData.nombre}
@@ -31,6 +32,7 @@ export default function ElementoBase({
     
             <label htmlFor="ruc">RUC</label>
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="text"
                 name="ruc"
                 value={proveedorData.ruc}
@@ -42,6 +44,7 @@ export default function ElementoBase({
     
             <label htmlFor="mail">Correo</label>
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="email"
                 name="mail"
                 value={proveedorData.mail}
@@ -52,6 +55,7 @@ export default function ElementoBase({
     
             <label htmlFor="telefono">Teléfono</label>          
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="tel"
                 name="telefono"
                 value={proveedorData.telefono}
@@ -62,6 +66,7 @@ export default function ElementoBase({
     
             <label htmlFor="precio">Precio</label>         
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="number"
                 name="precio"
                 value={formData.precio}
@@ -74,6 +79,7 @@ export default function ElementoBase({
     
             <label htmlFor="descuento">Descuento</label>
               <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="number"
                 name="descuento"
                 value={formData.descuento}
@@ -87,6 +93,7 @@ export default function ElementoBase({
                 <div>
                     <label htmlFor="cantidad">Cantidad</label>
                         <input
+          className="w-full px-3 py-2 border border-gray-300 rounded"
                             type="number"
                             name="cantidad"
                             value={formData.cantidad}

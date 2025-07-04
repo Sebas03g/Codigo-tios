@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import EmpleadoBase from "../Base/EmpleadoBase.jsx";
 
-export default function EmpleadoForm({onClose}) {
+export default function EmpleadoForm({setOpen, handleSubmit}) {
   const [formData, setFormData] = useState({
     nombre: "",
     cedula: "",
@@ -33,22 +33,13 @@ export default function EmpleadoForm({onClose}) {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await sentences.createData("empleado", formData);
-      alert("Empleado creado exitosamente");
-    } catch (error) {
-      console.error("Error al crear empleado:", error);
-    }
-  };
-
   return (
     <EmpleadoBase
       formData={formData}
       handleChange={handleChange}
       posiciones={posiciones}
       handleSubmit={handleSubmit}
+      setOpen={setOpen}
     />
   );
 }

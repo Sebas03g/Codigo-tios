@@ -1,7 +1,12 @@
 import TablaPosicion from "../../components/Tables/TablaPosicion.jsx";
 import { AiOutlinePlus } from "react-icons/ai";
+import Crear from "../forms/Crear/PosicionForm.jsx";
 
-export default function PosicionesPage({busqueda, handleInputChange, handleAgregar, dataTable, onSeleccionar}){
+export default function PosicionesPage({
+    busqueda, handleInputChange, 
+    dataTable, onSeleccionar, handleSubmit,
+    open, setOpen
+}){
     return(
         <div className="h-full flex flex-col">
             <h1 className="text-2xl font-bold text-gray-800 mb-4">Posiciones</h1>
@@ -16,7 +21,7 @@ export default function PosicionesPage({busqueda, handleInputChange, handleAgreg
             />
 
             <button
-                onClick={handleAgregar}
+                onClick={() => setOpen(true)}
                 className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
             >
                 <AiOutlinePlus className="text-lg" />
@@ -29,6 +34,16 @@ export default function PosicionesPage({busqueda, handleInputChange, handleAgreg
             onSeleccionar={onSeleccionar}
             filtros={busqueda}
             />
+            {open && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-grey bg-opacity-40">
+                    <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full">
+                        <Crear 
+                          setOpen={setOpen}
+                          handleSubmit={handleSubmit}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

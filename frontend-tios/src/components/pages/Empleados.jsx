@@ -1,15 +1,19 @@
 import TablaEmpleado from "../../components/Tables/TablaEmpleado.jsx";
+import Crear from "../forms/Crear/EmpleadoForm.jsx";
+import Editar from "../forms/Edicion/EmpleadoForm.jsx";
 import { AiOutlinePlus } from "react-icons/ai";
 
 export default function EmpleadosPage({
   nombre,
   cedula,
   handleInputChange,
-  handleAgregar,
   dataTable,
   onSeleccionar,
   handleEstado,
   estado,
+  open,
+  setOpen,
+  handleSubmit
 }) {
   return (
     <div className="h-full flex flex-col">
@@ -50,7 +54,7 @@ export default function EmpleadosPage({
           ))}
         </div>
         <button
-          onClick={handleAgregar}
+          onClick={() => setOpen(true)}
           className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition w-fit"
         >
           <AiOutlinePlus className="text-lg" />
@@ -65,6 +69,19 @@ export default function EmpleadosPage({
         nombre={nombre}
         estado={estado}
       />
+
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-grey bg-opacity-40">
+          <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full">
+            <Crear 
+              setOpen={setOpen}
+              handleSubmit={handleSubmit}
+            />
+          </div>
+        </div>
+      )}
+
+
     </div>
   );
 }

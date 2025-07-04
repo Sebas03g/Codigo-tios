@@ -3,7 +3,7 @@ import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import TablaProveedores from "../TablaProveedores.jsx"; // Asegúrate que el nombre del archivo sea correcto
 import ElementoBase from "../Base/ElementoBase.jsx";
 
-export default function ElementoForm({ onClose, tipo, categoria }) {
+export default function ElementoForm({ setOpen, tipo, categoria }) {
   const [formData, setFormData] = useState({
     precio: 0.0,
     descuento: 0.0,
@@ -146,7 +146,7 @@ export default function ElementoForm({ onClose, tipo, categoria }) {
 
   return (
     <ElementoBase
-      onClose={onClose}
+      setOpen={setOpen}
       handleSubmit={handleSubmit} 
       proveedorData={proveedorData}
       handleChange={handleChange}
