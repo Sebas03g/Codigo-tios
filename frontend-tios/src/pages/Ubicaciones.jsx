@@ -7,6 +7,7 @@ export default function Ubicaciones(){
     const [nombre, setNombre] = useState("")
     
     const [dataTable, setDataTable] = useState([]);
+    const [open, setOpen] = useState(false);
     
     const handleInputChange = (e) => {
        setNombre(e.target.value);
@@ -36,13 +37,19 @@ export default function Ubicaciones(){
         
     }
     
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    }
+
     return(
         <UbicacionesPage
             busqueda= {nombre}
             handleInputChange = {handleInputChange}
-            handleAgregar={handleAgregar}
             dataTable = {dataTable}
             onSeleccionar = {onSeleccionar}
+            open={open}
+            setOpen={setOpen}
+            handleSubmit = {handleSubmit}
         />
     );
 }

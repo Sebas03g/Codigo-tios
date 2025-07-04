@@ -52,7 +52,6 @@ export default function Posiciones() {
         <PosicionesPage
             busqueda={busqueda}
             handleInputChange={handleInputChange}
-            handleAgregar={handleAgregar}
             dataTable={dataTable}
             onSeleccionar={onSeleccionar}
             open={open}

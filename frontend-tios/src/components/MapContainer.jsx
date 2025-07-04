@@ -1,17 +1,16 @@
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 
-export default function Mapa({punto, setPunto}) {
+export default function Mapa({ punto, setPunto }) {
 
-    const MarkerHandler = () => {
-        useMapEvents({
-            click(e) {
-                setPunto({lat: e.latlng.lat, lng: e.latlng.lng});
-            },
-        });
-        return null;
-    };
+  const MarkerHandler = () => {
+    useMapEvents({
+      click(e) {
+        setPunto({ lat: e.latlng.lat, lng: e.latlng.lng });
+      },
+    });
+    return null;
+  };
 
   return (
     <MapContainer center={[punto.lat, punto.lng]} zoom={13} style={{ height: '400px', width: '100%' }}>
@@ -24,7 +23,7 @@ export default function Mapa({punto, setPunto}) {
           Aquí está tu ubicación.
         </Popup>
       </Marker>
-      <MapClickHandler />
+      <MarkerHandler />
     </MapContainer>
   );
 }

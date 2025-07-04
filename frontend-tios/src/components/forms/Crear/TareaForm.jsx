@@ -6,7 +6,7 @@ import { PERMISOS } from "../../../constants/permissions.js"
 import 'react-datepicker/dist/react-datepicker.css';
 import TareaBase from "../Base/TareaBase.jsx";
 
-export default function TareaForm({setOpen}){
+export default function TareaForm({setOpen, handleSubmit}){
     const [formData, setFormData] = useState({
         nombre: "",
         descripcion: "",
@@ -56,10 +56,6 @@ export default function TareaForm({setOpen}){
             fecha_final: date,
         }));
     };
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
 
     return (
         <TareaBase

@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import UbicacionBase from "../Base/UbicacionBase.jsx";
 
-export default function UbicacionForm({setOpen}){
+export default function UbicacionForm({setOpen, handleSubmit}){
     const [formData, setFormData] = useState({
         nombre: "",
         descripcion: "",
@@ -19,10 +19,6 @@ export default function UbicacionForm({setOpen}){
             [e.target.name]: e.target.value,
         });
     };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    }
     
     return (
         <UbicacionBase

@@ -12,6 +12,7 @@ export default function Tareas(){
 
     const [estado, setEstado] = useState("TODOS")
     const [dataTable, setDataTable] = useState([])
+    const [open, setOpen] = useState(false);
 
     const getDataTable = async() => {
         try{
@@ -60,6 +61,10 @@ export default function Tareas(){
 
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     return(
         <TareasPage
             asignador={inputData.asignador}
@@ -71,6 +76,9 @@ export default function Tareas(){
             handleAgregar={handleAgregar}
             dataTable={dataTable}
             onSeleccionar={onSeleccionar}
+            open={open}
+            setOpen={setOpen}
+            handleSubmit={handleSubmit}
         
         />
     );
