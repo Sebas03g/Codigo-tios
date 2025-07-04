@@ -23,7 +23,7 @@ export default function TareaForm({setOpen, handleSubmit}){
         try {
             const data = await sentences.getAllData('empleado');
 
-            const empleadosConPermiso = await Promise.all(
+            /*const empleadosConPermiso = await Promise.all(
                 data.map(async (empleado) => {
                     const posicion = await sentences.extraData('posicion', empleado.posicion.id, 'permisos');
                     const tienePermiso = posicion?.permisos.some(
@@ -33,10 +33,10 @@ export default function TareaForm({setOpen, handleSubmit}){
                 })
             );
 
-            const filtrados = empleadosConPermiso.filter(Boolean);
-            setEmpleados(filtrados);
+            const filtrados = empleadosConPermiso.filter(Boolean);*/
+            setEmpleados(data);
         } catch (error) {
-            console.log('Error al cargar empleados con permisos:', error);
+            console.log('Error al cargar empleados:', error);
         }
     };
 

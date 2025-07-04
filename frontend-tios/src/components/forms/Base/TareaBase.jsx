@@ -26,7 +26,7 @@ export default function TareaBase({ formData, empleados, handleChange, handleSub
                     />
                 </div>
                 <div>
-                    <label htmlFor="fecha">Seleccionar Tiempo a completar</label>
+                    <label htmlFor="fecha">Seleccionar Tiempo a completar</label><br/>
                     <DatePicker
                         className="w-full px-3 py-2 border border-gray-300 rounded"
                         selected={formData.fecha_final}
