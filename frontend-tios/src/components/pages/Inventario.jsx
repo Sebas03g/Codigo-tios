@@ -1,35 +1,49 @@
+import TablaCategoriaHerramienta from "../Tables/TablaCategoriaHerramienta";
+import TablaCategoriaInventario from "../Tables/TablaCategoriaInventario";
 import { AiOutlinePlus } from "react-icons/ai";
-import NavigationBar from "../general/navbar";
-import TablaInventario from "../Tables/TablaInventario";
-import TablaHerramienta from "../Tables/TablaHerramienta";
 
 export default function InventarioPage({
-    paramsNavBar, paramsPage, paramsTable, paramsGenerales
+    tableData, ruc, ubicacion,categoria, 
+    handleInputChange, onSeleccionar, handleAgregar 
 }){
-    const { handleAgregar, handleInputChange } = paramsPage;
-    const { codigo, nombre } = paramsGenerales;
-    const { estadosNavBar, setEstadoNavBar, estadoNavBar } = paramsNavBar;
-
     return (
         <div className="h-full flex flex-col">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">Categorias {estadoNavBar}</h1>
-        
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">{categoria.nombre}</h1>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+                <span
+                    className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full"
+                >
+                    Codigo: {categoria.codigo}
+                </span>
+                <span
+                    className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full"
+                >
+                    Tipo de Unidad: {categoria.tipo_unidad}
+                </span>
+                <span
+                    className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full"
+                >
+                    Descripcion: {categoria.descripcion}
+                </span>
+            </div>
+    
           <div className="flex flex-col gap-4 mb-6">
             <div className="flex flex-wrap gap-4">
               <input
                 type="text"
                 name="nombre"
-                value={nombre}
+                value={ubicacion}
                 onChange={handleInputChange}
-                placeholder="Nombre..."
+                placeholder="Ubicacion..."
                 className="w-full sm:w-48 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <input
                 type="text"
-                name="codigo"
-                value={codigo}
+                name="cedula"
+                value={ruc}
                 onChange={handleInputChange}
-                placeholder="Codigo..."
+                placeholder="RUC..."
                 className="w-full sm:w-48 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
@@ -42,22 +56,23 @@ export default function InventarioPage({
             </button>
           </div>
 
-          <NavigationBar
-            paramsNavBar={paramsNavBar}
-          />
-
-          {estadoNavBar === "Inventario" && 
-            <TablaInventario
-                paramsTable={paramsTable}
-                paramsGenerales={paramsGenerales}
+          {categoria.tipo === "Inventario" ? (
+            <TablaCategoriaInventario
+                datos={tableData}
+                onSeleccionar={onSeleccionar}
+                ruc={ruc}
+                ubicacion={ubicacion}
             />
-          }
-          {estadoNavBar === "Herramientas" && 
-            <TablaHerramienta
-                paramsTable={paramsTable}
-                paramsGenerales={paramsGenerales}
+          ) : (
+            <TablaCategoriaHerramienta
+                datos={tableData}
+                onSeleccionar={onSeleccionar}
+                ruc={ruc}
+                ubicacion={ubicacion} 
             />
-          }
+          )}
+    
+          
         </div>
       );
 }

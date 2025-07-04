@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 
-export const validateproforma_inventario = [
+export const validateproceso_inventario = [
     body('cantidad')
         .notEmpty().withMessage('El campo "cantidad" es obligatorio')
         .isInt({min: 0}).withMessage('El campo "cantidad" debe ser de tipo entero y mayor a 0'),

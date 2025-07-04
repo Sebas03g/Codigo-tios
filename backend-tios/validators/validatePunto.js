@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 
-export const validateProforma = [
+export const validatePunto = [
     body('lat')
         .notEmpty().withMessage('El campo "lat" es obligatorio')
         .isDecimal().withMessage('El campo "lat" debe ser de tipo decimal'),

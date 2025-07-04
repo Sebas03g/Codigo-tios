@@ -8,6 +8,7 @@ import AppHome from "../pages/AppHome.jsx"
 import AppTasks from "../pages/AppTasks.jsx"
 import Clientes from "../pages/Clientes.jsx";
 import Empleados from "../pages/Empleados.jsx";
+import Categoria from "../pages/Categoria.jsx";
 import Inventario from "../pages/Inventario.jsx";
 import Obras from "../pages/Obras.jsx";
 import Pedidos from "../pages/Pedidos.jsx";
@@ -47,7 +48,10 @@ export default function AppRoutes() {
           <Route path="/transacciones" element={<PrivateRoute><Transacciones /></PrivateRoute>} />
         )}
         {categorias.includes("Inventario") && (
-          <Route path="/inventario" element={<PrivateRoute><Inventario /></PrivateRoute>} />
+          <>
+            <Route path="/categoria" element={<PrivateRoute><Categoria /></PrivateRoute>} />
+            <Route path="/inventario" element={<PrivateRoute><Inventario /></PrivateRoute>} />
+          </>
         )}
         {categorias.includes("Pedido") && (
           <Route path="/pedidos" element={<PrivateRoute><Pedidos /></PrivateRoute>} />

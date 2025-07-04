@@ -8,7 +8,7 @@ export default function HomePage({ categorias, transaccion }){
             <div className="flex flex-wrap gap-6 items-center justify-center">
                 {categorias.includes("Inventario") && (
                     <Link
-                        to="/inventario"
+                        to="/categoria"
                     >
                     <PageButton
                         text="Inventario"

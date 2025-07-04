@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 
-export const validateproforma_empleados = [
+export const validateproceso_empleados = [
     body('horas')
         .notEmpty().withMessage('El campo "horas" es obligatorio')
         .isInt({min: 0}).withMessage('El campo "horas" debe ser de tipo entero y mayor a 0'),

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function TablaHerramienta({ paramsTable, paramsGenerales}) {
+export default function TablaHerramientas({ paramsTable, paramsGenerales}) {
 
   const { dataTable, onSeleccionar} = paramsTable;
   const { codigo, nombre } = paramsGenerales;

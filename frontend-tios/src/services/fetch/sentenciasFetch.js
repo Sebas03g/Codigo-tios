@@ -107,6 +107,7 @@ export const dataAllRelations = async(nombreClase, relaciones, id) => {
 
 export const allDataAllRelations = async(nombreClase, relaciones) => {
   const includes = generarIncludes(relaciones);
+  console.log(includes);
   const res = await fetch(`${BASE_URL}/${nombreClase}/data/all`, {
     method: 'POST',
     headers: getAuthHeaders(),

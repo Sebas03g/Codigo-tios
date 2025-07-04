@@ -1,4 +1,4 @@
 import { baseController } from './baseController.js';
-import service from '../services/proforma_empleadosServices.js';
+import service from '../services/proceso_herramientasServices.js';
 
 export default baseController(service);

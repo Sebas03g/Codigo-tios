@@ -29,8 +29,8 @@ export default function TablaCompras({ datos, onSeleccionar, ruc, nombre }) {
             <tr className="bg-gray-100 text-gray-700">
               <th className="py-2 px-4 text-left">RUC</th>
               <th className="py-2 px-4 text-left">Nombre</th>
-              <th className="py-2 px-4 text-left">Mail</th>
-              <th className="py-2 px-4 text-left">Telefono</th>
+              <th className="py-2 px-4 text-left">Fecha de Pago</th>
+              <th className="py-2 px-4 text-left">Total</th>
             </tr>
           </thead>
           <tbody>
@@ -42,8 +42,8 @@ export default function TablaCompras({ datos, onSeleccionar, ruc, nombre }) {
               >
                 <td className="py-2 px-4">{item.ruc}</td>
                 <td className="py-2 px-4">{item.nombre}</td>
-                <td className="py-2 px-4">{item.mail}</td>
-                <td className="py-2 px-4">{item.telefono}</td>
+                <td className="py-2 px-4">{item.fecha_pago}</td>
+                <td className="py-2 px-4">{item.total}</td>
               </tr>
             ))}
           </tbody>

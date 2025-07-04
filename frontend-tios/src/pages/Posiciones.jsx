@@ -10,6 +10,8 @@ export default function Posiciones() {
         const fetchData = async () => {
             try {
                 const posicionesData = await sentences.allDataAllRelations("posicion", ["empleado", "permisos"])
+                console.log("ESTA")
+                console.log(posicionesData)
 
                 const tableData = await Promise.all(
                     posicionesData.map(async (posicion) => {

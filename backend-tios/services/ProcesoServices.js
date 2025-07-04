@@ -1,4 +1,4 @@
-import * as repo from '../repository/proforma_herramientasRepository.js'
+import repo from '../repository/ProcesoRepository.js'
 import { baseService } from './baseServices.js'
 
 export default baseService(repo);

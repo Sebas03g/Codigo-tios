@@ -1,103 +1,66 @@
-import { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 import * as sentences from "../services/fetch/sentenciasFetch";
-import InventarioPage from "../components/pages/Inventario";
+import { useEffect, useState } from 'react';
+import InventarioPage from '../components/pages/Inventario';
 
-export default function Inventario() {
-  const [inputData, setInputData] = useState({
-    nombre: "",
-    codigo: ""
-  });
+export default function Inventario(){
+    const location = useLocation();
+    const categoria = location.state?.item;
 
-  const estadosNavBar = ["Inventario", "Herramientas"];
-  const [estadoNavBar, setEstadoNavBar] = useState("Inventario");
-  const [dataTable, setDataTable] = useState([]);
-
-  const handleAgregar = () => {};
-
-  const handleInputChange = (e) => {
-    setInputData({
-      ...inputData,
-      [e.target.name]: e.target.value
+    const [inputData, setInputData] = useState({
+        ruc: "",
+        ubicacion: ""
     });
-  };
+    const [tableData, setTableData] = useState([]);
 
-  const getPrecioUnidad = (inventario) => {
-    let maxPrecio = 0;
-    for (const elemento of inventario) {
-      const precioUnidad = elemento.precio - (elemento.precio * elemento.descuento);
-      if (precioUnidad > maxPrecio) {
-        maxPrecio = precioUnidad;
-      }
+    const getDataCategoria = async() => {
+        const inventario = await sentences.allDataAllRelations("inventario", ["proveedor","ubicacion"])
+        const filteredData = inventario.filter((elemento) => elemento.id_categoria == categoria.id);
+
+        const data = filteredData.map((elemento) => {
+                        return {
+                            precio: elemento.precio,
+                            descuento: elemento.descuento,
+                            cantidad: elemento.cantidad,
+                            ubicacion: elemento.ubicacion.nombre,
+                            proveedor: elemento.proveedor.ruc,
+                            mantenimiento: categoria.tiempo,
+                            estado: elemento.estado
+                        }
+                    });
+                
+
+        setTableData(data);
     }
-    return maxPrecio;
-  };
 
-  const obtenerCategoriaPorTipo = async (tipo) => {
-    const data = await sentences.allExtraData("categoria", "inventario");
-    return data.filter(c => c.tipo === tipo);
-    };
-
-  const inventarioTable = async (categoriaData) => {
-    try {
-      const tableData = categoriaData.map((categoria) => ({
-        id: categoria.id,
-        codigo: categoria.codigo,
-        descripcion: categoria.descripcion,
-        nombre: categoria.nombre,
-        cantidad: categoria.inventario.length,
-        tipo_unidad: categoria.tipo_unidad,
-        precio_unidad: getPrecioUnidad(categoria.inventario)
-      }));
-
-      setDataTable(tableData);
-    } catch (error) {
-      console.log("Error al obtener data de inventario:", error);
+    const handleInputChange = (e) => {
+        setInputData({
+            ...inputData,
+            [e.target.name]: e.target.value
+        });
     }
-  };
 
-  const herramientaTable = async (categoriaData) => {
-    try {
+    const onSeleccionar = (item) => {
 
-      const tableData = categoriaData.map((categoria) => ({
-        id: categoria.id,
-        codigo: categoria.codigo,
-        nombre: categoria.nombre,
-        estado: categoria.estado,
-        mantenimiento: categoria.tiempo ? "SI": "No",
-        precio_unidad: getPrecioUnidad(categoria.inventario),
-        tiempo: categoria.tiempo || "No Aplica"
-      }));
-
-      setDataTable(tableData);
-    } catch (error) {
-      console.log("Error al obtener data de inventario:", error);
     }
-  };
 
-  const getDataTable = async () => {
-    const categoriaData = await obtenerCategoriaPorTipo(estadoNavBar);
+    const handelAgregar = () => {
 
-    if (estadoNavBar === "Inventario") {
-      await inventarioTable(categoriaData);
-    } else {
-      await herramientaTable(categoriaData);
     }
-  };
 
-  const onSeleccionar = async () => {
-    // lógica futura
-  };
+    useEffect(() => {
+        getDataCategoria();
+    }, []);
 
-  useEffect(() => {
-    getDataTable();
-  }, [estadoNavBar]);
-
-  return (
-    <InventarioPage
-      paramsPage={{ handleAgregar, handleInputChange }}
-      paramsNavBar={{ estadosNavBar, setEstadoNavBar, estadoNavBar }}
-      paramsTable={{ dataTable, onSeleccionar }}
-      paramsGenerales={{ codigo: inputData.codigo, nombre: inputData.nombre }}
-    />
-  );
+    return(
+        <InventarioPage
+            tableData={tableData}
+            ruc={inputData.ruc}
+            ubicacion={inputData.ubicacion}
+            handleInputChange={handleInputChange}
+            onSeleccionar={onSeleccionar}
+            handleAgregar={handelAgregar}
+            categoria={categoria}
+        />
+    );
 }

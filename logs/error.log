@@ -95976,3 +95976,443 @@ Invalid `prisma.categoria.create()` invocation:
 }
 
 Argument `data` is missing.
+[2025-07-03T23:33:55.078Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:33:55.081Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:33:59.962Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:33:59.965Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:34:30.220Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:34:30.223Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:35:40.160Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:35:40.162Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:35:59.701Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:35:59.703Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:37:58.435Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:37:58.437Z] ERROR: repository.allDataAllRelations is not a function
+[2025-07-03T23:40:14.968Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:40:14.972Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:41:47.436Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:41:47.439Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:42:02.750Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:42:02.753Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:42:06.591Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:42:06.594Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:42:22.827Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:42:22.831Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:45:31.717Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:45:31.720Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:48:09.720Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:48:09.724Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:49:45.994Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:49:45.997Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:50:33.785Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:50:33.789Z] ERROR: repository.allExtraData is not a function
+[2025-07-03T23:57:03.244Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-03T23:57:03.249Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:00:24.223Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:00:24.225Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:01:09.710Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:01:09.869Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:01:49.220Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:01:49.222Z] ERROR: 
+Invalid `prisma.proceso.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: ProcesoWhereInput | ProcesoWhereInput[],
+?   OR?: ProcesoWhereInput[],
+?   NOT?: ProcesoWhereInput | ProcesoWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   id_proforma?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   empleados?: Proceso_empleadosListRelationFilter,
+?   herramientas?: Proceso_herramientasListRelationFilter,
+?   inventario?: Proceso_inventarioListRelationFilter,
+?   proforma?: ProformaNullableScalarRelationFilter | ProformaWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:17:54.126Z] ERROR: 
+Invalid `prisma.tarea.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: TareaWhereInput | TareaWhereInput[],
+?   OR?: TareaWhereInput[],
+?   NOT?: TareaWhereInput | TareaWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   estado?: EnumEstadoTareaFilter | EstadoTarea,
+?   id_asignador?: IntFilter | Int,
+?   id_asignado?: IntNullableFilter | Int | Null,
+?   id_ubicacion?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   fecha_final?: DateTimeFilter | DateTime,
+?   fecha_inicio?: DateTimeFilter | DateTime,
+?   createdBy?: IntFilter | Int,
+?   updatedBy?: IntNullableFilter | Int | Null,
+?   deletedBy?: IntNullableFilter | Int | Null,
+?   createdDate?: DateTimeFilter | DateTime,
+?   updatedDate?: DateTimeFilter | DateTime,
+?   deletedDate?: DateTimeNullableFilter | DateTime | Null,
+?   asignador?: EmpleadoScalarRelationFilter | EmpleadoWhereInput,
+?   asignado?: EmpleadoNullableScalarRelationFilter | EmpleadoWhereInput | Null,
+?   ubicacion?: UbicacionNullableScalarRelationFilter | UbicacionWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:17:54.163Z] ERROR: 
+Invalid `prisma.tarea.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: TareaWhereInput | TareaWhereInput[],
+?   OR?: TareaWhereInput[],
+?   NOT?: TareaWhereInput | TareaWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   estado?: EnumEstadoTareaFilter | EstadoTarea,
+?   id_asignador?: IntFilter | Int,
+?   id_asignado?: IntNullableFilter | Int | Null,
+?   id_ubicacion?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   fecha_final?: DateTimeFilter | DateTime,
+?   fecha_inicio?: DateTimeFilter | DateTime,
+?   createdBy?: IntFilter | Int,
+?   updatedBy?: IntNullableFilter | Int | Null,
+?   deletedBy?: IntNullableFilter | Int | Null,
+?   createdDate?: DateTimeFilter | DateTime,
+?   updatedDate?: DateTimeFilter | DateTime,
+?   deletedDate?: DateTimeNullableFilter | DateTime | Null,
+?   asignador?: EmpleadoScalarRelationFilter | EmpleadoWhereInput,
+?   asignado?: EmpleadoNullableScalarRelationFilter | EmpleadoWhereInput | Null,
+?   ubicacion?: UbicacionNullableScalarRelationFilter | UbicacionWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:17:56.983Z] ERROR: 
+Invalid `prisma.tarea.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: TareaWhereInput | TareaWhereInput[],
+?   OR?: TareaWhereInput[],
+?   NOT?: TareaWhereInput | TareaWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   estado?: EnumEstadoTareaFilter | EstadoTarea,
+?   id_asignador?: IntFilter | Int,
+?   id_asignado?: IntNullableFilter | Int | Null,
+?   id_ubicacion?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   fecha_final?: DateTimeFilter | DateTime,
+?   fecha_inicio?: DateTimeFilter | DateTime,
+?   createdBy?: IntFilter | Int,
+?   updatedBy?: IntNullableFilter | Int | Null,
+?   deletedBy?: IntNullableFilter | Int | Null,
+?   createdDate?: DateTimeFilter | DateTime,
+?   updatedDate?: DateTimeFilter | DateTime,
+?   deletedDate?: DateTimeNullableFilter | DateTime | Null,
+?   asignador?: EmpleadoScalarRelationFilter | EmpleadoWhereInput,
+?   asignado?: EmpleadoNullableScalarRelationFilter | EmpleadoWhereInput | Null,
+?   ubicacion?: UbicacionNullableScalarRelationFilter | UbicacionWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:17:56.986Z] ERROR: 
+Invalid `prisma.tarea.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: TareaWhereInput | TareaWhereInput[],
+?   OR?: TareaWhereInput[],
+?   NOT?: TareaWhereInput | TareaWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   estado?: EnumEstadoTareaFilter | EstadoTarea,
+?   id_asignador?: IntFilter | Int,
+?   id_asignado?: IntNullableFilter | Int | Null,
+?   id_ubicacion?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   fecha_final?: DateTimeFilter | DateTime,
+?   fecha_inicio?: DateTimeFilter | DateTime,
+?   createdBy?: IntFilter | Int,
+?   updatedBy?: IntNullableFilter | Int | Null,
+?   deletedBy?: IntNullableFilter | Int | Null,
+?   createdDate?: DateTimeFilter | DateTime,
+?   updatedDate?: DateTimeFilter | DateTime,
+?   deletedDate?: DateTimeNullableFilter | DateTime | Null,
+?   asignador?: EmpleadoScalarRelationFilter | EmpleadoWhereInput,
+?   asignado?: EmpleadoNullableScalarRelationFilter | EmpleadoWhereInput | Null,
+?   ubicacion?: UbicacionNullableScalarRelationFilter | UbicacionWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:18:30.133Z] ERROR: 
+Invalid `prisma.tarea.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: TareaWhereInput | TareaWhereInput[],
+?   OR?: TareaWhereInput[],
+?   NOT?: TareaWhereInput | TareaWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   estado?: EnumEstadoTareaFilter | EstadoTarea,
+?   id_asignador?: IntFilter | Int,
+?   id_asignado?: IntNullableFilter | Int | Null,
+?   id_ubicacion?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   fecha_final?: DateTimeFilter | DateTime,
+?   fecha_inicio?: DateTimeFilter | DateTime,
+?   createdBy?: IntFilter | Int,
+?   updatedBy?: IntNullableFilter | Int | Null,
+?   deletedBy?: IntNullableFilter | Int | Null,
+?   createdDate?: DateTimeFilter | DateTime,
+?   updatedDate?: DateTimeFilter | DateTime,
+?   deletedDate?: DateTimeNullableFilter | DateTime | Null,
+?   asignador?: EmpleadoScalarRelationFilter | EmpleadoWhereInput,
+?   asignado?: EmpleadoNullableScalarRelationFilter | EmpleadoWhereInput | Null,
+?   ubicacion?: UbicacionNullableScalarRelationFilter | UbicacionWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.
+[2025-07-04T00:18:30.135Z] ERROR: 
+Invalid `prisma.tarea.findMany()` invocation:
+
+{
+  where: {
+    estadoEliminado: "ACTIVO",
+    ~~~~~~~~~~~~~~~
+?   AND?: TareaWhereInput | TareaWhereInput[],
+?   OR?: TareaWhereInput[],
+?   NOT?: TareaWhereInput | TareaWhereInput[],
+?   id?: IntFilter | Int,
+?   nombre?: StringFilter | String,
+?   descripcion?: StringFilter | String,
+?   estado?: EnumEstadoTareaFilter | EstadoTarea,
+?   id_asignador?: IntFilter | Int,
+?   id_asignado?: IntNullableFilter | Int | Null,
+?   id_ubicacion?: IntNullableFilter | Int | Null,
+?   id_obra?: IntNullableFilter | Int | Null,
+?   fecha_final?: DateTimeFilter | DateTime,
+?   fecha_inicio?: DateTimeFilter | DateTime,
+?   createdBy?: IntFilter | Int,
+?   updatedBy?: IntNullableFilter | Int | Null,
+?   deletedBy?: IntNullableFilter | Int | Null,
+?   createdDate?: DateTimeFilter | DateTime,
+?   updatedDate?: DateTimeFilter | DateTime,
+?   deletedDate?: DateTimeNullableFilter | DateTime | Null,
+?   asignador?: EmpleadoScalarRelationFilter | EmpleadoWhereInput,
+?   asignado?: EmpleadoNullableScalarRelationFilter | EmpleadoWhereInput | Null,
+?   ubicacion?: UbicacionNullableScalarRelationFilter | UbicacionWhereInput | Null,
+?   obra?: ObraNullableScalarRelationFilter | ObraWhereInput | Null
+  },
+  include: undefined
+}
+
+Unknown argument `estadoEliminado`. Available options are marked with ?.

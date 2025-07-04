@@ -1,4 +1,4 @@
-import * as repo from '../repository/proforma_empleadosRepository.js'
+import repo from '../repository/TareaRepository.js'
 import { baseService } from './baseServices.js'
 
 export default baseService(repo);

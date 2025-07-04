@@ -29,19 +29,27 @@ export default function Proformas(){
 
     const getDataProformas = async() => {
         try{
-            const data = await sentences.allDataAllRelations("proforma", ["empleados", "herramientas", "inventario", "cliente"])
+            console.log("Prueba 1")
+            const data = await sentences.allDataAllRelations("proforma", ["procesos", "cliente"]);
+            console.log("Prueba 2")
+            const procesos = await sentences.allDataAllRelations("proceso", ["empleados", "herramientas", "inventario"]);
+            console.log("Prueba 3")
+            let dataTable = []
 
+            for (const dato of data){
+                const procesosFiltrados = procesos.filter((proceso) => {proceso.id_proforma == dato.id});
 
-            const dataTable = data.map((proforma) => (
-                {
-                    id: proforma.id,
-                    nombre: proforma.nombre,
-                    cliente: proforma.cliente.nombre,
-                    porcentaje_venta: proforma.porcentaje_venta,
-                    tiempo_esperado:proforma.tiempo_esperado,
-                    total: obtenerTotalEmpleados(proforma.empleados) + obtenerTotalHerramientas(proforma.herramientas) + obtenerTotalInventario(proforma.inventario)
+                const elementoTabla = {
+                    id: dato.id,
+                    nombre: dato.nombre,
+                    cliente: dato.cliente.nombre,
+                    porcentaje_venta: dato.porcentaje_venta,
+                    tiempo_esperado:dato.tiempo_esperado,
+                    total: obtenerTotalEmpleados(procesosFiltrados) + obtenerTotalHerramientas(procesosFiltrados) + obtenerTotalInventario(procesosFiltrados)
                 }
-        ));
+
+                dataTable.push(elementoTabla);
+            }
 
             setTableData(dataTable);
 

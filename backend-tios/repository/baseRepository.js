@@ -42,7 +42,7 @@ export const baseRepository = (modelName) => ({
   extraData: async (id, relation) => {
     return prisma[modelName].findFirst({
       where: { id: Number(id), estadoEliminado: 'ACTIVO' },
-      include: {
+      select: {
         [relation]: true,
       },
     });
@@ -51,7 +51,7 @@ export const baseRepository = (modelName) => ({
   allExtraData: async (relation) => {
     return prisma[modelName].findMany({
       where: { estadoEliminado: 'ACTIVO' },
-      include: {
+      select: {
         [relation]: true,
       },
     });

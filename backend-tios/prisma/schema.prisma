@@ -131,7 +131,6 @@ model Categoria{
   descripcion    String
   tipo CategoriasInventario
   tipo_unidad    String
-  venta    Boolean
   tiempo    DateTime?
   estadoEliminado EstadoEliminado @default(ACTIVO)
   inventario Inventario[]
@@ -182,11 +181,8 @@ model Inventario{
   proveedor Persona @relation(fields: [id_proveedor], references: [id])
   transaccion transaccion_elementos[]
   pedido pedido_elementos[]
-  obra_herramientas obra_herramientas[]
-  obra_inventario obra_inventario[]
-  proforma_herramienta proforma_herramientas[]
-  proforma_inventario proforma_inventario[]
-
+  proceso_herramientas proceso_herramientas[]
+  proceso_inventario proceso_inventario[]
   createdBy   Int
   updatedBy   Int?
   deletedBy   Int?
@@ -247,8 +243,7 @@ model Empleado{
 
   transaccion Transaccion[]
   pedido pedido_elementos[]
-  obra obra_empleados[]
-  proforma proforma_empleados[]
+  proceso proceso_empleados[]
   ubicacion ubicacion_empleado[]
   mensajesEnviados Mensaje[] @relation("MensajeRemitente")
   mensajesRecibidos Mensaje[] @relation("MensajeDestinatario")
@@ -299,9 +294,8 @@ model Proforma{
   punto  Punto @relation(fields: [id_punto], references: [id])
   cliente Persona @relation(fields: [id_cliente], references: [id])
   obra Obra?
-  empleados proforma_empleados[]
-  herramientas proforma_herramientas[]
-  inventario proforma_inventario[]
+
+  procesos Proceso []
 
   createdBy   Int
   updatedBy   Int?
@@ -311,41 +305,65 @@ model Proforma{
   deletedDate DateTime?
 }
 
-model proforma_empleados{
+model Proceso{
+  id        Int     @id @default(autoincrement())
+  nombre String
+  descripcion String
+  empleados proceso_empleados[]
+  herramientas proceso_herramientas[]
+  inventario proceso_inventario[]
+  id_proforma Int?
+  id_obra Int?
+  estadoEliminado EstadoEliminado @default(ACTIVO)
+
+  proforma Proforma? @relation(fields: [id_proforma], references: [id])
+  obra Obra? @relation(fields: [id_obra], references: [id])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
+}
+
+model proceso_empleados{
   id        Int     @id @default(autoincrement())
   horas Int
   sueldo Float
-  id_proforma Int
+  id_proceso Int
   id_empleado Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
-  proforma Proforma @relation(fields: [id_proforma], references: [id])
+  proceso Proceso @relation(fields: [id_proceso], references: [id])
   empleado Empleado @relation(fields: [id_empleado], references: [id])
+  horarios Horario[] @relation("horario_obra_empleado")
 }
 
-model proforma_herramientas{
+model proceso_herramientas{
   id        Int     @id @default(autoincrement())
   horas Int
   descuento Float
   precio Float
-  id_proforma Int
+  id_proceso Int
   id_herramienta Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
-  proforma Proforma @relation(fields: [id_proforma], references: [id])
+  proceso Proceso @relation(fields: [id_proceso], references: [id])
   herramienta Inventario @relation(fields: [id_herramienta], references: [id])
+  horarios Horario[] @relation("horario_obra_herramienta")
 }
 
-model proforma_inventario{
+model proceso_inventario{
   id        Int     @id @default(autoincrement())
   cantidad Float
   descuento Float
   precio Float
-  id_proforma Int
+  id_proceso Int
   id_elemento Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
-  proforma Proforma @relation(fields: [id_proforma], references: [id])
+  proceso Proceso @relation(fields: [id_proceso], references: [id])
   elemento Inventario @relation(fields: [id_elemento], references: [id])
 }
 
@@ -364,9 +382,7 @@ model Obra{
   punto  Punto @relation(fields: [id_punto], references: [id])
   cliente Persona @relation(fields: [id_cliente], references: [id])
   proforma Proforma @relation(fields: [id_proforma], references: [id])
-  herramientas obra_herramientas[]
-  inventario obra_inventario[]
-  empleado obra_empleados[]
+  proceso Proceso[]
   transaccion Transaccion[]
   pedido Pedido[]
   tarea Tarea[]
@@ -383,12 +399,15 @@ model Transaccion{
   id        Int     @id @default(autoincrement())
   fecha DateTime @default(now())
   id_empleado Int
-  id_persona Int?
+  id_persona Int
   id_obra Int?
+  id_compra Int?
+  id_venta Int?
+  id_devolucion Int?
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   empleado Empleado @relation(fields: [id_empleado], references: [id])
-  persona Persona? @relation(fields: [id_persona], references: [id])
+  persona Persona @relation(fields: [id_persona], references: [id])
   obra Obra? @relation(fields: [id_obra], references: [id])
   elementos transaccion_elementos[]
   pedido Pedido[]
@@ -409,6 +428,7 @@ model transaccion_elementos{
   id_transaccion Int
   id_elementos Int
   cantidad Float
+  estado EstadoTarea?
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
@@ -417,7 +437,7 @@ model transaccion_elementos{
 
 model Compra{
   id        Int     @id @default(autoincrement())
-  codigo String
+  fechaCredito DateTime? 
   id_transaccion Int @unique
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
@@ -438,6 +458,7 @@ model Devolucion{
   id        Int     @id @default(autoincrement())
   codigo String
   id_transaccion Int @unique
+  estado EstadoTarea?
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
@@ -450,8 +471,8 @@ model Horario{
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   dias Dia[] @relation("horario_dia")
-  obra_empleado obra_empleados[] @relation("horario_obra_empleado")
-  obra_herramienta obra_herramientas[] @relation("horario_obra_herramienta")
+  proceso_empleados proceso_empleados[] @relation("horario_obra_empleado")
+  proceso_herramientas proceso_herramientas[] @relation("horario_obra_herramienta")
 }
 
 model Dia{
@@ -460,49 +481,6 @@ model Dia{
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   horarios Horario[] @relation("horario_dia")
-}
-
-model obra_empleados{
-  id        Int     @id @default(autoincrement())
-  horas Int
-  sueldo Float
-  id_obra Int
-  id_empleado Int
-  estadoEliminado EstadoEliminado @default(ACTIVO)
-
-  obra Obra @relation(fields: [id_obra], references: [id])
-  empleado Empleado @relation(fields: [id_empleado], references: [id])
-  horarios Horario[] @relation("horario_obra_empleado")
-
-}
-
-model obra_inventario{
-  id        Int     @id @default(autoincrement())
-  horas Int
-  descuento Float
-  precio Float
-  id_obra Int
-  id_inventario Int
-  estadoEliminado EstadoEliminado @default(ACTIVO)
-
-  obra Obra @relation(fields: [id_obra], references: [id])
-  inventario Inventario @relation(fields: [id_inventario], references: [id])
-
-}
-
-model obra_herramientas{
-  id        Int     @id @default(autoincrement())
-  horas Int
-  descuento Float
-  precio Float
-  id_obra Int
-  id_herramienta Int
-  estadoEliminado EstadoEliminado @default(ACTIVO)
-
-  obra Obra @relation(fields: [id_obra], references: [id])
-  herramienta Inventario @relation(fields: [id_herramienta], references: [id])
-  horarios Horario[] @relation("horario_obra_herramienta")
-
 }
 
 model Pedido{
@@ -534,6 +512,7 @@ model Tarea {
   id_obra Int?
   fecha_final DateTime
   fecha_inicio DateTime @default(now())
+  estadoEliminado EstadoEliminado @default(ACTIVO)
 
   asignador Empleado @relation("AsignadorRelacion", fields: [id_asignador], references: [id])
   asignado  Empleado? @relation("AsignadoRelacion", fields: [id_asignado], references: [id])

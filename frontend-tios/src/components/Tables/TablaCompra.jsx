@@ -1,15 +1,16 @@
-export default function TablaEditable({ data, onSeleccionar, setCantidad, setPrecioUnidad }) {
+export default function TablaCompra({ data, onSeleccionar, setCantidad, setPrecioUnidad }) {
 
 
   return (
     <div className="h-[300px] overflow-y-auto">
-        <table className="min-w-full table-fixed border border-gray-300">
+        <table className="w-full table-fixed border border-gray-300">
             <thead className="bg-gray-200 text-left">
             <tr>
+                <th className="w-1/3 p-2 border-b">Codigo</th>
                 <th className="w-1/3 p-2 border-b">Nombre</th>
-                <th className="w-1/3 p-2 border-b">RUC</th>
-                <th className="w-1/3 p-2 border-b">Fecha Compra</th>
-                <th className="w-1/3 p-2 border-b">Total</th>
+                <th className="w-1/3 p-2 border-b">Tipo de Unidad</th>
+                <th className="w-1/3 p-2 border-b">Percio por Unidad</th>
+                <th className="w-1/3 p-2 border-b">Cantidad</th>
             </tr>
             </thead>
             <tbody>

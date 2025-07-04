@@ -132,8 +132,8 @@ export const baseController = (service) => ({
   },
 
   allDataAllRelations: async (req, res) => {
-    try{
-        const includes = req.body.data;
+    try{ 
+        const includes = req.body;
         const results = await service.allDataAllRelations(includes);
     
         if (!results) {
