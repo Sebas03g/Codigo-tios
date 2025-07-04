@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getTokenData } from "../../services/getLocalStorageData";
-import { extraData, getDataById } from "../../services/fetch/sentenciasFetch";
+import { dataAllRelations, getDataById } from "../../services/fetch/sentenciasFetch";
 import UserComponent from "./usuario";
 
 export default function HeaderComponent(){
@@ -35,8 +35,10 @@ export default function HeaderComponent(){
 
       const getUserData = async () => {
         try {
-          console.log(getTokenData()?.id)
-          const usuario = await extraData("empleado", getTokenData()?.id, "posicion");
+          const usuario = await dataAllRelations("empleado", ["posicion"], getTokenData()?.id);
+
+          
+
           setUser(usuario);
         } catch (error) {
           console.log("Error al obtener los usuarios: ", error);
