@@ -116,7 +116,7 @@ export const baseController = (service) => ({
   dataAllRelations: async (req, res) => {
     try{
         const id = parseInt(req.params.id);
-        const includes = req.body.data;
+        const includes = req.body;
         const results = await service.dataAllRelations(id,includes);
     
         if (!results) {

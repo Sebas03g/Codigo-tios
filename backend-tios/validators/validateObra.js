@@ -25,5 +25,4 @@ export const validateObra = [
         .notEmpty().withMessage('El campo "id_proforma" es obligatorio')
         .isInt().withMessage('El campo "id_proforma" debe ser de tipo entero'),
 
-
 ];

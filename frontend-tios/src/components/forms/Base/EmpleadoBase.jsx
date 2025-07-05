@@ -64,10 +64,10 @@ export default function EmpleadoBase({formData, handleChange, posiciones, handle
       </div>
 
       <div>
-        <label htmlFor="posicion">Posición</label>
+        <label htmlFor="id_posicion">Posición</label>
         <select
           className="w-full px-3 py-2 border border-gray-300 rounded"
-          name="posicion"
+          name="id_posicion"
           value={formData.id_posicion}
           onChange={handleChange}
           required

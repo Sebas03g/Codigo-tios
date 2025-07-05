@@ -8,7 +8,7 @@ export default function Obras(){
     });
 
     const [estadoObra, setEstadoObra] = useState("ACTIVO");
-
+    const [open, setOpen] = useState(false);
     const [dataObras, setDataObras] = useState([]);
 
     const handleEstadoObra = (e) => {
@@ -39,6 +39,10 @@ export default function Obras(){
         
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     return(
         <ObrasPage
             data={dataObras}
@@ -48,6 +52,9 @@ export default function Obras(){
             estadoObra={estadoObra}
             nombre={inputData.nombre}
             handleInputChange={handleInputChange}
+            open={open}
+            setOpen={setOpen}
+            handleSubmit={handleSubmit}
         />)
     ;
 }

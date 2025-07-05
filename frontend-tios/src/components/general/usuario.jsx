@@ -4,10 +4,6 @@ export default function UserComponent({ isOpen, usuario }) {
 
   const claseAnimacion = isOpen ? "translate-x-0" : "translate-x-full";
 
-
-  console.log("AQQQQQQQQQ");
-  console.log(usuario);
-
   return (
     <aside className={`${claseBase} ${claseAnimacion}`}>
       <div className="text-gray-800">

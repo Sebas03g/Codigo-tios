@@ -1,4 +1,4 @@
-nombre,categoria
+nombre,categoria,permisosHijos
 Realizar ventas,Venta
 Visualizar ventas,Venta
 Realizar compras,Compra
@@ -35,3 +35,5 @@ Recibir mensajes generales,Mensaje
 Mandar mensajes,Mensaje
 Visualizar Proformas,Proforma
 Crear Proformas,Proforma
+Visualizar Pago, Pago
+Realizar Transacciones Especiales, Pago

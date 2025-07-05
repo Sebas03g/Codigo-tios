@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { AiOutlinePlus } from "react-icons/ai";
+import Crear from "../forms/Crear/ObraForm.jsx";
 
 export default function ObrasPage({
   data,
@@ -7,7 +9,10 @@ export default function ObrasPage({
   handlePropuesta,
   estadoObra,
   nombre,
-  handleInputChange
+  handleInputChange,
+  open, 
+  setOpen,
+  handleSubmit
 }) {
   const [datosObras, setDatosObras] = useState([]);
 
@@ -69,10 +74,24 @@ export default function ObrasPage({
                 {item.nombre}
             </button>
             ))}
-            <button className="h-42 w-42 bg-green-100 border-2 border-dashed border-green-500 text-green-700 rounded-xl hover:bg-green-200 shadow">
-            + Agregar nuevo
+            <button 
+              className="h-42 w-42 bg-green-100 border-2 border-dashed border-green-500 text-green-700 rounded-xl hover:bg-green-200 shadow"
+              onClick={() => setOpen(true)}
+            >
+              + Agregar
             </button>
         </div>
+
+        {open && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-grey bg-opacity-40">
+            <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full">
+                <Crear 
+                  setOpen={setOpen}
+                  handleSubmit={handleSubmit}
+                />
+            </div>
+          </div>
+        )}
     </div>
   );
 }

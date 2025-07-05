@@ -36,6 +36,8 @@ import ubicacion_empleadoRoutes from './routes/ubicacion_empleadoRoutes.js';
 import ubicacionRoutes from './routes/UbicacionRoutes.js';
 import ventaRoutes from './routes/VentaRoutes.js';
 import mailRoutes from './routes/MailRouter.js';
+import pagoRoutes from './routes/PagoRouter.js'
+import permisoDependenciaRoutes from './routes/PermisoDependenciaRouter.js'
 import updateLocationRoutes from './routes/UpdateLocationRouter.js'
 
 dotenv.config();
@@ -62,7 +64,7 @@ app.use((req, res, next) => {
   next();
 });
 
-/**/ 
+/* 
 
 // Configurar CSRF protección solo para rutas que la necesitan
 const csrfProtection = csurf({ cookie: true });
@@ -110,6 +112,7 @@ app.use('/mensaje', verificarToken, mensajeRoutes);
 app.use('/obra_empleados', verificarToken, obra_empleadosRoutes);
 app.use('/obra_herramientas', verificarToken, obra_herramientasRoutes);
 app.use('/obra', verificarToken, obraRoutes);
+app.use('/pago', verificarToken, pagoRoutes);
 app.use('/pedido_elementos', verificarToken, pedido_elementosRoutes);
 app.use('/pedido', verificarToken, pedidoRoutes);
 app.use('/permiso', verificarToken, permisoRoutes);
@@ -128,9 +131,10 @@ app.use('/ubicacion_empleado', verificarToken, ubicacion_empleadoRoutes);
 app.use('/ubicacion', verificarToken, ubicacionRoutes);
 app.use('/venta', verificarToken, ventaRoutes);
 app.use('/mail', verificarToken, mailRoutes);
+app.use('/permiso-dependencia', verificarToken, permisoDependenciaRoutes)
 app.use('/update/location', verificarToken, updateLocationRoutes);
 
-/*
+*/
 
 app.use('/empleado', empleadoRoutes); // login no usa verificarToken
 // Rutas protegidas con token
@@ -158,9 +162,10 @@ app.use('/transaccion_elementos', transaccion_elementosRoutes);
 app.use('/transaccion', transaccionRoutes);
 app.use('/ubicacion_empleado', ubicacion_empleadoRoutes);
 app.use('/ubicacion', ubicacionRoutes);
+app.use('/permiso-dependencia', permisoDependenciaRoutes)
 app.use('/venta', ventaRoutes);
 
-*/
+/**/
 // Middleware para manejar rutas no encontradas
 app.use((req, res) => {
   res.status(404).json({ mensaje: 'Ruta no encontrada' });

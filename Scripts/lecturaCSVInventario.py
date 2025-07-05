@@ -9,11 +9,11 @@ nuevo_diccionario =[]
 datos_default = {'nombre':'Sin Nombre', 'descripcion':'Sin Nombre', 'tipo_unidad':'UND'}
 
 for dato in datos:
-    dato['venta'] = True
     dato['tipo'] = "Inventario"
     if pd.isna(dato['nombre']): dato['nombre'] = datos_default['nombre']
     if pd.isna(dato['descripcion']): dato['descripcion'] = datos_default['descripcion']
     if pd.isna(dato['tipo_unidad']): dato['tipo_unidad'] = datos_default['tipo_unidad']
+    print(dato)
     nuevo_diccionario.append(dato)
 df = pd.DataFrame(nuevo_diccionario)
 df.to_csv('categoria.csv', index=False, encoding='utf-8')

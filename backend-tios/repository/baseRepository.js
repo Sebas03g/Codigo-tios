@@ -57,6 +57,7 @@ export const baseRepository = (modelName) => ({
     });
   },
   dataAllRelations: async (id, includes) => {
+    console.log(includes);
     return prisma[modelName].findFirst({
       where: { id: Number(id), estadoEliminado: 'ACTIVO' },
       include: includes

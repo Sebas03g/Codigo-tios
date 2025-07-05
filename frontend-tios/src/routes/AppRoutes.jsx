@@ -11,6 +11,7 @@ import Empleados from "../pages/Empleados.jsx";
 import Categoria from "../pages/Categoria.jsx";
 import Inventario from "../pages/Inventario.jsx";
 import Obras from "../pages/Obras.jsx";
+import CreateObra from "../pages/CreateObra.jsx";
 import Pedidos from "../pages/Pedidos.jsx";
 import Posiciones from "../pages/Posiciones.jsx";
 import Proveedores from "../pages/Proveedores.jsx";
@@ -28,6 +29,7 @@ import AppLayout from "../layouts/AppLayout.jsx";
 
 export default function AppRoutes() {
   const categorias = getTokenData()?.categorias || [];
+  const permisos = getTokenData()?.permisos || [];
 
   const permisosTransaccion = ["Compra",  "Venta", "Devolucion"]
 
@@ -57,7 +59,13 @@ export default function AppRoutes() {
           <Route path="/pedidos" element={<PrivateRoute><Pedidos /></PrivateRoute>} />
         )}
         {categorias.includes("Obra") && (
-          <Route path="/obras" element={<PrivateRoute><Obras /></PrivateRoute>} />
+          <>
+            <Route path="/obras" element={<PrivateRoute><Obras /></PrivateRoute>} />
+            {permisos.includes("Crear obras") && (
+              <Route path="/create-obra" element={<PrivateRoute><CreateObra /></PrivateRoute>} />
+            )}
+          </>
+          
         )}
         {categorias.includes("Cliente") && (
           <Route path="/clientes" element={<PrivateRoute><Clientes /></PrivateRoute>} />

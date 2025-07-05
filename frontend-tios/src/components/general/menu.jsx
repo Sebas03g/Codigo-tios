@@ -91,7 +91,6 @@ export default function MenuComponent({ isOpen, setIsOpen, categorias }) {
           )}
         </nav>
 
-        {/* Botón de salir */}
         <div className="p-6 border-t">
             <button
                 className="flex items-center justify-center gap-2 text-red-600 hover:bg-red-50 px-3 py-2 rounded transition w-full"

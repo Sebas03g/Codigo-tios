@@ -20,12 +20,11 @@ export default function ElementoBase({
           <div className="grid gap-4">
             <label htmlFor="nombre">Nombre</label>
               <input
-          className="w-full px-3 py-2 border border-gray-300 rounded"
+                className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="text"
                 name="nombre"
                 value={proveedorData.nombre}
                 onChange={handleChangeProveedor}
-                className="border p-2 w-full"
                 required
               />
             

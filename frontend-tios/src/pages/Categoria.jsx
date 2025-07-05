@@ -39,7 +39,7 @@ export default function Categoria() {
   };
 
   const obtenerCategoriaPorTipo = async (tipo) => {
-    const data = await sentences.allExtraData("categoria", "inventario");
+    const data = await sentences.allDataAllRelations("categoria", ["inventario"]);
     return data.filter(c => c.tipo === tipo);
     };
 

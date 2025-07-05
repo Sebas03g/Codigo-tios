@@ -36,9 +36,6 @@ export default function HeaderComponent(){
       const getUserData = async () => {
         try {
           const usuario = await dataAllRelations("empleado", ["posicion"], getTokenData()?.id);
-
-          
-
           setUser(usuario);
         } catch (error) {
           console.log("Error al obtener los usuarios: ", error);
