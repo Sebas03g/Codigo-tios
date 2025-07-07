@@ -64,7 +64,7 @@ app.use((req, res, next) => {
   next();
 });
 
-/* 
+/**/ 
 
 // Configurar CSRF protección solo para rutas que la necesitan
 const csrfProtection = csurf({ cookie: true });
@@ -134,7 +134,7 @@ app.use('/mail', verificarToken, mailRoutes);
 app.use('/permiso-dependencia', verificarToken, permisoDependenciaRoutes)
 app.use('/update/location', verificarToken, updateLocationRoutes);
 
-*/
+/*
 
 app.use('/empleado', empleadoRoutes); // login no usa verificarToken
 // Rutas protegidas con token
@@ -165,7 +165,7 @@ app.use('/ubicacion', ubicacionRoutes);
 app.use('/permiso-dependencia', permisoDependenciaRoutes)
 app.use('/venta', ventaRoutes);
 
-/**/
+*/
 // Middleware para manejar rutas no encontradas
 app.use((req, res) => {
   res.status(404).json({ mensaje: 'Ruta no encontrada' });

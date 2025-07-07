@@ -1,18 +1,22 @@
+import { IoClose } from "react-icons/io5";
+
 export default function CategoriaBase({
     formData, handleSubmit, setOpen, handleChange, 
     handleMantenimiento, mantenimiento, tiempoData, 
-    handleTimeChange
+    handleTimeChange, tipo
 }){
     return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto relative bg-white p-4 shadow rounded">
-      <button
-        type="button"
-        onClick={() => setOpen(false)}
-        className="absolute top-2 right-2 text-red-500 font-bold"
-      >
-        ✖
-      </button>
-      <h2 className="text-xl font-bold mb-4">Crear Categoría</h2>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-bold">Crear Posicion</h2>
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            className="text-red-500 text-xl hover:text-red-700"
+          >
+            <IoClose />
+          </button>
+      </div>
 
       <div>
         <label htmlFor="nombre" className="block font-medium">Nombre</label>
@@ -23,7 +27,6 @@ export default function CategoriaBase({
           value={formData.nombre}
           onChange={handleChange}
           required
-          className="border p-2 w-full"
         />
       </div>
 
@@ -38,7 +41,7 @@ export default function CategoriaBase({
         />
       </div>
 
-      {formData.venta ? (
+      {!formData.venta ? (
         <div>
           <label htmlFor="tipo_unidad" className="block font-medium">Tipo de Unidad</label>
           <input
@@ -48,14 +51,13 @@ export default function CategoriaBase({
             value={formData.tipo_unidad}
             onChange={handleChange}
             required
-            className="border p-2 w-full"
           />
         </div>
       ) : (
         <div>
           <label className="flex items-center space-x-2">
             <input
-          className="w-full px-3 py-2 border border-gray-300 rounded"
+              className="w-full px-3 py-2 border border-gray-300 rounded"
               type="checkbox"
               checked={mantenimiento}
               onChange={handleMantenimiento}
@@ -67,12 +69,11 @@ export default function CategoriaBase({
             <div className="mt-2 grid grid-cols-1 gap-2">
               <label>Días</label>
               <input
-          className="w-full px-3 py-2 border border-gray-300 rounded"
+                className="w-full px-3 py-2 border border-gray-300 rounded"
                 type="number"
                 name="dias"
                 value={tiempoData.dias}
                 onChange={handleTimeChange}
-                className="border p-2"
               />
               <label>Meses</label>
               <input
@@ -81,7 +82,6 @@ export default function CategoriaBase({
                 name="meses"
                 value={tiempoData.meses}
                 onChange={handleTimeChange}
-                className="border p-2"
               />
               <label>Años</label>
               <input
@@ -90,14 +90,15 @@ export default function CategoriaBase({
                 name="anios"
                 value={tiempoData.anios}
                 onChange={handleTimeChange}
-                className="border p-2"
               />
             </div>
           )}
         </div>
       )}
 
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+      <button 
+      type="submit" 
+      className="block w-full max-w-xs mx-auto bg-blue-500 text-white p-3 rounded text-lg hover:bg-blue-600 transition">
         Guardar
       </button>
     </form>

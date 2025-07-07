@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Empleado" ALTER COLUMN "estado" SET DEFAULT 'TRABAJANDO';

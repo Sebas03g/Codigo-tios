@@ -5,7 +5,7 @@ import Crear from "../forms/Crear/UbicacionForm.jsx"
 export default function UbicacionesPage({
     busqueda, handleInputChange, handleAgregar, 
     dataTable, onSeleccionar, handleSubmit,
-    open, setOpen
+    open, setOpen,paramsFormData
 }){
     return(
         <div className="h-full flex flex-col">
@@ -40,6 +40,7 @@ export default function UbicacionesPage({
                         <Crear 
                             setOpen={setOpen}
                             handleSubmit={handleSubmit}
+                            paramsFormData={paramsFormData}
                         />
                     </div>
                 </div>

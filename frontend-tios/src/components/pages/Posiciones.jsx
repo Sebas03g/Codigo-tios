@@ -5,7 +5,7 @@ import Crear from "../forms/Crear/PosicionForm.jsx";
 export default function PosicionesPage({
     busqueda, handleInputChange, 
     dataTable, onSeleccionar, handleSubmit,
-    open, setOpen
+    open, setOpen,dataForm
 }){
     return(
         <div className="h-full flex flex-col">
@@ -40,6 +40,7 @@ export default function PosicionesPage({
                         <Crear 
                           setOpen={setOpen}
                           handleSubmit={handleSubmit}
+                          dataForm={dataForm}
                         />
                     </div>
                 </div>

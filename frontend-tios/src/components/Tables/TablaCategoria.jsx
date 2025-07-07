@@ -48,7 +48,7 @@ export default function TablaCategoria({ paramsTable, paramsGenerales}) {
               onClick={() => onSeleccionar(item)}
             >
               <td className="py-2 px-4">{item.codigo}</td>
-              <td className="py-2 px-4">{item.descripcion}</td>
+              <td className="py-2 px-4">{item.nombre}</td>
               <td className="py-2 px-4">{item.tipo_unidad}</td>
               <td className="py-2 px-4">{item.precio_unidad}</td>
               <td className="py-2 px-4">{item.cantidad}</td>

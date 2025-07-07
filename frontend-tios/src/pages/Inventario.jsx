@@ -12,22 +12,40 @@ export default function Inventario(){
         ubicacion: ""
     });
     const [tableData, setTableData] = useState([]);
+    const [open, setOpen] = useState(false);
+
+    const handleSubmit = async (e, formData) => {
+        e.preventDefault();
+        const createForm = {
+
+        };
+
+        try {
+              await sentences.createData("empleado", createForm);
+              toast.success("Empleado creado exitosamente");
+              await getAllEmployeeData();
+              setOpen(false);
+            } catch (error) {
+              console.error("Error al crear empleado:", error);
+            }
+    };
+
 
     const getDataCategoria = async() => {
         const inventario = await sentences.allDataAllRelations("inventario", ["proveedor","ubicacion"])
         const filteredData = inventario.filter((elemento) => elemento.id_categoria == categoria.id);
 
         const data = filteredData.map((elemento) => {
-                        return {
-                            precio: elemento.precio,
-                            descuento: elemento.descuento,
-                            cantidad: elemento.cantidad,
-                            ubicacion: elemento.ubicacion.nombre,
-                            proveedor: elemento.proveedor.ruc,
-                            mantenimiento: categoria.tiempo,
-                            estado: elemento.estado
-                        }
-                    });
+            return {
+                    precio: elemento.precio,
+                    descuento: elemento.descuento,
+                    cantidad: elemento.cantidad,
+                    ubicacion: elemento.ubicacion.nombre,
+                    proveedor: elemento.proveedor.ruc,
+                    mantenimiento: categoria.tiempo,
+                    estado: elemento.estado
+                }
+            });
                 
 
         setTableData(data);
@@ -61,6 +79,9 @@ export default function Inventario(){
             onSeleccionar={onSeleccionar}
             handleAgregar={handelAgregar}
             categoria={categoria}
+            open={open}
+            setOpen={setOpen}
+            handleSubmit={handleSubmit}
         />
     );
 }

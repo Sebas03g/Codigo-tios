@@ -20,7 +20,9 @@ import Ubicaciones from "../pages/Ubicaciones.jsx";
 import Compras from "../pages/Compras.jsx";
 import Ventas from "../pages/Ventas.jsx";
 import Proformas from "../pages/Proformas.jsx";
+import Pagos from "../pages/Pagos.jsx";
 import Devoluciones from "../pages/Devoluciones.jsx";
+import UpdatePassword from "../pages/UpdatePassword.jsx";
 import Transacciones from "../pages/Transacciones.jsx";
 import { getTokenData } from "../services/getLocalStorageData.js";
 import PrivateRoute from "./PrivateRoutes.jsx";
@@ -39,6 +41,7 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Login ruta="/home"/>} />
       <Route path="/app-login" element={<Login ruta="/app-home"/>}/>
+      <Route path="/update-password" element={<UpdatePassword/>} />
       <Route element= {<AppLayout />}>
         <Route path="/app-home" element={<PrivateRoute><AppHome /></PrivateRoute>}/>
         <Route path="/app-tasks" element={<PrivateRoute><AppTasks /></PrivateRoute>}/>
@@ -96,6 +99,9 @@ export default function AppRoutes() {
         )}
         {categorias.includes("Proforma") && (
           <Route path="/proformas" element={<PrivateRoute><Proformas /></PrivateRoute>} />
+        )}
+        {categorias.includes("Pago") && (
+          <Route path="/pagos" element={<PrivateRoute><Pagos /></PrivateRoute>} />
         )}
       </Route>
     </Routes>

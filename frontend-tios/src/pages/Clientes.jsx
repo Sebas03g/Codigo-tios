@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PersonasPage from "../components/pages/Personas";
 import * as sentences from "../services/fetch/sentenciasFetch"
+import { toast } from 'react-toastify';
 
 export default function Clientes(){
     const [formData, setFormData] = useState({
@@ -22,18 +23,19 @@ export default function Clientes(){
 
     }
 
-    useEffect(() => {
-        const getProviderData = async () => {
-            try{
-                const personasData = await sentences.getAllData("persona");
-                if(!personasData.mensaje){
-                    setDataTable(personasData);
-                }
-            }catch (error) {
-                console.log("Error al obtener data de empleados:", error);
+    const getProviderData = async () => {
+        try{
+            const personasData = await sentences.getAllData("persona");
+            if(!personasData.mensaje){
+                setDataTable(personasData);
             }
-        };
-    
+        }catch (error) {
+            console.log("Error al obtener data de empleados:", error);
+        }
+    };
+
+    useEffect(() => {
+        
         getProviderData();
     
     }, [])
@@ -44,11 +46,23 @@ export default function Clientes(){
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const form = e.target;
+
+        const createForm = {
+            nombre: form.nombre.value,
+            ruc: form.ruc.value,
+            mail: form.mail.value,
+            telefono: form.telefono.value,
+            proveedor: false
+        }
+
         try {
-          await sentences.createData("persona", formData);
-          setOpen();
+            await sentences.createData("persona", createForm);
+            toast.success("Cliente creado de forma existosa.")
+            await getProviderData();
+            setOpen(false);
         } catch (error) {
-          console.error("Error al crear cliente:", error);
+            console.error("Error al crear cliente:", error);
         }
     };
 

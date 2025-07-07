@@ -36,7 +36,6 @@ export default function ElementoBase({
                 name="ruc"
                 value={proveedorData.ruc}
                 onChange={handleChangeProveedor}
-                className="border p-2 w-full"
                 required
               />
             
@@ -48,7 +47,6 @@ export default function ElementoBase({
                 name="mail"
                 value={proveedorData.mail}
                 onChange={handleChangeProveedor}
-                className="border p-2 w-full"
               />
             
     
@@ -59,7 +57,6 @@ export default function ElementoBase({
                 name="telefono"
                 value={proveedorData.telefono}
                 onChange={handleChangeProveedor}
-                className="border p-2 w-full"
               />
            
     
@@ -71,7 +68,6 @@ export default function ElementoBase({
                 value={formData.precio}
                 onChange={handleChange}
                 step="0.01"
-                className="border p-2 w-full"
                 required
               />
             
@@ -84,7 +80,6 @@ export default function ElementoBase({
                 value={formData.descuento}
                 onChange={handleChange}
                 step="0.01"
-                className="border p-2 w-full"
               />
             
     
@@ -92,13 +87,12 @@ export default function ElementoBase({
                 <div>
                     <label htmlFor="cantidad">Cantidad</label>
                         <input
-          className="w-full px-3 py-2 border border-gray-300 rounded"
+                            className="w-full px-3 py-2 border border-gray-300 rounded"
                             type="number"
                             name="cantidad"
                             value={formData.cantidad}
                             onChange={handleChange}
                             step="0.01"
-                            className="border p-2 w-full"
                         /> 
     
                 </div>

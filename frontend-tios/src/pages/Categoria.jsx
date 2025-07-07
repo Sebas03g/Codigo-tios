@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import * as sentences from "../services/fetch/sentenciasFetch";
 import CategoriaPage from "../components/pages/Categoria";
 import { useNavigate } from "react-router-dom";
+import { crearCodigo } from "../services/baseFunctions";
+import { toast } from 'react-toastify';
 
 export default function Categoria() {
   const [inputData, setInputData] = useState({
@@ -11,12 +13,13 @@ export default function Categoria() {
 
   const navigate = useNavigate();
 
-  const estadosNavBar = ["Inventario", "Herramientas"];
+  const estadosNavBar = ["Inventario", "Herramienta"];
   const [estadoNavBar, setEstadoNavBar] = useState("Inventario");
   const [dataTable, setDataTable] = useState([]);
+  const [open, setOpen] = useState(false);
 
   const handleAgregar = () => {
-
+    
     
   };
 
@@ -68,8 +71,9 @@ export default function Categoria() {
         id: categoria.id,
         codigo: categoria.codigo,
         nombre: categoria.nombre,
-        estado: categoria.estado,
-        mantenimiento: categoria.tiempo ? "SI": "No",
+        descripcion: categoria.descripcion,
+        tipo_unidad: categoria.tipo_unidad,
+        mantenimiento: categoria.tiempo ? categoria.tiempo: null,
         precio_unidad: getPrecioUnidad(categoria.inventario),
         tiempo: categoria.tiempo || "No Aplica"
       }));
@@ -94,6 +98,42 @@ export default function Categoria() {
     navigate("/inventario", { state: { item } });
   };
 
+  const handleSubmit = async (e, tiempoData, mantenimiento) => {
+    e.preventDefault();
+    const form = e.target;
+
+    console.log("CODIGO");
+    console.log(crearCodigo(dataTable, estadoNavBar));
+
+    let tiempoCalculado = null;
+    if (mantenimiento) {
+      const hoy = new Date();
+      tiempoCalculado = new Date(hoy);
+      tiempoCalculado.setFullYear(hoy.getFullYear() + (tiempoData.anios || 0));
+      tiempoCalculado.setMonth(hoy.getMonth() + (tiempoData.meses || 0));
+      tiempoCalculado.setDate(hoy.getDate() + (tiempoData.dias || 0));
+    }
+
+    const createForm = {
+      nombre: form.nombre.value,
+      codigo: crearCodigo(dataTable, estadoNavBar),
+      descripcion: form.descripcion.value,
+      tipo: estadoNavBar,
+      tipo_unidad: estadoNavBar === "Herramienta" ? "UND" : form.tipo_unidad?.value || "",
+      tiempo: mantenimiento ? tiempoCalculado.toISOString() : null,
+    };
+
+    try {
+      await sentences.createData("categoria", createForm);
+      toast.success("Ubicación creada de forma exitosa.");
+      await getDataTable();
+      setOpen(false);
+    } catch (error) {
+      console.error("Error al crear cliente:", error);
+    }
+  };
+
+
   useEffect(() => {
     getDataTable();
   }, [estadoNavBar]);
@@ -104,6 +144,9 @@ export default function Categoria() {
       paramsNavBar={{ estadosNavBar, setEstadoNavBar, estadoNavBar }}
       paramsTable={{ dataTable, onSeleccionar }}
       paramsGenerales={{ codigo: inputData.codigo, nombre: inputData.nombre }}
+      open={open}
+      setOpen={setOpen}
+      handleSubmit={handleSubmit}
     />
   );
 }

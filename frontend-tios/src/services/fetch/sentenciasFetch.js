@@ -2,7 +2,7 @@ import { getTokenData } from "../getLocalStorageData.js";
 
 const BASE_URL = 'http://localhost:3000';
 
-const getUsuario = () => getTokenData().id;
+const getUsuario = () => getTokenData()?.id;
 
 const getAuthHeaders = () => ({
   'Content-Type': 'application/json',

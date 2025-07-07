@@ -6,6 +6,8 @@ export default function Mapa({ punto, setPunto }) {
   const MarkerHandler = () => {
     useMapEvents({
       click(e) {
+        console.log("PUNTO")
+        console.log(e.latlng.lat, e.latlng.lng )
         setPunto({ lat: e.latlng.lat, lng: e.latlng.lng });
       },
     });

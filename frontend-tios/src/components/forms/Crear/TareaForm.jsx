@@ -10,37 +10,33 @@ export default function TareaForm({setOpen, handleSubmit}){
     const [formData, setFormData] = useState({
         nombre: "",
         descripcion: "",
-        id_asignador: localStorage.getItem("id_usuario"),
         id_asignado: "",
+        id_ubicacion: "",
+        id_obra: "",
         fecha_final: new Date(),
     });
 
-    
     const [empleados, setEmpleados] = useState([]);
+    const [ubicaciones, setUbicaciones] = useState([]);
+    const [obras, setObras] = useState([]);
 
-    useEffect(() => {
-    const fetchEmpleados = async () => {
+    const fetchAllData = async () => {
         try {
-            const data = await sentences.getAllData('empleado');
-
-            /*const empleadosConPermiso = await Promise.all(
-                data.map(async (empleado) => {
-                    const posicion = await sentences.extraData('posicion', empleado.posicion.id, 'permisos');
-                    const tienePermiso = posicion?.permisos.some(
-                        (permiso) => permiso.nombre === PERMISOS.RECIBIR_MENSAJES
-                    );
-                    return tienePermiso ? empleado : null;
-                })
-            );
-
-            const filtrados = empleadosConPermiso.filter(Boolean);*/
-            setEmpleados(data);
+            const dataEmpleados = await sentences.getAllData('empleado');
+            const dataUbicaciones = await sentences.getAllData('ubicacion');
+            const dataObras = await sentences.getAllData('obra');
+            
+            setEmpleados(dataEmpleados);
+            setUbicaciones(dataUbicaciones);
+            setObras(dataObras);
         } catch (error) {
-            console.log('Error al cargar empleados:', error);
+            console.log('Error al cargar data:', error);
         }
     };
 
-    fetchEmpleados();
+
+    useEffect(() => {
+    fetchAllData();
     }, []);
 
     const handleChange = (e) => {
@@ -62,9 +58,11 @@ export default function TareaForm({setOpen, handleSubmit}){
             formData={formData}
             empleados={empleados}
             handleChange={handleChange}
-            handleSubmit={handleSubmit}
+            handleSubmit={(e) => handleSubmit(e, formData)}
             handleDateChange = {handleDateChange}
             setOpen={setOpen}
+            ubicaciones={ubicaciones}
+            obras={obras}
         />
     );
 

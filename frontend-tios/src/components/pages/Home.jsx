@@ -42,6 +42,16 @@ export default function HomePage({ categorias, transaccion }){
                     />
                     </Link>
                 )}
+
+                {categorias.includes("Pago") && (
+                    <Link
+                        to="/pagos"
+                    >
+                    <PageButton
+                        text="Pagos"
+                    />
+                    </Link>
+                )}
             </div>
         </div>
 

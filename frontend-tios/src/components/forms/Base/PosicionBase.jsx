@@ -4,7 +4,7 @@ export default function PosicionBase({ formData, handleChange, setOpen, handleSu
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Crear Empleado</h2>
+        <h2 className="text-xl font-bold">Crear Posicion</h2>
         <button
           type="button"
           onClick={() => setOpen(false)}
@@ -35,6 +35,7 @@ export default function PosicionBase({ formData, handleChange, setOpen, handleSu
             <div key={permiso.id} className="flex items-center mb-2">
               <input
                 type="checkbox"
+                name="permisos"
                 value={permiso.id}
                 checked={formData.permisos.includes(String(permiso.id))}
                 onChange={handleCheck}

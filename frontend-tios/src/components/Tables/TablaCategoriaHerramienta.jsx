@@ -31,7 +31,6 @@ export default function TablaCategoriaHerramienta({
           <thead>
             <tr className="bg-gray-100 text-gray-700">
                 <th className="py-2 px-4 text-left">Proveedor</th>
-                <th className="py-2 px-4 text-left">Estado</th>
                 <th className="py-2 px-4 text-left">Mantenimiento</th>
                 <th className="py-2 px-4 text-left">Ubicacion</th>
             </tr>
@@ -44,7 +43,6 @@ export default function TablaCategoriaHerramienta({
                 onClick={() => onSeleccionar(item)}
               >
                 <td className="py-2 px-4">{item.proveedor}</td>
-                <td className="py-2 px-4">{item.estado}</td>
                 <td className="py-2 px-4">{item.mantenimiento}</td>
                 <td className="py-2 px-4">{item.ubicacion}</td>
               </tr>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import LoginPage from '../components/forms/pages/Login.jsx';
 import { toast } from 'react-toastify'
 import fetchLogin from '../services/fetch/fetchLogin.js'
+import { getTokenData } from '../services/getLocalStorageData.js';
 
 
 export default function Login({ruta}){
@@ -19,6 +20,9 @@ export default function Login({ruta}){
         if(result.valido){
             toast.success(result.mensaje);
             setTimeout(() => {
+                if(getTokenData()?.primera){
+                    navigate("/update-password", { state : { ruta } });
+                }
                 navigate(ruta);
             }, 1500);
         }else{

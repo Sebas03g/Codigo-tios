@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PersonasPage from "../components/pages/Personas";
 import * as sentences from "../services/fetch/sentenciasFetch"
+import { toast } from 'react-toastify';
 
 export default function Proveedores(){
     const [formData, setFormData] = useState({
@@ -23,17 +24,33 @@ export default function Proveedores(){
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-          await sentences.createData("persona", formData);
-          setOpen(false);
-        } catch (error) {
-          console.error("Error al crear Proveedor:", error);
-        }
-      };
+            e.preventDefault();
+            const form = e.target;
+    
+            const createForm = {
+                nombre: form.nombre.value,
+                ruc: form.ruc.value,
+                mail: form.mail.value,
+                telefono: form.telefono.value,
+                proveedor: true
+            }
+    
+            try {
+                await sentences.createData("persona", createForm);
+                toast.success("Proveedor creado de forma existosa.")
+                await getProviderData();
+                setOpen(false);
+            } catch (error) {
+                console.error("Error al crear cliente:", error);
+            }
+        };
 
     useEffect(() => {
-        const getProviderData = async () => {
+        getProviderData();
+    
+    }, [])
+    
+    const getProviderData = async () => {
             try{
                 const personasData = await sentences.getAllData("persona");
                 if(!personasData.mensaje){
@@ -44,10 +61,6 @@ export default function Proveedores(){
                 console.log("Error al obtener data de empleados:", error);
             }
         };
-    
-        getProviderData();
-    
-    }, [])
     
     const onSeleccionar = (item) => {
     

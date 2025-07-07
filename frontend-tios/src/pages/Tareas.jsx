@@ -1,6 +1,8 @@
 import TareasPage from "../components/pages/Tareas";
 import * as sentences from "../services/fetch/sentenciasFetch"
 import { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+import { getTokenData } from "../services/getLocalStorageData";
 
 export default function Tareas(){
 
@@ -10,15 +12,29 @@ export default function Tareas(){
         nombre: ""
     })
 
+    const id_usuario = getTokenData()?.id;
+
     const [estado, setEstado] = useState("TODOS")
     const [dataTable, setDataTable] = useState([])
     const [open, setOpen] = useState(false);
 
+    const estadosNavBar = ["Propios", "General"];
+    const [estadoNavBar, setEstadoNavBar] = useState("General");
+
     const getDataTable = async() => {
         try{
             const dataTareas = await sentences.allDataAllRelations("tarea", ["asignador", "asignado"])
-            const fixedData = await Promise.all(
-                dataTareas.map(async (tarea) => {
+
+            let filteredTareas = [];
+
+            if(estadoNavBar === "General"){
+                filteredTareas = dataTareas;
+            }else{
+                filteredTareas = dataTareas.filter((elemento) => elemento.id_asignado === id_usuario);
+            }
+
+            let fixedData = await Promise.all(
+                filteredTareas.map(async (tarea) => {
                     return {
                         id:tarea.id,
                         nombre:tarea.nombre,
@@ -40,7 +56,7 @@ export default function Tareas(){
 
     useEffect(() => {
         getDataTable()
-    }, []);
+    }, [estadoNavBar]);
 
     const handleEstado = (e) => {
         setEstado(e.target.value);
@@ -61,9 +77,39 @@ export default function Tareas(){
 
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
+    const handleSubmit = async (e, formDataState) => {
+        e.preventDefault();
+
+        if (!(formDataState.fecha_final instanceof Date) || isNaN(formDataState.fecha_final)) {
+            toast.error("Selecciona una fecha válida");
+            return;
+        }
+
+        if (!formDataState.id_ubicacion && !formDataState.id_obra) {
+            toast.error("Debes seleccionar al menos una ubicación o una obra");
+            return;
+        }
+
+        const createForm = {
+            nombre: formDataState.nombre,
+            descripcion: formDataState.descripcion,
+            fecha_final: formDataState.fecha_final.toISOString(),
+            id_asignador: 1,
+            id_asignado: parseInt(formDataState.id_asignado),
+            id_ubicacion: formDataState.id_ubicacion ? parseInt(formDataState.id_ubicacion) : null,
+            id_obra: formDataState.id_obra ? parseInt(formDataState.id_obra) : null,
+            createdBy: 1
+        };
+
+        try {
+            await sentences.createData("tarea", createForm);
+            toast.success("Tarea creada exitosamente");
+            getDataTable();
+            setOpen(false);
+        } catch (error) {
+            console.error("Error al crear tarea:", error);
+        }
+    };
 
     return(
         <TareasPage
@@ -79,7 +125,7 @@ export default function Tareas(){
             open={open}
             setOpen={setOpen}
             handleSubmit={handleSubmit}
-        
+            paramsNavBar = {{ estadosNavBar, setEstadoNavBar, estadoNavBar }}
         />
     );
 }

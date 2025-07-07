@@ -1,7 +1,7 @@
 import TablaTarea from "../Tables/TablaTareas";
 import { AiOutlinePlus } from "react-icons/ai";
-import Crear from "../forms/Crear/TareaForm"
-
+import Crear from "../forms/Crear/TareaForm";
+import NavigationBar from "../general/navbar";
 export default function TareasPage({
   asignador,
   asignado,
@@ -9,12 +9,15 @@ export default function TareasPage({
   nombre,
   handleEstado,
   handleInputChange,
-  handleAgregar,
   dataTable,
   onSeleccionar,
   handleSubmit,
-  open, setOpen
+  open, setOpen,
+  paramsNavBar
 }) {
+
+  const { estadosNavBar, setEstadoNavBar, estadoNavBar } = paramsNavBar;
+
   return (
     <div className="h-full flex flex-col">
       <h1 className="text-2xl font-bold text-gray-800 mb-4">Tareas</h1>
@@ -60,14 +63,22 @@ export default function TareasPage({
             </label>
           ))}
         </div>
-        <button
-          onClick={() => setOpen(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition w-fit"
-        >
-          <AiOutlinePlus className="text-lg" />
-          <span className="hidden sm:inline">Agregar</span>
-        </button>
+
+        {estadoNavBar === "General" && (
+          <button
+            onClick={() => setOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition w-fit"
+          >
+            <AiOutlinePlus className="text-lg" />
+            <span className="hidden sm:inline">Agregar</span>
+          </button>
+        )}
+        
       </div>
+
+      <NavigationBar
+        paramsNavBar={paramsNavBar}
+      />
 
       <TablaTarea
         datos={dataTable}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import CategoriaBase from "../Base/CategoriaBase.jsx";
 
-export default function CategoriaForm({ setOpen, tipo }) {
+export default function CategoriaForm({ setOpen, tipo, handleSubmit }) {
   const [formData, setFormData] = useState({
     nombre: "",
     codigo: "",
@@ -38,29 +38,6 @@ export default function CategoriaForm({ setOpen, tipo }) {
     setMantenimiento(e.target.checked);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    let tiempoCalculado = "";
-    if (mantenimiento) {
-        const hoy = new Date();
-        tiempoCalculado = new Date(hoy);
-        tiempoCalculado.setFullYear(tiempoCalculado.getFullYear() + tiempoData.anios);
-        tiempoCalculado.setMonth(tiempoCalculado.getMonth() + tiempoData.meses);
-        tiempoCalculado.setDate(tiempoCalculado.getDate() + tiempoData.dias);
-
-        
-
-    }
-
-    const dataParaEnviar = {
-        ...formData,
-        ...(mantenimiento && { tiempo: tiempoCalculado.toISOString() })
-    };
-
-    
-  };
-
   useEffect(() => {
     setFormData((prev) => ({ ...prev, tipo }));
   }, [tipo]);
@@ -68,7 +45,7 @@ export default function CategoriaForm({ setOpen, tipo }) {
   return (
     <CategoriaBase
       formData={formData}
-      handleSubmit={handleSubmit}
+      handleSubmit={(e) => handleSubmit(e, tiempoData, mantenimiento)}
       setOpen={setOpen}
       handleChange={handleChange}
       handleMantenimiento={handleMantenimiento}

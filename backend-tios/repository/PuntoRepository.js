@@ -1,4 +1,5 @@
 import { baseRepository } from './baseRepository.js'
+import { prisma } from '../config/db.js';
 
 const repo = baseRepository('punto');
 
@@ -7,8 +8,8 @@ repo.findByCords = (data) =>
         where: {
             lat: data.lat,
             lng: data.lng,
-            estadoEliminado: 'ACTIVO',
+            createdBy: data.createdBy,
         }
     })
 
-export default repo;1
+export default repo;

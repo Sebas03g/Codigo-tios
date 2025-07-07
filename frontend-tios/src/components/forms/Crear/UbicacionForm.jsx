@@ -2,16 +2,8 @@ import { useState } from "react";
 import * as sentences from "../../../services/fetch/sentenciasFetch.js";
 import UbicacionBase from "../Base/UbicacionBase.jsx";
 
-export default function UbicacionForm({setOpen, handleSubmit}){
-    const [formData, setFormData] = useState({
-        nombre: "",
-        descripcion: "",
-        id_punto: ""
-    });
-    const [punto, setPunto] = useState({
-        lat: -0.22985,
-        lng: -78.52495
-    });
+export default function UbicacionForm({setOpen, handleSubmit, paramsFormData}){
+    const {formData, setFormData, punto, setPunto} = paramsFormData;
 
     const handleChange = (e) => {
         setFormData({
