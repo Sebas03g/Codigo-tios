@@ -45,3 +45,5 @@ service.create = async(data) => {
     }
 
 }
+
+export default service;

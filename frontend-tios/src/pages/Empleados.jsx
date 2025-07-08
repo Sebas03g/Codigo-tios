@@ -46,6 +46,9 @@ export default function Empleados() {
     e.preventDefault();
 
     const form = e.target;
+
+    console.log(form.mail.value);
+
     const createForm = {
       nombre: form.nombre.value,
       cedula: form.cedula.value,

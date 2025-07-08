@@ -41,6 +41,10 @@ export async function enviarCorreoArchivo({ to, subject, text , dataFile }) {
 
 export async function enviarCorreoSinArchivo({ to, subject, text, html }) {
   try {
+    console.log("AQUI");
+    console.log(process.env.EMAIL_USER);
+    console.log(html);
+
     const info = await transporter.sendMail({
       from: `"Hidrogas" <${process.env.EMAIL_USER}>`,
       to,

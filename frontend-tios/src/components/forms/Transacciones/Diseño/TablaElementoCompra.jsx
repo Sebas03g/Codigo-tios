@@ -1,6 +1,6 @@
 export default function TablaElementoCompra({ dataInventario, handleCheck }) {
   return (
-    <div className="overflow-x-auto max-h-[400px] overflow-y-auto border rounded shadow">
+    <div className="overflow-x-auto fill-h overflow-y-auto border rounded shadow">
       <table className="min-w-full text-sm text-left">
         <thead className="bg-gray-100 text-gray-600 font-semibold">
           <tr>

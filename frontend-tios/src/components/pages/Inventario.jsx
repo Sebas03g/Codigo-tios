@@ -83,7 +83,7 @@ export default function InventarioPage({
     
           {open && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-grey bg-opacity-40">
-              <div className="bg-white p-6 rounded-xl shadow-xl w-[80%] max-w">
+              <div className="bg-white p-6 rounded-xl shadow-xl fill-w max-h-[90vh] overflow-y-auto">
                 <Crear 
                   setOpen={setOpen}
                   handleSubmit={handleSubmit}

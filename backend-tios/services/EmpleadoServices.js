@@ -18,8 +18,16 @@ function generarPassword(longitud = 10) {
 
 service.create = async (data) => {
   data.password = generarPassword();
+  console.log('AQUIII 2')
+  console.log(data);
 
-  enviarCorreoSinArchivo(data.mail, "Creacion cuenta de hidrogas", "", `<h1>Creacion cuenta de la aplicacion Hidrogas</h1><br/><p>Clave Temporal:</p><br/><h2>${data.password}</h2></br><a href="http://localhost:5173/">Enlace aqui</a>`);
+  await enviarCorreoSinArchivo({
+    to: data.mail,
+    subject: "Creación cuenta de Hidrogas",
+    text: "",
+    html: `<h1>Creación cuenta de la aplicación Hidrogas</h1><br/><p>Clave Temporal:</p><br/><h2>${data.password}</h2></br><a href="http://localhost:5173/">Enlace aquí</a>`
+  });
+
 
   data.password = await bcrypt.hash(data.password, 10);
 
@@ -44,7 +52,10 @@ export const login = async (cedula, password) => {
 
   let token;
 
-  if (empleado.fecha_inicio === null) {
+  console.log("FECHA");
+  console.log(empleado.fecha_inicio);
+
+  if (empleado.fecha_inicio == null) {
     await repo.update(empleado.id, { fecha_inicio: new Date() });
 
     token = jwt.sign(

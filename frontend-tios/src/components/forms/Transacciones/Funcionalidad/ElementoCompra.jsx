@@ -2,18 +2,16 @@ import { useEffect, useState } from "react";
 import * as sentences from "../../../../services/fetch/sentenciasFetch"
 import ElementoCompraDesign from "../Diseño/ElementoCompra";
 
-export default function ElementoCompra({ setOpen, handleSubmit, categoria }){
+export default function ElementoCompra({ setOpen, handleSubmit, categoria, tipo }){
     const [formData, setFormData] = useState({
         id_ubicacion: "",
-        id_proveedor: "",
         cantidad: 0.0,
         precio: 0.0,
         ruc: "",
         nombre: "",
         telefono: "",
         mail: "",
-        cantidad: "",
-        precio: ""
+        estado: tipo=="Herramiento" ? "Nuevo" : null,
     })
 
     const [dataUbicaciones, setDataUbicaciones] = useState([]);
@@ -31,7 +29,6 @@ export default function ElementoCompra({ setOpen, handleSubmit, categoria }){
             if(prov){
                 setFormData({
                     ...formData,
-                    id_proveedor: prov.id,
                     ruc: prov.ruc,
                     nombre: prov.nombre,
                     telefono: prov.telefono,
@@ -49,7 +46,6 @@ export default function ElementoCompra({ setOpen, handleSubmit, categoria }){
     const handleCheck = (item) => {
         setFormData({
             ...formData,
-            id_proveedor: item.id,
             ruc: item.ruc,
             nombre: item.nombre,
             telefono: item.telefono,
@@ -64,12 +60,11 @@ export default function ElementoCompra({ setOpen, handleSubmit, categoria }){
             const dataInventario = await sentences.allDataAllRelations("inventario", ["proveedor"]);
 
             const filteredInventarioData = dataInventario.filter((elemento) => elemento.id_categoria === categoria.id)
-            const filteredProveedorData = dataProveedor.filter((elemento) => elemento.proveedor);
 
             filteredInventarioData.sort((a, b) => a.precio - b.precio);
 
-            setDataUbicaciones(dataUbicacion);
-            setDataProveedores(filteredProveedorData);
+            setDataUbicaciones(dataUbicacion?.mensaje ? [] : dataUbicacion);
+            setDataProveedores(dataProveedor?.mensaje ? [] : dataProveedor);
             setDataInventario(filteredInventarioData);
 
         }catch (error) {
@@ -90,6 +85,7 @@ export default function ElementoCompra({ setOpen, handleSubmit, categoria }){
             formData={formData}
             handleChange={handleChange}
             handleCheck={handleCheck}
+            tipo={tipo}
         />
     );
 }

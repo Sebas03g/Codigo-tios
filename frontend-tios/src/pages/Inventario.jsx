@@ -1,7 +1,9 @@
 import { useLocation } from 'react-router-dom';
 import * as sentences from "../services/fetch/sentenciasFetch";
+import {transaction} from "../services/fetch/fetchTransactions";
 import { useEffect, useState } from 'react';
 import InventarioPage from '../components/pages/Inventario';
+import { toast } from 'react-toastify';
 
 export default function Inventario(){
     const location = useLocation();
@@ -16,18 +18,29 @@ export default function Inventario(){
 
     const handleSubmit = async (e, formData) => {
         e.preventDefault();
+        const inventario ={
+            precio:formData.precio,
+            cantidad:formData.cantidad,
+            id_categoria:categoria.id,
+            id_ubicacion:formData.id_ubicacion
+        }
         const createForm = {
-
+            ruc:formData.ruc,
+            nombre:formData.nombre,
+            mail:formData.mail,
+            telefono:formData.telefono,
+            inventario:[inventario],
+            obra:null,
         };
 
         try {
-              await sentences.createData("empleado", createForm);
-              toast.success("Empleado creado exitosamente");
-              await getAllEmployeeData();
-              setOpen(false);
-            } catch (error) {
-              console.error("Error al crear empleado:", error);
-            }
+            await transaction(createForm, "purchase");
+            toast.success("Compra exitosa");
+            await getDataCategoria();
+            setOpen(false);
+        } catch (error) {
+            console.error("Error al crear empleado:", error);
+        }
     };
 
 
@@ -43,7 +56,7 @@ export default function Inventario(){
                     ubicacion: elemento.ubicacion.nombre,
                     proveedor: elemento.proveedor.ruc,
                     mantenimiento: categoria.tiempo,
-                    estado: elemento.estado
+                    estado: elemento?.estado ? elemento.estado : null
                 }
             });
                 

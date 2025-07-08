@@ -4,7 +4,7 @@ import TablaElementoCompra from "../Diseño/TablaElementoCompra";
 export default function ElementoCompraDesign({
   dataUbicaciones, dataInventario,
   setOpen, handleSubmit, formData,
-  handleChange, handleCheck
+  handleChange, handleCheck, tipo
 }) {
   return (
     <form onSubmit={handleSubmit} className="fill-w mx-auto p-6">
@@ -45,13 +45,32 @@ export default function ElementoCompraDesign({
               required
             >
               <option value="">-- Selecciona una ubicación --</option>
-              {dataUbicaciones.map((ubi) => (
+              {dataUbicaciones?.map((ubi) => (
                 <option key={ubi.id} value={ubi.id}>
                   {ubi.nombre}
                 </option>
               ))}
             </select>
           </div>
+          {tipo=="Herramienta" && (
+            <div>
+              <label className="block mb-1">Estado</label>
+              <select
+                name="estado"
+                value={formData.estado}
+                onChange={handleChange}
+                className="w-full border border-gray-300 px-3 py-2 rounded"
+                required
+              >
+                <option value="">-- Seleccione el Estado --</option>
+                {["NUEVO", "USADO", "VIEJO", "DAÑADO"].map((estado, indice) => (
+                  <option key={indice} value={estado}>
+                    {estado}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           <button
             type="submit"
