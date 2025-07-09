@@ -4,6 +4,7 @@ import csurf from 'csurf';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import helmet from 'helmet';
 
 import { logRequest } from './middleware/loggerMiddleware.js';
 
@@ -46,6 +47,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middlewares básicos
+app.use(helmet());
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(logRequest);

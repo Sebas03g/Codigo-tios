@@ -18,8 +18,15 @@ function generarPassword(longitud = 10) {
 
 service.create = async (data) => {
   data.password = generarPassword();
-  console.log('AQUIII 2')
-  console.log(data);
+
+  let persona = await repo.findByCedRUC(data.ruc);
+  if(persona !== null){
+      throw new Error("Error datos duplicados");
+  }
+  persona = await repo.findByMail(data.mail);
+  if(persona !== null){
+        throw new Error("Error datos duplicados");
+  }
 
   await enviarCorreoSinArchivo({
     to: data.mail,
@@ -51,9 +58,6 @@ export const login = async (cedula, password) => {
   const categoriasEmpleado = data.permisos.map(p => p.categoria);
 
   let token;
-
-  console.log("FECHA");
-  console.log(empleado.fecha_inicio);
 
   if (empleado.fecha_inicio == null) {
     await repo.update(empleado.id, { fecha_inicio: new Date() });

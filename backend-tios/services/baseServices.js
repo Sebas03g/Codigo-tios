@@ -7,8 +7,9 @@ export const baseService = (repository, dataValidate) => ({
     return repository.update(id, data);
   },
 
-  delete: async (id) => {
-    return repository.delete(id);
+  delete: async (id, data) => {
+
+    return repository.delete(id, data);
   },
 
   findById: async (id) => {
@@ -17,6 +18,13 @@ export const baseService = (repository, dataValidate) => ({
 
   findAll: async () => {
     return repository.findAll();
+  },
+  findAllFilter: async (filter) => {
+    return repository.findAllFilter(filter);
+  },
+  
+  findAllDeleted: async () => {
+    return repository.findAllDeleted();
   },
 
   extraData: async (id, relation) => {

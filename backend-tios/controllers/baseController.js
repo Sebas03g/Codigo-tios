@@ -77,6 +77,35 @@ export const baseController = (service) => ({
     }
   },
 
+  findAllFilter: async (req, res) => {
+    try {
+      const filter = req.body;
+      const results = await service.findAllFilter(filter);
+      if (!results || results.length === 0) {
+        return res.status(200).json({ mensaje: 'No hay registros.' });
+      }
+      res.status(200).json(results);
+    } catch (error) {
+      console.error(error);
+      logger.error(error);
+      res.status(500).json({ mensaje: 'Error interno del servidor.' });
+    }
+  },
+
+  findAllDeleted: async (req, res) => {
+    try {
+      const results = await service.findAllDeleted();
+      if (!results || results.length === 0) {
+        return res.status(200).json({ mensaje: 'No hay registros.' });
+      }
+      res.status(200).json(results);
+    } catch (error) {
+      console.error(error);
+      logger.error(error);
+      res.status(500).json({ mensaje: 'Error interno del servidor.' });
+    }
+  },
+
   extraData: async (req, res) => {
     try{
     

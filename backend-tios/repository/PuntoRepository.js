@@ -10,6 +10,6 @@ repo.findByCords = (data) =>
             lng: data.lng,
             createdBy: data.createdBy,
         }
-    })
+    });
 
 export default repo;

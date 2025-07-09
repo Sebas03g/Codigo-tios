@@ -1,8 +1,19 @@
 import repo from '../repository/PosicionRepository.js'
 import { baseService } from './baseServices.js'
 
-export default baseService(repo);
+const service = baseService(repo);
 
-export const permisos = async(id) => {
+service.create = async(data) => {
+    const permiso = await repo.findByName(data.nombre);
+
+    if(permiso){
+        throw new Error("Error datos duplicados");
+    }
+    return await repo.create(permiso);
+}
+
+service.permisos = async(id) => {
    return await repo.obtenerPermisos(id);
 }
+
+export default service;

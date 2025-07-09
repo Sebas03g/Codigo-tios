@@ -93,8 +93,6 @@ model Punto{
   obra      Obra[]
   empleado ubicacion_empleado[]
 
-  @@unique([lat,lng])
-
   createdBy   Int
   updatedBy   Int?
   deletedBy   Int?
@@ -125,7 +123,7 @@ model Ubicacion{
 model Categoria{
   id        Int     @id @default(autoincrement())
   nombre    String
-  codigo    String  @unique
+  codigo    String
   descripcion    String
   tipo CategoriasInventario
   tipo_unidad    String
@@ -144,8 +142,8 @@ model Categoria{
 model Persona{
   id        Int     @id @default(autoincrement())
   nombre    String
-  ruc    String @unique
-  mail    String  @unique
+  ruc    String
+  mail    String
   telefono    String
   proveedor    Boolean
   estadoEliminado EstadoEliminado @default(ACTIVO)
@@ -191,7 +189,7 @@ model Inventario{
 
 model Permiso {
   id               Int       @id @default(autoincrement())
-  nombre           String    @unique
+  nombre           String
   estadoEliminado  EstadoEliminado @default(ACTIVO)
   categoria        CategoriasPermiso
 
@@ -228,7 +226,7 @@ model PermisoDependencia {
 
 model Posicion{
   id        Int     @id @default(autoincrement())
-  nombre    String  @unique
+  nombre    String
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   permisos Permiso[] @relation("posicion_permiso")
@@ -245,8 +243,8 @@ model Posicion{
 model Empleado{
   id        Int     @id @default(autoincrement())
   nombre    String
-  cedula    String  @unique
-  mail    String  @unique 
+  cedula    String 
+  mail    String  
   telefono    String
   sueldo    Decimal
   password String
@@ -346,7 +344,7 @@ model Proforma{
 
   punto  Punto @relation(fields: [id_punto], references: [id])
   cliente Persona @relation(fields: [id_cliente], references: [id])
-  obra Obra?
+  obra Obra[]
 
   procesos Proceso []
 
@@ -428,7 +426,7 @@ model Obra{
   porcentaje_venta Decimal
   id_punto Int 
   id_cliente Int
-  id_proforma Int @unique
+  id_proforma Int
   estado EstadoObra @default(ACTIVO)
   estadoEliminado EstadoEliminado @default(ACTIVO)
 

@@ -12,5 +12,6 @@ export const baseRouter = (controller, validateData) => {
     router.get('/related/:relation', controller.allExtraData);
     router.post('/all/:id', controller.dataAllRelations);
     router.post('/data/all', controller.allDataAllRelations);
+    router.post('/filtered/data', controller.findAllFilter);
     return router;
 }

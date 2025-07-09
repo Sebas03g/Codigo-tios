@@ -9,4 +9,10 @@ repo.findByCedRUC = async(dato) => {
     });
 }
 
+repo.findByMail = async(dato) => {
+    return prisma.persona.findFirst({
+        where: {mail: String(mail), estadoEliminado: 'ACTIVO' },
+    });
+}
+
 export default repo;

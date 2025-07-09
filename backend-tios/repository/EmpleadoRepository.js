@@ -43,4 +43,16 @@ repo.updateLiveLocationn = async (id, data) => {
   const empleado = await repo.findById(id)
 }
 
+repo.findByCedRUC = async(dato) => {
+    return prisma.persona.findFirst({
+        where: {ruc: String(dato), estadoEliminado: 'ACTIVO' },
+    });
+}
+
+repo.findByMail = async(dato) => {
+    return prisma.persona.findFirst({
+        where: {mail: String(mail), estadoEliminado: 'ACTIVO' },
+    });
+}
+
 export default repo;

@@ -1,3 +1,12 @@
 import { baseRepository } from './baseRepository.js'
+import { prisma } from '../config/db.js';
 
-export default baseRepository('permiso');
+const repo = baseRepository('permiso');
+
+repo.findByName = async(dato) => {
+    return prisma.permiso.findFirst({
+        where: {nombre: String(nombre), estadoEliminado: 'ACTIVO' },
+    });
+}
+
+export default repo;

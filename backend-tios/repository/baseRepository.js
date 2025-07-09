@@ -16,6 +16,18 @@ export const baseRepository = (modelName) => ({
   create: async (data) => {
     return prisma[modelName].create({ data });
   },
+  
+  findAllFilter: async (filter) => {
+    return prisma[modelName].findMany({
+      where: filter,
+    });
+  },
+
+  findAllDeleted: async () => {
+    return prisma[modelName].findMany({
+      where: { estadoEliminado: 'ELIMINADO' },
+    })
+  },
 
   update: async (id, data) => {
     const record = await prisma[modelName].findFirst({
@@ -28,14 +40,14 @@ export const baseRepository = (modelName) => ({
     });
   },
 
-  remove: async (id) => {
+  delete: async (id, data) => {
     const record = await prisma[modelName].findFirst({
       where: { id: Number(id), estadoEliminado: 'ACTIVO' },
     });
     if (!record) return null;
     return prisma[modelName].update({
       where: { id: Number(id) },
-      data: { estadoEliminado: 'ELIMINADO' },
+      data: data,
     });
   },
 
