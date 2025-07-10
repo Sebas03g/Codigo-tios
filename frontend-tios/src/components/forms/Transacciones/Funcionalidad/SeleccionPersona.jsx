@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react";
-import * as sentences from "../../../../services/fetch/sentenciasFetch"
-import SeleccionPersonaDesign from "../Diseño/SeleccionPersona"
+import * as sentences from "../../../../services/fetch/sentenciasFetch";
+import SeleccionPersonaDesign from "../Diseño/SeleccionPersona";
 
 export default function SeleccionPersona({setOpen, handleSubmit, tipo}){
     const [formData, setFormData] = useState({
         nombre:"",
         ruc:"",
         mail:"",
-        telefono:"",
-        proveedor:tipo=="proveedor",
+        telefono:""
     })
 
     const [dataProveedores, setDataProveedores] = useState([]);
-    
+
     const handleChange = (e) => {
+        const { name, value } = e.target;
 
-        const name = e.target.name;
-        const value = e.target.value;
+        console.log(name);
+        console.log(value);
+        console.log(dataProveedores);
 
-        if(name==="ruc"){
+        if (name === "ruc") {
             const prov = dataProveedores.find(proveedor => proveedor.ruc === value);
 
-            if(prov){
-                setFormData({
+            if (prov) {
+                return setFormData({
                     ...formData,
                     ruc: prov.ruc,
                     nombre: prov.nombre,
@@ -30,26 +31,25 @@ export default function SeleccionPersona({setOpen, handleSubmit, tipo}){
                     mail: prov.mail,
                 });
             }
-        }else{
-            setFormData({
-                ...formData,
-                [name]:value
-            })
-        }    
-    }
+        }
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
 
-    const getAllData = async() => {
+    const getData = async() => {
         try{
-            const data = await sentences.getAllData("persona");
-            setDataProveedores(data);
+            const dataProveedor = await sentences.getAllData("persona");
+            setDataProveedores(dataProveedor?.mensaje ? [] : dataProveedor);
+    
         }catch (error) {
             console.log("Error al obtener data de elemento de compra:", error);
         }
-
     }
 
     useEffect(() => {
-        getAllData();
+        getData();
     }, []);
 
     return(
@@ -58,7 +58,8 @@ export default function SeleccionPersona({setOpen, handleSubmit, tipo}){
             handleSubmit={(e) => handleSubmit(e,formData)}
             formData={formData}
             handleChange={handleChange}
-             tipo={tipo}
+            tipo={tipo}
         />
     );
+
 }
