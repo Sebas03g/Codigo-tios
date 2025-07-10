@@ -71,7 +71,7 @@ export const removeData = async(nombreClase, id) => {
     method: 'POST',
     headers: getAuthHeaders(),
     credentials: 'include',
-    body: JSON.stringify({ deletedBy: getUsuario(),  estadoEliminado: "ELIMINADO"}),
+    body: JSON.stringify({ deletedBy: getUsuario(),  estadoEliminado: "ELIMINADO", deletedDate: new Date()}),
   });
   return handleResponse(res);
 };

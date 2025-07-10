@@ -48,9 +48,7 @@ export default function Posiciones() {
         console.log(item)
     }
 
-    const handleAgregar = (e) => {
 
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -68,6 +66,7 @@ export default function Posiciones() {
             }); 
         } catch (error) {
             console.error("Error al crear empleado:", error);
+            toast.error("Validar que el dato de Nombre sea unico");
         }
     }
 

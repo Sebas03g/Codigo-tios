@@ -42,6 +42,7 @@ export default function Proveedores(){
                 setOpen(false);
             } catch (error) {
                 console.error("Error al crear cliente:", error);
+                toast.error("Validar que los datos de RUC y Mail sean unicos.");
             }
         };
 

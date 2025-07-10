@@ -65,6 +65,7 @@ export default function Empleados() {
       setOpen(false);
     } catch (error) {
       console.error("Error al crear empleado:", error);
+      toast.error("Validar que los datos de RUC y Mail sean unicos.");
     }
   };
 

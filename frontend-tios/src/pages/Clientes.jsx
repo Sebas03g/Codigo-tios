@@ -18,11 +18,6 @@ export default function Clientes(){
             [e.target.name]: e.target.value,
         });
     }
-
-    const handleAgregar = (item) => {
-
-    }
-
     const getProviderData = async () => {
         try{
             const personasData = await sentences.getAllData("persona");
@@ -63,6 +58,7 @@ export default function Clientes(){
             setOpen(false);
         } catch (error) {
             console.error("Error al crear cliente:", error);
+            toast.error("Validar que los datos de RUC y Mail sean unicos.");
         }
     };
 
