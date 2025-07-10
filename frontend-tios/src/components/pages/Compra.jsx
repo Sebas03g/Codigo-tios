@@ -1,13 +1,14 @@
 import TablaCompra from "../Tables/TablaCompra";
+import CrearProveedor from "../forms/Transacciones/Funcionalidad/SeleccionPersona"
 
 export default function CompraPage({
     handleProveedor, estadoCredito, setEstadoCredito,
     fecha, setFecha, handleAgregarElemento,
     tableData, onSeleccionar, setCantidad, proveedor,
-    setPrecioUnidad, handleCompra
+    setPrecioUnidad, handleCompra, openProveedor, 
+    setOpenProveedor, openInventario, setOpenInventario,
 }){
     
-
     return (
         <div className="min-h-screen p-8 bg-gray-100">
             <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg">
@@ -17,7 +18,7 @@ export default function CompraPage({
                     
                     <button
                         className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-                        onClick={handleProveedor}
+                        onClick={() => setOpenProveedor(true)}
                     >
                         {proveedor ? "Modificar": "Proveedor"}
                     </button>
@@ -60,7 +61,7 @@ export default function CompraPage({
 
                 <div className="mt-4">
                     <button
-                        onClick={handleAgregarElemento}
+                        onClick={() => setOpenInventario(true)}
                         className="min-w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
                     >
                         Agregar Elemento
@@ -75,6 +76,17 @@ export default function CompraPage({
                     </button>
                 </div>
             </div>
+            {openProveedor && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-grey bg-opacity-40">
+                    <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full">
+                        <CrearProveedor 
+                          setOpen={setOpenProveedor}
+                          handleSubmit={handleProveedor}
+                          tipo = {"Proveedor"}
+                        />
+                      </div>
+                </div>
+            )}
         </div>
     );
 }

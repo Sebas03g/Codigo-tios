@@ -7,10 +7,16 @@ export default function RealizarCompra(){
     const [fecha, setFecha] = useState("");
     const [estadoCredito, setEstadoCredito] = useState(false);
     const [proveedor, setProveedor] = useState(null);
+    const [inventario, setInventario] = useState([]);
 
-    const handleAgregarElemento = () => {
+    const [openProveedor, setOpenProveedor] = useState(false)
+    const [openInventario, setOpenInventario] = useState(false)
 
-        
+    const handleAgregarElemento = (e, inventarioDato) => {
+        e.preventDefault();
+        setInventario([...inventario, inventarioDato]);
+        agregarElementoTabla(inventarioDato);
+        setOpenInventario(false);
     };
 
     const agregarElementoTabla = (item) => {
@@ -29,8 +35,10 @@ export default function RealizarCompra(){
         setTableData([...tableData, nuevoElemento]);
     };
 
-    const handleProveedor = () => {
-        
+    const handleProveedor = (e, formProveedor) => {
+        e.preventDefault();
+        setProveedor({ ...formProveedor});
+        setOpenProveedor(false);
     }
 
     const onSeleccionar = () => {
@@ -40,8 +48,11 @@ export default function RealizarCompra(){
     const setCantidad = (cantidad, item) => {
         const total = cantidad * item.precio_unidad;
         const nuevosElemento = tableData.map(data =>
-            data.id === item.id ? { ...data, cantidad: cantidad, total: total } : item
+            data.id === item.id
+                ? { ...data, cantidad, total }
+                : data
         );
+
         setTableData(nuevosElemento);
     }
 
@@ -71,6 +82,10 @@ export default function RealizarCompra(){
             proveedor={proveedor}
             setPrecioUnidad={setPrecioUnidad}
             handleCompra={handleCompra}
+            openProveedor={openProveedor}
+            setOpenProveedor={setOpenProveedor}
+            openInventario={openInventario}
+            setOpenInventario={setOpenInventario}
         />
     );
 }

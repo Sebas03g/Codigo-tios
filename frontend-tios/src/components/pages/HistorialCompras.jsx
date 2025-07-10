@@ -17,7 +17,14 @@ export default function HistorialCompras(){
     const getTableData = async() => {
         try{
             const data = await sentences.allDataAllRelations("transaccion", ["elementos", "empleado", "compra", "persona", "obra"])
-            const dataFiltrada = data.filter((dato) => {data.compra});
+
+            console.log("AQUIIIIII");
+            console.log(data);
+
+            const dataFiltrada = data.filter((dato) => {dato.id_compra});
+            
+            console.log(dataFiltrada);
+                
             const elementosTotales = await sentences.allExtraData("transaccion_elementos", "elemento");
             const diccionario = []
 
@@ -36,6 +43,8 @@ export default function HistorialCompras(){
                 }
                 diccionario.push(elemento)
             }
+
+            console.log(diccionario);
 
             setTableData(diccionario);
 
