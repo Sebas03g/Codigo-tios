@@ -8,9 +8,16 @@ export default function RealizarVenta(){
         const [fecha, setFecha] = useState("");
         const [cliente, setCliente] = useState(null);
         const [porcentaje, setPorcentaje] = useState(0);
+
+        const [openCliente, setOpenCliente] = useState(false)
+        const [openInventario, setOpenInventario] = useState(false)
+
     
         const handleAgregarElemento = () => {
-    
+            e.preventDefault();
+            setInventario([...inventario, inventarioDato]);
+            agregarElementoTabla(inventarioDato);
+            setOpenInventario(false);
             
         };
     
@@ -31,8 +38,10 @@ export default function RealizarVenta(){
             setTableData([...tableData, nuevoElemento]);
         };
     
-        const handleCliente = () => {
-            
+        const handleCliente = (e, formCliente) => {
+            e.preventDefault();
+            setCliente({ ...formCliente});
+            setOpenCliente(false);
         }
     
         const onSeleccionar = () => {
@@ -73,6 +82,10 @@ export default function RealizarVenta(){
                 cliente={cliente}
                 setPrecioUnidad={setPrecioUnidad}
                 handleVenta={handleVenta}
+                openCliente={openCliente}
+                setOpenCliente={setOpenCliente}
+                openInventario={openInventario}
+                setOpenInventario={setOpenInventario}
             />
         );
 }

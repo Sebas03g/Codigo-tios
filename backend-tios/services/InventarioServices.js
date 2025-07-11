@@ -1,88 +1,146 @@
 import repo from '../repository/InventarioRepository.js';
 import repoPersona from '../repository/PersonaRepository.js';
-import serviceTransaccion from './TransaccionServices.js'
-import repoTransaccion_elementos from '../repository/transaccion_elementosRepository.js'
+import serviceTransaccion from './TransaccionServices.js';
+import repoTransaccion_elementos from '../repository/transaccion_elementosRepository.js';
+import repoCategoria from '../repository/CategoriaRepository.js'
 import { baseService } from './baseServices.js';
 
 const service = baseService(repo);
 
-service.purchase = async (data) => {
-  const { createdBy, ruc, nombre, mail, telefono, inventario, obra } = data;
-
+async function obtenerOcrearPersona({ ruc, nombre, mail, telefono, proveedor, createdBy }) {
   let persona = await repoPersona.findByCedRUC(ruc);
 
-  if (persona && !persona.proveedor) {
-    await repoPersona.update({ proveedor: true, updatedBy: createdBy });
-  } else if (!persona) {
+  if (persona) {
+    if (persona.proveedor !== proveedor) {
+      await repoPersona.update(persona.id, { proveedor:true, updatedBy: createdBy });
+    }
+  } else {
     persona = await repoPersona.create({
       nombre,
       ruc,
       mail,
       telefono,
-      proveedor: true,
-      createdBy
+      proveedor,
+      createdBy,
     });
   }
+
+  return persona;
+}
+
+service.purchase = async (data) => {
+
+  console.log("DATA");
+  console.log(data);
+
+  const { createdBy, ruc, nombre, mail, telefono, inventario, obra } = data;
+
+  if (!inventario || !Array.isArray(inventario) || inventario.length === 0) {
+    throw new Error("Inventario inválido o vacío.");
+  }
+
+  const persona = await obtenerOcrearPersona({
+    ruc,
+    nombre,
+    mail,
+    telefono,
+    proveedor: true,
+    createdBy,
+  });
 
   const transaccion = await serviceTransaccion.create({
     id_empleado: createdBy,
     id_persona: persona.id,
     id_obra: obra,
-    tipo: "Compra"
+    tipo:"Compra",
+    createdBy,
   });
 
-  for (const elemento of inventario) {
-    const nuevoElemento = await repo.create({
-      precio: elemento.precio,
-      descuento: 0,
-      cantidad: elemento.cantidad,
-      id_categoria: elemento.id_categoria,
-      id_ubicacion: elemento.id_ubicacion,
-      id_proveedor: persona.id,
-      estado: elemento.estado || null,
-      createdBy
-    });
+  console.log(transaccion);
+  console.log("---------");
 
-    await repoTransaccion_elementos.create({
-      id_transaccion: transaccion.id,
-      id_elementos: nuevoElemento.id,
-      cantidad: nuevoElemento.cantidad
-    });
-  }
+  const operaciones = await Promise.all(
+    inventario.map(async (elemento) => {
+      const categoria = await repoCategoria.findById(elemento.id_categoria);
+
+      if (categoria.tipo === "Herramienta") {
+        const herramientas = Array.from({ length: parseInt(elemento.cantidad) }, async () => {
+          const nuevoElemento = await repo.create({
+            precio: parseFloat(elemento.precio),
+            descuento: 0,
+            cantidad: 1,
+            id_categoria: elemento.id_categoria,
+            id_ubicacion: parseInt(elemento.id_ubicacion),
+            id_proveedor: persona.id,
+            estado: elemento.estado || null,
+            createdBy,
+          });
+
+          await repoTransaccion_elementos.create({
+            id_transaccion: transaccion.id,
+            id_elementos: nuevoElemento.id,
+            cantidad: 1,
+            createdBy,
+          });
+        });
+        return Promise.all(herramientas);
+      } else {
+        const nuevoElemento = await repo.create({
+          precio: parseFloat(elemento.precio),
+          descuento: 0,
+          cantidad: parseFloat(elemento.cantidad),
+          id_categoria: elemento.id_categoria,
+          id_ubicacion: parseInt(elemento.id_ubicacion),
+          id_proveedor: persona.id,
+          estado: elemento.estado || null,
+          createdBy,
+        });
+
+        await repoTransaccion_elementos.create({
+          id_transaccion: transaccion.id,
+          id_elementos: nuevoElemento.id,
+          cantidad: nuevoElemento.cantidad,
+          createdBy,
+        });
+      }
+    })
+  );
+
   return transaccion;
 };
+
 
 service.sell = async (data) => {
   const { createdBy, ruc, nombre, mail, telefono, inventario, obra, porcentaje } = data;
 
-  let persona = await repoPersona.findByCedRUC(ruc);
-
-  if (persona && !persona.proveedor) {
-    await repoPersona.update({ proveedor: false, updatedBy: createdBy });
-  } else if (!persona) {
-    persona = await repoPersona.create({
-      nombre,
-      ruc,
-      mail,
-      telefono,
-      proveedor: false,
-      createdBy
-    });
+  if (!inventario || !Array.isArray(inventario) || inventario.length === 0) {
+    throw new Error("Inventario inválido o vacío.");
   }
+
+  const persona = await obtenerOcrearPersona({
+    ruc,
+    nombre,
+    mail,
+    telefono,
+    proveedor: false,
+    createdBy,
+  });
 
   const transaccion = await serviceTransaccion.create({
     id_empleado: createdBy,
     id_persona: persona.id,
     id_obra: obra,
-    potcentaje: porcentaje,
-    tipo: "Venta"
+    porcentaje,
+    tipo: "Venta",
+    createdBy,
   });
 
   for (const elemento of inventario) {
     await repoTransaccion_elementos.create({
       id_transaccion: transaccion.id,
       id_elementos: elemento.id,
-      cantidad: elemento.cantidad
+      cantidad: elemento.cantidad,
+      createdBy,
     });
   }
 

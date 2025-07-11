@@ -1,12 +1,13 @@
 import TablaVenta from "../Tables/TablaVenta";
+import CrearCliente from "../forms/Transacciones/Funcionalidad/SeleccionPersona"
 
 export default function VentaPage({
     handleCliente, handleAgregarElemento,
     tableData, onSeleccionar, setCantidad,
     cliente,setPrecioUnidad, handleVenta,
-    porcentaje,setPorcentaje
+    porcentaje,setPorcentaje, openCliente, 
+    setOpenCliente, openInventario, setOpenInventario,
 }){
-    
 
     return (
         <div className="min-h-screen p-8 bg-gray-100">
@@ -17,7 +18,7 @@ export default function VentaPage({
                     
                     <button
                         className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-                        onClick={handleCliente}
+                        onClick={() => setOpenCliente(true)}
                     >
                         {cliente ? "Modificar": "Cliente"}
                     </button>
@@ -66,6 +67,17 @@ export default function VentaPage({
                     </button>
                 </div>
             </div>
+            {openCliente && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-grey bg-opacity-40">
+                    <div className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full">
+                        <CrearCliente 
+                            setOpen={setOpenCliente}
+                            handleSubmit={handleCliente}
+                            tipo = {"Cliente"}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

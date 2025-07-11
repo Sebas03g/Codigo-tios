@@ -479,11 +479,19 @@ model transaccion_elementos{
   id_transaccion Int
   id_elementos Int
   cantidad Float
+  precio Float
   estado EstadoTarea?
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
   elemento Inventario @relation(fields: [id_elementos], references: [id])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Compra{
@@ -493,6 +501,13 @@ model Compra{
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Venta{
@@ -502,15 +517,30 @@ model Venta{
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Devolucion{
   id        Int     @id @default(autoincrement())
   id_transaccion Int @unique
   estado EstadoTarea?
+  descuento Float
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   transaccion Transaccion @relation(fields: [id_transaccion], references: [id])
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Horario{
@@ -522,6 +552,13 @@ model Horario{
   dias Dia[] @relation("horario_dia")
   proceso_empleados proceso_empleados[] @relation("horario_obra_empleado")
   proceso_herramientas proceso_herramientas[] @relation("horario_obra_herramienta")
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Dia{
@@ -530,6 +567,13 @@ model Dia{
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   horarios Horario[] @relation("horario_dia")
+
+  createdBy   Int
+  updatedBy   Int?
+  deletedBy   Int?
+  createdDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  deletedDate DateTime?
 }
 
 model Pedido{

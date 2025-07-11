@@ -5,7 +5,7 @@ const repo = baseRepository('permiso');
 
 repo.findByName = async(dato) => {
     return prisma.permiso.findFirst({
-        where: {nombre: String(nombre), estadoEliminado: 'ACTIVO' },
+        where: {nombre: String(dato.nombre), estadoEliminado: 'ACTIVO' },
     });
 }
 

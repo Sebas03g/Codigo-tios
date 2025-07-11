@@ -38,7 +38,7 @@ export default function ElementoCompraDesign({
           <div>
             <label className="block mb-1">Ubicación</label>
             <select
-              name="ubicacion"
+              name="id_ubicacion"
               value={formData.id_ubicacion || ""}
               onChange={handleChange}
               className="w-full border border-gray-300 px-3 py-2 rounded"

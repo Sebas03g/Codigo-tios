@@ -33,13 +33,14 @@ const loginEmpleado = async (req, res) => {
 
 const updatePassword = async (req, res) => {
   try {
-    const { cedula, password } = req.body;
+    const id = parseInt(req.params.id);
+    const { password } = req.body;
 
-    if (!cedula?.trim() || !password?.trim()) {
-      return res.status(400).json({ mensaje: 'Cédula y nueva contraseña son obligatorias.' });
+    if (!password?.trim()) {
+      return res.status(400).json({ mensaje: 'Nueva contraseña es obligatoria.' });
     }
 
-    const empleado = await updatePass(cedula, password);
+    const empleado = await updatePass(id, password);
 
     if (!empleado) {
       return res.status(404).json({ mensaje: 'Empleado no encontrado.' });

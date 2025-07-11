@@ -1,13 +1,16 @@
 import TablaCategoriaHerramienta from "../Tables/TablaCategoriaHerramienta";
 import TablaCategoriaInventario from "../Tables/TablaCategoriaInventario";
+import TablaHistorialElementos from "../Tables/TablaHistorialElemento";
 import { AiOutlinePlus } from "react-icons/ai";
+import NavigationBar from "../general/navbar";
 import Crear from "../forms/Transacciones/Funcionalidad/ElementoCompra";
 
 export default function InventarioPage({
-    tableData, ruc, ubicacion,categoria, 
+    tableData, nombre, ubicacion, tipo,categoria, 
     handleInputChange, onSeleccionar, handleAgregar,
-    open, setOpen, handleSubmit
+    open, setOpen, handleSubmit,paramsNavBar
 }){
+  const {estadosNavBar, setEstadoNavBar, estadoNavBar} = paramsNavBar;
     return (
         <div className="h-full flex flex-col">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">{categoria.nombre}</h1>
@@ -39,22 +42,44 @@ export default function InventarioPage({
     
           <div className="flex flex-col gap-4 mb-6">
             <div className="flex flex-wrap gap-4">
+
+                {estadoNavBar==="Inventario" && (
+                  <input
+                    type="text"
+                    name="ubicacion"
+                    value={ubicacion}
+                    onChange={handleInputChange}
+                    placeholder="Ubicacion..."
+                    className="w-full sm:w-48 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                )}
+
+              
               <input
                 type="text"
                 name="nombre"
-                value={ubicacion}
+                value={nombre}
                 onChange={handleInputChange}
-                placeholder="Ubicacion..."
+                placeholder="Nombre..."
                 className="w-full sm:w-48 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
-              <input
-                type="text"
-                name="cedula"
-                value={ruc}
-                onChange={handleInputChange}
-                placeholder="RUC..."
-                className="w-full sm:w-48 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+
+              {estadoNavBar === "Historial" && (
+                <select
+                  name="tipo"
+                  value={tipo || ""}
+                  onChange={handleInputChange}
+                  className="w-full border border-gray-300 px-3 py-2 rounded"
+                  required
+                >
+                  <option value="">-- Todos --</option>
+                  {["Compras", "Ventas", "Devoluciones"].map((tp,indice) => (
+                    <option key={indice} value={tp}>
+                      {tp}
+                    </option>
+                  ))}
+                </select>
+              )}
             </div>
             <button
               onClick={() => setOpen(true)}
@@ -65,22 +90,34 @@ export default function InventarioPage({
             </button>
           </div>
 
-          {categoria.tipo === "Inventario" ? (
-            <TablaCategoriaInventario
+          <NavigationBar
+            paramsNavBar={paramsNavBar}
+          />
+
+          {estadoNavBar === "Inventario" ? (
+            categoria.tipo === "Inventario" ? (
+              <TablaCategoriaInventario
                 datos={tableData}
                 onSeleccionar={onSeleccionar}
-                ruc={ruc}
+                nombre={nombre}
                 ubicacion={ubicacion}
-            />
-          ) : (
-            <TablaCategoriaHerramienta
+              />
+            ) : (
+              <TablaCategoriaHerramienta
                 datos={tableData}
                 onSeleccionar={onSeleccionar}
-                ruc={ruc}
-                ubicacion={ubicacion} 
+                nombre={nombre}
+                ubicacion={ubicacion}
+              />
+            )
+          ) : (
+            <TablaHistorialElementos
+              datos={tableData}
+              onSeleccionar={onSeleccionar}
+              nombre={nombre}
             />
           )}
-    
+
           {open && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-grey bg-opacity-40">
               <div className="bg-white p-6 rounded-xl shadow-xl fill-w max-h-[90vh] overflow-y-auto">

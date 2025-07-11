@@ -14,44 +14,36 @@ export default function HistorialCompras(){
 
     }
 
-    const getTableData = async() => {
-        try{
-            const data = await sentences.allDataAllRelations("transaccion", ["elementos", "empleado", "compra", "persona", "obra"])
+    const getTableData = async () => {
+    try {
+        const data = await sentences.allDataAllRelations("transaccion", ["elementos", "empleado", "compra", "persona", "obra"]);
 
-            console.log("AQUIIIIII");
-            console.log(data);
+        const dataFiltrada = data.filter((dato) => dato.id_compra !== null);
 
-            const dataFiltrada = data.filter((dato) => {dato.id_compra});
-            
-            console.log(dataFiltrada);
-                
-            const elementosTotales = await sentences.allExtraData("transaccion_elementos", "elemento");
-            const diccionario = []
+        const elementosTotales = await sentences.allDataAllRelations("transaccion_elementos", ["elemento"]);
 
-            for(const dato of dataFiltrada){
-                const elementos = elementosTotales.filter((elemento) => elemento.id_transaccion === dato.id)
-                const total = elementos.reduce((acc, el) => acc + (1-el.elemento.descuento)*(el.cantidad * el.elemento.precio))
-                const elemento = {
-                    id: dato.id,
-                    nombre_empleado: dato.empleado.nombre,
-                    obra: dato.obra.nombre,
-                    ruc: dato.persona.ruc,
-                    nombre_persona: dato.persona.nombre,
-                    fecha: dato.fecha,
-                    total: total,
-                    credito: dato.compra.fechaCredito
-                }
-                diccionario.push(elemento)
-            }
+        const transaccionesFormateadas = dataFiltrada.map((dato) => {
+            const elementos = elementosTotales.filter((el) => el.id_transaccion === dato.id);
+            const total = elementos.reduce((acc, el) => acc + (1 - el.elemento.descuento) * (el.cantidad * el.elemento.precio), 0);
+            console.log(dato)
+            return {
+                id: dato.id,
+                nombre_empleado: dato.empleado.nombre,
+                obra: dato?.obra ? dato.obra.nombre : null,
+                ruc: dato.persona.ruc,
+                nombre_persona: dato.persona.nombre,
+                fecha: dato.fecha,
+                total: total,
+                credito: dato.compra.fechaCredito,
+            };
+        });
 
-            console.log(diccionario);
-
-            setTableData(diccionario);
-
-        }catch (error){
-            console.log("Error al obtener los datos de compras: ", error);
-        }
+        setTableData(transaccionesFormateadas);
+    } catch (error) {
+        console.error("Error al obtener los datos de compras: ", error);
     }
+    };
+
 
     useEffect(() => {
         getTableData();

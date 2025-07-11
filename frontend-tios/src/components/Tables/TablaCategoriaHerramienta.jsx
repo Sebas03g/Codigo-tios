@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 
 export default function TablaCategoriaHerramienta({
-    datos, onSeleccionar, ruc, ubicacion
+    datos, onSeleccionar, nombre, ubicacion
 }){
     const [dataTable, setDataTable] = useState([]);
 
+    const filterTableData = () => {
+
+        const tableData = datos.filter(dato =>
+          (dato.ubicacion?.toLowerCase() || '').includes(ubicacion.toLowerCase()) &&
+          (dato.nombre?.toLowerCase() || '').includes(nombre.toLowerCase())
+        );
+
+        setDataTable(tableData);
+
+    };
+
     useEffect(() => {
-        const filterTableData = () => {
-          const tableData = datos.filter(dato =>
-            (dato.ubicacion?.toLowerCase() || '').includes(ubicacion.toLowerCase()) &&
-            (dato.ruc?.toLowerCase() || '').includes(ruc.toLowerCase())
-          );
-    
-    
-          setDataTable(tableData);
-        };
-    
         filterTableData();
-      
-    }, [datos, ruc, ubicacion]);
+    }, [datos, nombre, ubicacion]);
 
     return (
     <div className="overflow-x-auto">

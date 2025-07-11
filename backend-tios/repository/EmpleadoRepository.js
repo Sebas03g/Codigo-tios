@@ -15,9 +15,9 @@ repo.findByCedula = async (cedula) => {
 
 }
 
-repo.updatePassword = async (cedula, password) => {
+repo.updatePassword = async (id, password) => {
   const empleado = await prisma.empleado.findFirst({
-    where: { cedula, estadoEliminado: 'ACTIVO' },
+    where: { id: id, estadoEliminado: 'ACTIVO' },
   });
 
   if (!empleado) return null;
@@ -51,7 +51,7 @@ repo.findByCedRUC = async(dato) => {
 
 repo.findByMail = async(dato) => {
     return prisma.persona.findFirst({
-        where: {mail: String(mail), estadoEliminado: 'ACTIVO' },
+        where: {mail: String(dato), estadoEliminado: 'ACTIVO' },
     });
 }
 

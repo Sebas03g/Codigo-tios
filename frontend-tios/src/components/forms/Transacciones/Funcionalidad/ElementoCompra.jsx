@@ -19,37 +19,37 @@ export default function ElementoCompra({ setOpen, handleSubmit, categoria, tipo 
     const [dataInventario, setDataInventario] = useState([]);
 
     const handleChange = (e) => {
-
         const name = e.target.name;
         const value = e.target.value;
 
-        if(name==="ruc"){
-            const prov = dataProveedores.find(proveedor => proveedor.ruc === value);
+        if (name === "ruc") {
+            const prov = dataProveedores.find((proveedor) => proveedor.ruc === value);
 
-            if(prov){
-                setFormData({
-                    ...formData,
-                    ruc: prov.ruc,
-                    nombre: prov.nombre,
-                    telefono: prov.telefono,
-                    mail: prov.mail,
-                });
-            }
-        }else{
+            if (prov) {
             setFormData({
                 ...formData,
-                [name]:value
-            })
-        }    
-    }
+                ruc: prov.ruc,
+                nombre: prov.nombre,
+                telefono: prov.telefono,
+                mail: prov.mail,
+            });
+            return;
+            }
+        }
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+        };
+
 
     const handleCheck = (item) => {
         setFormData({
             ...formData,
-            ruc: item.ruc,
-            nombre: item.nombre,
-            telefono: item.telefono,
-            mail: item.mail,
+            ruc: item.proveedor.ruc,
+            nombre: item.proveedor.nombre,
+            telefono: item.proveedor.telefono,
+            mail: item.proveedor.mail,
         })
     }
 

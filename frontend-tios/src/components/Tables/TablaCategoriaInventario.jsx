@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function TablaCategoriaInventario({
-    datos, onSeleccionar, ruc, ubicacion
+    datos, onSeleccionar, nombre, ubicacion
 }){
     const [dataTable, setDataTable] = useState([]);
 
@@ -9,7 +9,7 @@ export default function TablaCategoriaInventario({
         const filterTableData = () => {
           const tableData = datos.filter(dato =>
             (dato.ubicacion?.toLowerCase() || '').includes(ubicacion.toLowerCase()) &&
-            (dato.ruc?.toLowerCase() || '').includes(ruc.toLowerCase())
+            (dato.nombre?.toLowerCase() || '').includes(nombre.toLowerCase())
           );
     
     
@@ -18,7 +18,7 @@ export default function TablaCategoriaInventario({
     
         filterTableData();
       
-    }, [datos, ruc, ubicacion]);
+    }, [datos, nombre, ubicacion]);
 
     return (
     <div className="overflow-x-auto">

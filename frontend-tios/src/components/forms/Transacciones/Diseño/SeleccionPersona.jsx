@@ -1,3 +1,5 @@
+import { IoClose } from "react-icons/io5";
+
 export default function SeleccionPersonaDesign({
   setOpen, handleSubmit, formData,
   handleChange, tipo
@@ -17,7 +19,7 @@ export default function SeleccionPersonaDesign({
 
       <div className="flex gap-8">
         <div className="flex-1 space-y-4">
-          {["ruc", "nombre", "telefono", "mail", "cantidad", "precio"].map((field) => (
+          {["ruc", "nombre", "telefono", "mail"].map((field) => (
             <div key={field}>
               <label className="block capitalize mb-1">{field}</label>
               <input
@@ -35,7 +37,7 @@ export default function SeleccionPersonaDesign({
                 type="submit"
                 className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition mt-4"
             >
-                Crear
+                Aceptar
             </button>
 
         </div>

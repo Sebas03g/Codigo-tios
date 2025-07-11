@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function TablaTransaccion({ datos, onSeleccionar, tipo, ruc, obra}) {
+export default function TablaTransaccion({ datos, onSeleccionar, tipo, ruc, nombre}) {
 
   const [dataTable, setDataTable] = useState([]);
+
+  console.log(datos);
   
     useEffect(() => {
       const filterTableData = () => {
         const tableData = datos.filter(dato =>
-          (dato.nombre_empleado?.toLowerCase() || '').includes(nombre_empleado.toLowerCase()) &&
-          (dato.ruc?.toLowerCase() || '').includes(ruc.toLowerCase())
+          (dato.empleado?.nombre.toLowerCase() || '').includes(nombre.toLowerCase()) &&
+          (dato.persona?.ruc.toLowerCase() || '').includes(ruc.toLowerCase())
         );
   
   
@@ -16,7 +18,7 @@ export default function TablaTransaccion({ datos, onSeleccionar, tipo, ruc, obra
       };
   
       filterTableData();
-    }, [datos, ruc, obra]);
+    }, [datos, ruc, nombre]);
 
   return (
     <div className="overflow-x-auto">
@@ -30,7 +32,7 @@ export default function TablaTransaccion({ datos, onSeleccionar, tipo, ruc, obra
           <tr className="bg-gray-100 text-gray-700">
             <th className="py-2 px-4 text-left">Empleado</th>
             <th className="py-2 px-4 text-left">Fecha</th>
-            <th className="py-2 px-4 text-left">{tipo === "Compra" ? Proveedor : Cliente}</th>
+            <th className="py-2 px-4 text-left">{tipo === "Compra" ? "Proveedor" : "Cliente"}</th>
             <th className="py-2 px-4 text-left">RUC</th>
             <th className="py-2 px-4 text-left">Obra</th>
             {tipo === "Compra" && (

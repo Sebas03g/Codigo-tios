@@ -7,11 +7,11 @@ service.create = async(data) => {
     let persona = await repo.findByCedRUC(data.ruc);
     if(persona != null && persona.proveedor == data.proveedor){
         throw new Error("Error datos duplicados");
-    }else if(persona.proveedor != data.proveedor && data.proveedor){
+    }else if(persona != null && data.proveedor){
         return await repo.update({proveedor: true})
     }
     persona = await repo.findByMail(data.mail);
-    if(persona == null){
+    if(persona != null){
         throw new Error("Error datos duplicados");
     }
 

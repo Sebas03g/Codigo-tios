@@ -44,7 +44,14 @@ export default function Categoria() {
   const obtenerCategoriaPorTipo = async (tipo) => {
     const data = await sentences.allDataAllRelations("categoria", ["inventario"]);
     return data.filter(c => c.tipo === tipo);
-    };
+  };
+
+  const obtenerCantidad = (inventario) => {
+    if(inventario.length == 0){
+      return 0;
+    }
+    return inventario.reduce((acumulador, valor) => valor.cantidad + acumulador, 0);
+  }
 
   const inventarioTable = async (categoriaData) => {
     try {
@@ -53,9 +60,10 @@ export default function Categoria() {
         codigo: categoria.codigo,
         descripcion: categoria.descripcion,
         nombre: categoria.nombre,
-        cantidad: categoria.inventario.length,
+        cantidad: obtenerCantidad(categoria.inventario),
         tipo_unidad: categoria.tipo_unidad,
-        precio_unidad: getPrecioUnidad(categoria.inventario)
+        precio_unidad: getPrecioUnidad(categoria.inventario),
+        tipo: categoria.tipo
       }));
 
       setDataTable(tableData);
@@ -75,9 +83,9 @@ export default function Categoria() {
         tipo_unidad: categoria.tipo_unidad,
         mantenimiento: categoria.tiempo ? categoria.tiempo: null,
         precio_unidad: getPrecioUnidad(categoria.inventario),
-        tiempo: categoria.tiempo || "No Aplica"
+        tiempo: categoria.tiempo || "No Aplica",
+        tipo: categoria.tipo
       }));
-
       setDataTable(tableData);
     } catch (error) {
       console.log("Error al obtener data de inventario:", error);
@@ -102,8 +110,6 @@ export default function Categoria() {
     e.preventDefault();
     const form = e.target;
 
-    console.log("CODIGO");
-    console.log(crearCodigo(dataTable, estadoNavBar));
 
     let tiempoCalculado = null;
     if (mantenimiento) {

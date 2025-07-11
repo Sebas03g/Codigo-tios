@@ -1,6 +1,6 @@
 import express from 'express';
 import controller from '../controllers/InventarioController.js';
-import { validateInventario } from '../validators/validateInventario.js'
+import { validateInventario } from '../validators/create/validateInventario.js'
 
 const router = express.Router();
 

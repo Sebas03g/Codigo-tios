@@ -9,7 +9,7 @@ service.create = async(data) => {
     if(permiso){
         throw new Error("Error datos duplicados");
     }
-    return await repo.create(permiso);
+    return await repo.create(data);
 }
 
 service.permisos = async(id) => {

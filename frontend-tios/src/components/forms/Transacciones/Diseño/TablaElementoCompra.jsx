@@ -17,7 +17,12 @@ export default function TablaElementoCompra({ dataInventario, handleCheck }) {
               <td className="px-4 py-2">${item.precio}</td>
               <td className="px-4 py-2">{item.cantidad}</td>
               <td className="px-4 py-2 text-center">
-                <input type="checkbox" value={item.proveedor?.id} onChange={(item) => handleCheck(item)} />
+                <input
+                  type="radio"
+                  name="seleccionProveedor"
+                  value={item.id}
+                  onChange={() => handleCheck(item)}
+                />
               </td>
             </tr>
           ))}

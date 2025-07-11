@@ -22,8 +22,9 @@ export default function Login({ruta}){
             setTimeout(() => {
                 if(getTokenData()?.primera){
                     navigate("/update-password", { state : { ruta } });
+                }else{
+                    navigate(ruta);
                 }
-                navigate(ruta);
             }, 1500);
         }else{
             toast.error(result.mensaje)

@@ -1,6 +1,6 @@
 import express from 'express';
 import controller from '../controllers/DiaController.js';
-import { validateDia } from '../validators/validateDia.js'
+import { validateDia } from '../validators/create/validateDia.js'
 
 const router = express.Router();
 
