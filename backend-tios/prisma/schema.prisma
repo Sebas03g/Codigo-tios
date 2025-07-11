@@ -10,6 +10,12 @@ enum EstadoTrabajador{
   DESACTIVO
 }
 
+enum TipoObra{
+  Corta
+  Mediana
+  Largo
+}
+
 enum EstadoObra{
   ACTIVO
   CERRADO
@@ -336,7 +342,8 @@ model Mensaje{
 model Proforma{
   id        Int     @id @default(autoincrement())
   nombre String
-  tiempo_esperado DateTime
+  fecha_final DateTime
+  tipoObra TipoObra
   porcentaje_venta Decimal
   id_punto  Int 
   id_cliente  Int
@@ -422,17 +429,18 @@ model proceso_inventario{
 model Obra{
   id        Int     @id @default(autoincrement())
   nombre String
-  tiempo_esperado DateTime
+  fecha_final DateTime
+  tipoObra TipoObra
   porcentaje_venta Decimal
   id_punto Int 
   id_cliente Int
-  id_proforma Int
+  id_proforma Int?
   estado EstadoObra @default(ACTIVO)
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   punto  Punto @relation(fields: [id_punto], references: [id])
   cliente Persona @relation(fields: [id_cliente], references: [id])
-  proforma Proforma @relation(fields: [id_proforma], references: [id])
+  proforma Proforma? @relation(fields: [id_proforma], references: [id])
   proceso Proceso[]
   transaccion Transaccion[]
   pedido Pedido[]

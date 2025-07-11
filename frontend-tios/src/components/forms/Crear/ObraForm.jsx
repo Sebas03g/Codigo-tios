@@ -7,9 +7,13 @@ import { useState } from "react";
 export default function ObraForm({handleSubmit, setOpen}){
 
     const [formData, setFormData] = useState({
-        nombre_proyecto:"",
+        nombre:"",
         fecha_final:"",
+        tipoObra:"",
         porcentaje_venta: 0.0,
+        lat: 0.0,
+        lng: 0.0,
+        estado: ""
     });
 
     const [cliente, setCliente] = useState(null)
