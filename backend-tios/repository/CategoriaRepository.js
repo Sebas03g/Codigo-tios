@@ -3,10 +3,10 @@ import { prisma } from '../config/db.js';
 
 const repo = baseRepository('categoria');
 
-repo.findByCode = (data) => {
+repo.findByCode = (dato) => {
     prisma.categoria.findFirst({
         where: {
-            codigo: data.codigo
+            codigo: dato
         }
     });
 }

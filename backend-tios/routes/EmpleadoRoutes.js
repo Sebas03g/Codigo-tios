@@ -20,4 +20,4 @@ router.get("/getAllData", verificarToken, controller.getAllEmpleadoData);
 router.post('/all/:id', verificarToken, controller.dataAllRelations);
 router.post('/all/data', verificarToken, controller.allDataAllRelations);
 
-export default router
+export default router;

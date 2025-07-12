@@ -4,6 +4,7 @@ import serviceTransaccion from './TransaccionServices.js';
 import repoTransaccion_elementos from '../repository/transaccion_elementosRepository.js';
 import repoCategoria from '../repository/CategoriaRepository.js'
 import { baseService } from './baseServices.js';
+import { CreateCode } from '../utils/CreateCode.js';
 
 const service = baseService(repo);
 
@@ -29,10 +30,6 @@ async function obtenerOcrearPersona({ ruc, nombre, mail, telefono, proveedor, cr
 }
 
 service.purchase = async (data) => {
-
-  console.log("DATA");
-  console.log(data);
-
   const { createdBy, ruc, nombre, mail, telefono, inventario, obra } = data;
 
   if (!inventario || !Array.isArray(inventario) || inventario.length === 0) {
@@ -52,16 +49,34 @@ service.purchase = async (data) => {
     id_empleado: createdBy,
     id_persona: persona.id,
     id_obra: obra,
-    tipo:"Compra",
+    tipo: "Compra",
     createdBy,
   });
 
-  console.log(transaccion);
-  console.log("---------");
-
   const operaciones = await Promise.all(
     inventario.map(async (elemento) => {
-      const categoria = await repoCategoria.findById(elemento.id_categoria);
+      let categoria;
+
+      if (elemento.id_categoria !== null && elemento.id_categoria !== undefined) {
+        categoria = await repoCategoria.findById(elemento.id_categoria);
+      } else {
+        if (!elemento.nombre_categoria || !elemento.tipo_categoria || !elemento.tipo_unidad) {
+          throw new Error("Faltan datos para crear la categoría.");
+        }
+
+        const nuevaCategoria = {
+          nombre: elemento.nombre_categoria,
+          codigo: CreateCode(elemento.tipo_categoria), 
+          descripcion: elemento.descripcion_categoria || "",
+          tipo: elemento.tipo_categoria,
+          tipo_unidad: elemento.tipo_unidad,
+          tiempo: elemento.tiempo || null,
+          createdBy,
+        };
+
+        categoria = await repoCategoria.create(nuevaCategoria);
+        elemento.id_categoria = categoria.id;
+      }
 
       if (categoria.tipo === "Herramienta") {
         const herramientas = Array.from({ length: parseInt(elemento.cantidad) }, async () => {
@@ -108,6 +123,7 @@ service.purchase = async (data) => {
 
   return transaccion;
 };
+
 
 
 service.sell = async (data) => {

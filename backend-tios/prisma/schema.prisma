@@ -366,16 +366,13 @@ model Proforma{
 model Proceso{
   id        Int     @id @default(autoincrement())
   nombre String
-  descripcion String
-  empleados proceso_empleados[]
-  herramientas proceso_herramientas[]
-  inventario proceso_inventario[]
   id_proforma Int?
   id_obra Int?
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
   proforma Proforma? @relation(fields: [id_proforma], references: [id])
   obra Obra? @relation(fields: [id_obra], references: [id])
+  subProcesos SubProceso[]
 
   createdBy   Int
   updatedBy   Int?
@@ -383,6 +380,16 @@ model Proceso{
   createdDate DateTime @default(now())
   updatedDate DateTime @updatedAt
   deletedDate DateTime?
+}
+
+model SubProceso{
+  id        Int     @id @default(autoincrement())
+  descripcion String
+  id_proceso Int
+  proceso Proceso @relation(fields: [id_proceso], references: [id])
+  empleados proceso_empleados[]
+  herramientas proceso_herramientas[]
+  inventario proceso_inventario[]
 }
 
 model proceso_empleados{
@@ -393,7 +400,7 @@ model proceso_empleados{
   id_empleado Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
-  proceso Proceso @relation(fields: [id_proceso], references: [id])
+  proceso SubProceso @relation(fields: [id_proceso], references: [id])
   empleado Empleado @relation(fields: [id_empleado], references: [id])
   horarios Horario[] @relation("horario_obra_empleado")
 }
@@ -407,7 +414,7 @@ model proceso_herramientas{
   id_herramienta Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
-  proceso Proceso @relation(fields: [id_proceso], references: [id])
+  proceso SubProceso @relation(fields: [id_proceso], references: [id])
   herramienta Inventario @relation(fields: [id_herramienta], references: [id])
   horarios Horario[] @relation("horario_obra_herramienta")
 }
@@ -421,7 +428,7 @@ model proceso_inventario{
   id_elemento Int
   estadoEliminado EstadoEliminado @default(ACTIVO)
 
-  proceso Proceso @relation(fields: [id_proceso], references: [id])
+  proceso SubProceso @relation(fields: [id_proceso], references: [id])
   elemento Inventario @relation(fields: [id_elemento], references: [id])
 }
 

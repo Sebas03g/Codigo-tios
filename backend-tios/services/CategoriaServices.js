@@ -1,12 +1,11 @@
 import repo from '../repository/CategoriaRepository.js'
 import { baseService } from './baseServices.js'
+import { CreateCode } from '../utils/CreateCode.js';
 
 const service = baseService(repo);
 
 service.create = async (data) => {
-    const category = await repo.findByCode(data);
-
-    if(category) throw new Error("Error codigo duplicado.");
+    data.codigo = CreateCode(data.tipo);
     return await repo.create(data);
 }
 

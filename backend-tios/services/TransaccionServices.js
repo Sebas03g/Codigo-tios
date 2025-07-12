@@ -8,18 +8,12 @@ const service = baseService(repo);
 
 service.create = async(data) => {
 
-    console.log("AQYU");
-    console.log(data);
-
     const dataTransacction = {
         id_empleado: data.id_empleado,
         id_persona: data.id_persona,
         id_obra: data.id_obra,
         createdBy: data.createdBy
     }
-
-    console.log("----------////")
-    console.log(dataTransacction);
 
     const transaccion = await repo.create(dataTransacction);
 

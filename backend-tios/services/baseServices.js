@@ -8,7 +8,6 @@ export const baseService = (repository, dataValidate) => ({
   },
 
   delete: async (id, data) => {
-
     return repository.delete(id, data);
   },
 
