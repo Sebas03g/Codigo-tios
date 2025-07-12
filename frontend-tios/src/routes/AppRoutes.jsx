@@ -11,10 +11,12 @@ import Empleados from "../pages/Empleados.jsx";
 import Categoria from "../pages/Categoria.jsx";
 import Inventario from "../pages/Inventario.jsx";
 import Obras from "../pages/Obras.jsx";
-import CreateObra from "../pages/CreateObra.jsx";
+import Obra from "../pages/Obra.jsx";
 import Pedidos from "../pages/Pedidos.jsx";
 import Posiciones from "../pages/Posiciones.jsx";
 import Proveedores from "../pages/Proveedores.jsx";
+import CreateProforma from "../pages/CreateProforma.jsx";
+import Proforma from "../pages/Proforma.jsx";
 import Tareas from "../pages/Tareas.jsx";
 import Ubicaciones from "../pages/Ubicaciones.jsx";
 import Compras from "../pages/Compras.jsx";
@@ -64,9 +66,7 @@ export default function AppRoutes() {
         {categorias.includes("Obra") && (
           <>
             <Route path="/obras" element={<PrivateRoute><Obras /></PrivateRoute>} />
-            {permisos.includes("Crear obras") && (
-              <Route path="/create-obra" element={<PrivateRoute><CreateObra /></PrivateRoute>} />
-            )}
+            <Route path="/obra" element={<PrivateRoute><Obra /></PrivateRoute>} />
           </>
           
         )}
@@ -98,7 +98,11 @@ export default function AppRoutes() {
           <Route path="/devoluciones" element={<PrivateRoute><Devoluciones /></PrivateRoute>} />
         )}
         {categorias.includes("Proforma") && (
-          <Route path="/proformas" element={<PrivateRoute><Proformas /></PrivateRoute>} />
+          <>
+            <Route path="/proformas" element={<PrivateRoute><Proformas /></PrivateRoute>} />
+            <Route path="/create-proforma" element={<PrivateRoute><CreateProforma /></PrivateRoute>} />
+            <Route path="/proforma" element={<PrivateRoute><Proforma /></PrivateRoute>} />
+          </>
         )}
         {categorias.includes("Pago") && (
           <Route path="/pagos" element={<PrivateRoute><Pagos /></PrivateRoute>} />

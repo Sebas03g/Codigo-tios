@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaPagos({ 
     tableData, onSeleccionar, handlePagar,
@@ -8,13 +9,20 @@ export default function TablaPagos({
   const [dataTable, setDataTable] = useState([]);
 
   const filterTableData = () => {
-    const data = tableData.filter(dato =>
-      dato.posicion.toLowerCase().includes(posicion.toLowerCase()) &&
-      dato.cedula.toLowerCase().includes(cedula.toLowerCase())
-    );
-
+  
+    let data = [...tableData];
+        
+    if (posicion) {
+        data = buscarElementosPorTexto(data, posicion, "posicion");
+    }
+        
+    if (cedula) {
+        data = buscarElementosPorTexto(data, cedula, "cedula");
+    }
+        
     setDataTable(data);
-  }
+  
+  };
 
   useEffect(() => {
     filterTableData();

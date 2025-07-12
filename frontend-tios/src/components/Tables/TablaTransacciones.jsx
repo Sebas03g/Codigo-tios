@@ -1,22 +1,27 @@
 import { useState, useEffect } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaTransaccion({ datos, onSeleccionar, tipo, ruc, nombre}) {
 
   const [dataTable, setDataTable] = useState([]);
 
-  console.log(datos);
+  const filterTableData = () => {
+    
+    let data = [...datos];
+          
+    if (nombre) {
+        data = buscarElementosPorTexto(data, nombre, "empleado.nombre");
+    }
+    
+    if(ruc){
+      data = buscarElementosPorTexto(data, ruc, "persona.ruc");
+    }
+
+    setDataTable(data);
+    
+  };
   
-    useEffect(() => {
-      const filterTableData = () => {
-        const tableData = datos.filter(dato =>
-          (dato.empleado?.nombre.toLowerCase() || '').includes(nombre.toLowerCase()) &&
-          (dato.persona?.ruc.toLowerCase() || '').includes(ruc.toLowerCase())
-        );
-  
-  
-        setDataTable(tableData);
-      };
-  
+    useEffect(() => {  
       filterTableData();
     }, [datos, ruc, nombre]);
 

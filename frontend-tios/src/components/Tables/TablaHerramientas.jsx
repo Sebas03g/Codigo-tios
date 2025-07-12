@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaHerramientas({ paramsTable, paramsGenerales}) {
 
@@ -6,20 +7,27 @@ export default function TablaHerramientas({ paramsTable, paramsGenerales}) {
   const { codigo, nombre } = paramsGenerales;
 
   const [tableData, setTableData] = useState([]);
+
+  const filterTableData = () => {
   
-    const filterTableData = async () => {
-      const data = dataTable.filter(dato =>
-            dato.nombre.toLowerCase().includes(nombre.toLowerCase()) &&
-            dato.codigo.toLowerCase().includes(codigo.toLowerCase())
-        );
-  
-  
-      setTableData(data);
+    let data = [...dataTable];
+        
+    if (nombre) {
+        data = buscarElementosPorTexto(data, nombre, "nombre");
     }
+        
+    if (codigo) {
+        data = buscarElementosPorTexto(data, codigo, "codigo");
+    }
+        
+    setTableData(data);
   
-    useEffect(() => {
-        filterTableData();
-    },[dataTable, codigo, nombre])
+  };
+  
+  
+  useEffect(() => {
+    filterTableData();
+  },[dataTable, codigo, nombre])
 
   return (
     <div className="overflow-x-auto">

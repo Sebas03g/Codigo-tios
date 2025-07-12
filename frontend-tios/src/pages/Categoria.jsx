@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import * as sentences from "../services/fetch/sentenciasFetch";
 import CategoriaPage from "../components/pages/Categoria";
 import { useNavigate } from "react-router-dom";
-import { crearCodigo } from "../services/baseFunctions";
 import { toast } from 'react-toastify';
 
 export default function Categoria() {
@@ -122,7 +121,6 @@ export default function Categoria() {
 
     const createForm = {
       nombre: form.nombre.value,
-      codigo: crearCodigo(dataTable, estadoNavBar),
       descripcion: form.descripcion.value,
       tipo: estadoNavBar,
       tipo_unidad: estadoNavBar === "Herramienta" ? "UND" : form.tipo_unidad?.value || "",

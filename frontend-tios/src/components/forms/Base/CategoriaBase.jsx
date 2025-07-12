@@ -8,7 +8,7 @@ export default function CategoriaBase({
     return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto relative bg-white p-4 shadow rounded">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Crear Posicion</h2>
+        <h2 className="text-xl font-bold">Crear Categoria</h2>
           <button
             type="button"
             onClick={() => setOpen(false)}

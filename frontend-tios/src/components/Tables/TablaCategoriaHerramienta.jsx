@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
+
 export default function TablaCategoriaHerramienta({
     datos, onSeleccionar, nombre, ubicacion
 }){
@@ -7,12 +9,17 @@ export default function TablaCategoriaHerramienta({
 
     const filterTableData = () => {
 
-        const tableData = datos.filter(dato =>
-          (dato.ubicacion?.toLowerCase() || '').includes(ubicacion.toLowerCase()) &&
-          (dato.nombre?.toLowerCase() || '').includes(nombre.toLowerCase())
-        );
-
-        setDataTable(tableData);
+      let data = [...datos];
+      
+      if (nombre) {
+            data = buscarElementosPorTexto(data, nombre, "nombre");
+      }
+      
+      if (ubicacion) {
+        data = buscarElementosPorTexto(data, ubicacion, "ubicacion");
+      }
+      
+      setDataTable(data);
 
     };
 

@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaPersonas({ datos, onSeleccionar, ruc, nombre }) {
   const [dataTable, setDataTable] = useState([]);
 
+  const filterTableData = () => {
+  
+    let data = [...datos];
+        
+    if (nombre) {
+        data = buscarElementosPorTexto(data, nombre, "nombre");
+    }
+        
+    if (ruc) {
+        data = buscarElementosPorTexto(data, ruc, "ruc");
+    }
+        
+    setDataTable(data);
+  
+  };
+
   useEffect(() => {
-    const filterTableData = () => {
-      const tableData = datos.filter(dato =>
-        (dato.nombre?.toLowerCase() || '').includes(nombre.toLowerCase()) &&
-        (dato.ruc?.toLowerCase() || '').includes(ruc.toLowerCase())
-      );
-
-
-      setDataTable(tableData);
-    };
 
     filterTableData();
   }, [datos, ruc, nombre]);

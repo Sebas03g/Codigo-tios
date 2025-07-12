@@ -1,20 +1,28 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaInventario({
     datos, onSeleccionar, ruc, ubicacion
 }){
     const [dataTable, setDataTable] = useState([]);
 
+    const filterTableData = () => {
+  
+      let data = [...datos];
+          
+      if (ubicacion) {
+          data = buscarElementosPorTexto(data, ubicacion, "ubicacion");
+      }
+          
+      if (ruc) {
+          data = buscarElementosPorTexto(data, ruc, "ruc");
+      }
+          
+      setDataTable(data);
+    
+    };
+
     useEffect(() => {
-        const filterTableData = () => {
-          const tableData = datos.filter(dato =>
-            (dato.ubicacion?.toLowerCase() || '').includes(ubicacion.toLowerCase()) &&
-            (dato.ruc?.toLowerCase() || '').includes(ruc.toLowerCase())
-          );
-    
-    
-          setDataTable(tableData);
-        };
     
         filterTableData();
       

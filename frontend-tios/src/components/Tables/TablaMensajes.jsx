@@ -1,21 +1,31 @@
 import { useState, useEffect } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaMensajes({ datos, onSeleccionar, nombre, remitente, estadoMensaje, estadoNavBar}) {
   
   const [tableData, setTableData] = useState([]);
 
-  const applyDataFilters = async() => {
-          const filteredData = datos.filter(data => data.nombre.toLowerCase().includes(nombre) &&
-                                                  data.empleado.toLowerCase().includes(remitente.toLowerCase()) &&
-                                                  (estadoMensaje==="TODOS" || data.estado === estadoMensaje)  && 
-                                                  data.tipo === estadoNavBar
-                                              )
-          setTableData(filteredData);
-                                              
-      };
+  const filterTableData = () => {
+  
+      let data = [...datos];
+          
+      if (nombre) {
+          data = buscarElementosPorTexto(data, nombre, "nombre");
+      }
+          
+      if (remitente) {
+          data = buscarElementosPorTexto(data, remitente, "empleado");
+      }
+
+      data = data.filter((estadoMensaje==="TODOS" || data.estado === estadoMensaje)  && 
+                          data.tipo === estadoNavBar)
+          
+      setTableData(data);
+    
+  };
     
   useEffect(() => {
-    applyDataFilters();
+    filterTableData();
   }, [datos, nombre, remitente, estadoMensaje, estadoNavBar]);
 
   return (

@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaUbicacion({ datos, onSeleccionar, filtros}) {
 
   const [dataTable, setDataTable] = useState([]);
+
+    const filterTableData = () => {
+    
+      let data = [...datos];
+          
+      if (filtros) {
+          data = buscarElementosPorTexto(data, filtros, "nombre");
+      }
+          
+
+      setDataTable(data);
+    
+    };
   
     useEffect(() => {
-      const filterTableData = async () => {
-  
-        const tableData = datos.filter(dato => dato.nombre.toLowerCase().includes(filtros.toLowerCase()));
-  
-        setDataTable(tableData);
-  
-      }
   
       filterTableData();
   

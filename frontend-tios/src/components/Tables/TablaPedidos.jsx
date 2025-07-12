@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaPedidos({ paramsTable, paramsGeneral }) {
 
@@ -8,13 +9,18 @@ export default function TablaPedidos({ paramsTable, paramsGeneral }) {
   const [dataTable, setDataTable] = useState([]);
 
   const filterTableData = () => {
-    const data = tableData.filter(dato =>
-      dato.nombre_obra.toLowerCase().includes(obra.toLowerCase()) &&
-      (estadoPedido === "TODOS" || dato.estado === estadoPedido)
-    );
+  
+      let data = [...tableData];
+          
+      if (nombre) {
+          data = buscarElementosPorTexto(data, nombre, "nombre");
+      }        
 
-    setDataTable(data);
-  }
+      data = data.filter((estadoMensaje==="TODOS" || data.estado === estadoPedido))
+          
+      setDataTable(data);
+    
+  };
 
   useEffect(() => {
     filterTableData();

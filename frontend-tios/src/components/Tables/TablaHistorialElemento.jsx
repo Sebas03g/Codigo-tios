@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaHistorialElementos({
     datos, onSeleccionar, nombre
 }){
     const [dataTable, setDataTable] = useState([]);
 
-    console.log(datos);
-
     const filterTableData = () => {
 
-        const tableData = datos.filter(dato =>
-          (dato.nombre?.toLowerCase() || '').includes(nombre.toLowerCase())
-        );
+        let data = [...datos];
+        
+        if (nombre) {
+            data = buscarElementosPorTexto(data, nombre, "nombre");
+        }
 
-        setDataTable(tableData);
+        setDataTable(data);
 
     };
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaTarea({
   datos,
@@ -10,16 +11,27 @@ export default function TablaTarea({
   asignacionEmpleado
 }) {
   const [dataTable, setDataTable] = useState([]);
-
+  
   const filterTableData = () => {
-    const tableData = datos.filter(dato =>
-      dato.nombre.toLowerCase().includes(nombre.toLowerCase()) &&
-      dato.asignador.toLowerCase().includes(asignador.toLowerCase()) &&
-      dato.asignado.toLowerCase().includes(asignado.toLowerCase()) &&
-      (estado === "TODOS" || dato.estado === estado)
-    );
+  
+    let data = [...datos];
+        
+    if (nombre) {
+        data = buscarElementosPorTexto(data, nombre, "nombre");
+    }
+        
+    if (asignador) {
+        data = buscarElementosPorTexto(data, asignador, "asignador");
+    }
 
-    setDataTable(tableData);
+    if (asignado) {
+        data = buscarElementosPorTexto(data, asignado, "asignado");
+    }
+    
+    data = data.filter(dato => (estado === "TODOS" || dato.estado === estado));
+
+    setDataTable(data);
+  
   };
 
   useEffect(() => {

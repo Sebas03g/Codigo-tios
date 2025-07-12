@@ -2,7 +2,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import NavigationBar from "../general/navbar";
 import TablaCategoria from "../Tables/TablaCategoria";
 import TablaHerramientas from "../Tables/TablaHerramientas";
-import Crear from "../forms/Crear/CategoriaForm.jsx";
+import Crear from "../forms/Crear/CategoriaForm";
 
 export default function CategoriaPage({
     paramsNavBar, paramsPage, paramsTable, 
@@ -74,5 +74,5 @@ export default function CategoriaPage({
             </div>
           )}
         </div>
-      );
+    );
 }

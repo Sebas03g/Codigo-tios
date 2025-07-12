@@ -1,19 +1,26 @@
 import { useEffect, useState } from "react";
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
 
 export default function TablaProformas({ datos, onSeleccionar, cliente, nombre }) {
   const [dataTable, setDataTable] = useState([]);
 
+  const filterTableData = () => {
+  
+    let data = [...datos];
+        
+    if (nombre) {
+        data = buscarElementosPorTexto(data, nombre, "nombre");
+    }
+        
+    if (cliente) {
+        data = buscarElementosPorTexto(data, cliente, "cliente");
+    }
+        
+    setDataTable(data);
+  
+  };
+
   useEffect(() => {
-    const filterTableData = () => {
-      const tableData = datos.filter(dato =>
-        (dato.cliente?.toLowerCase() || '').includes(cliente.toLowerCase()) &&
-        (dato.nombre?.toLowerCase() || '').includes(nombre.toLowerCase())
-      );
-
-
-      setDataTable(tableData);
-    };
-
     filterTableData();
   }, [datos, cliente, nombre]);
 

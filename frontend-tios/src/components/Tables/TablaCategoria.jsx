@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { buscarElementosPorTexto } from "../../services/baseFunctions";
+
 export default function TablaCategoria({ paramsTable, paramsGenerales}) {
 
   const { dataTable, onSeleccionar} = paramsTable;
@@ -7,15 +9,20 @@ export default function TablaCategoria({ paramsTable, paramsGenerales}) {
 
   const [tableData, setTableData] = useState([]);
 
-  const filterTableData = async () => {
-    const data = dataTable.filter(dato =>
-          dato.nombre.toLowerCase().includes(nombre.toLowerCase()) &&
-          dato.codigo.toLowerCase().includes(codigo.toLowerCase())
-      );
+  const filterTableData = () => {
+    let data = [...dataTable];
 
+    if (nombre) {
+      data = buscarElementosPorTexto(data, nombre, "nombre");
+    }
+
+    if (codigo) {
+      data = buscarElementosPorTexto(data, codigo, "codigo");
+    }
 
     setTableData(data);
-  }
+  };
+
 
   useEffect(() => {
       filterTableData();
